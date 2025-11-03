@@ -110,3 +110,67 @@ body.jazz-klubben nav a:hover {
   background: rgba(255, 215, 0, 0.2);
   transform: scale(1.05);
 }
+
+/* Club details styling - only for jazz club */
+body.jazz-klubben .club-description {
+  font-size: 1.2em;
+  font-style: italic;
+  margin-bottom: 40px;
+}
+
+body.jazz-klubben .club-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+body.jazz-klubben .club-info-section {
+  background: rgba(255, 215, 0, 0.1);
+  border: 1px solid #ffd700;
+  border-radius: 15px;
+  padding: 20px;
+  backdrop-filter: blur(5px);
+}
+
+body.jazz-klubben .club-info-section h3 {
+  color: #ffd700;
+  font-size: 1.3em;
+  margin-bottom: 15px;
+  margin-top: 0;
+}
+
+body.jazz-klubben .club-info-section p {
+  text-align: left;
+  margin: 8px 0;
+  max-width: none;
+}
+
+body.jazz-klubben .opening-hours {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+body.jazz-klubben .opening-hour {
+  padding: 5px 0;
+  border-bottom: 1px dotted rgba(255, 215, 0, 0.3);
+}
+
+body.jazz-klubben .special-features {
+  list-style: none;
+  padding: 0;
+}
+
+body.jazz-klubben .special-features li {
+  background: rgba(255, 215, 0, 0.2);
+  margin: 8px 0;
+  padding: 8px 15px;
+  border-radius: 8px;
+}
+
+body.jazz-klubben .event-date {
+  color: #daa520;
+  font-size: 0.9em;
+  font-style: normal;
+}
