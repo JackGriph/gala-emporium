@@ -1,13 +1,16 @@
 import start from './pages/start.js';
 import jazzClub from './pages/jazz-club.js';
 import metalClub from './pages/metal-club.js';
+import hiphopClub from './pages/hiphop-club.js';
+
 
 // Our menu: label to display in menu and 
 // function to run on menu choice
 const menu = {
   "start": { label: 'Start', function: start },
   "jazz-klubben": { label: 'Jazz-klubben', function: jazzClub },
-  "metal-klubben": { label: 'Metal-klubben', function: metalClub }
+  "metal-klubben": { label: 'Metal-klubben', function: metalClub },
+  "hiphop-klubben": { label: 'Hiphop-klubben', function: hiphopClub }
 };
 
 function createMenu() {
