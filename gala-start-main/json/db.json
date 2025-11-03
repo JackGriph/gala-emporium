@@ -3,7 +3,25 @@
     {
       "id": "a37c",
       "name": "Jazz-klubben",
-      "description": "Vår laid-back jazz-klubb där vi varje vecka får träffa nya spännande artister."
+      "description": "Vår laid-back jazz-klubb där vi varje vecka får träffa nya spännande artister.",
+      "address": "Jazzgatan 42, 111 20 Stockholm",
+      "phone": "08-555 123 45",
+      "email": "info@jazzklubb.se",
+      "openingHours": {
+        "monday": "Stängt",
+        "tuesday": "19:00 - 01:00",
+        "wednesday": "19:00 - 01:00", 
+        "thursday": "19:00 - 01:00",
+        "friday": "18:00 - 02:00",
+        "saturday": "18:00 - 02:00",
+        "sunday": "19:00 - 00:00"
+      },
+      "atmosphere": "Intimt och mysigt med dämpat ljus, läderсофи och levande ljus på borden. Vår scen är designad för akustisk musik och skapar en nära kontakt mellan artister och publik.",
+      "capacity": "80 personer",
+      "ageLimit": "21+",
+      "dressCode": "Smart casual - vi uppskattar om du klär dig lite finare för kvällen",
+      "specialFeatures": ["Live piano bar", "Whiskey-tasting", "Cigarrrum", "VIP-avskiljning"],
+      "priceRange": "Drycker: 95-180 kr, Entré: 150-250 kr"
     },
     {
       "id": "fg5i",
