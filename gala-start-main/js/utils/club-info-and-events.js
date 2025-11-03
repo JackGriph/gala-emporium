@@ -1,110 +1,21 @@
 export default async function clubInfoAndEvents(clubId) {
-  let clubInfo = null;
+  let name = '', description = '';
   // if there is a clubId -> fetch the info about the club
   // and calculate the correct url for fetching filtered events
   let url = 'http://localhost:3000/events';
   if (clubId) {
-    clubInfo = await (await fetch('http://localhost:3000/clubs/' + clubId)).json();
+    const { name: clubName, description: clubDescription } =
+      await (await fetch('http://localhost:3000/clubs/' + clubId)).json();
+    name = clubName;
+    description = clubDescription;
     url += '?clubId=' + clubId;
   }
   const events = await (await fetch(url)).json();
 
-  // Function to format opening hours (only for jazz club)
-  function formatOpeningHours(hours) {
-    const days = {
-      monday: 'Måndag',
-      tuesday: 'Tisdag',
-      wednesday: 'Onsdag',
-      thursday: 'Torsdag',
-      friday: 'Fredag',
-      saturday: 'Lördag',
-      sunday: 'Söndag'
-    };
-
-    return Object.entries(hours)
-      .map(([day, time]) => `<div class="opening-hour"><strong>${days[day]}:</strong> ${time}</div>`)
-      .join('');
-  }
-
-  // If showing jazz club specifically, show detailed info
-  if (clubInfo && clubId === 'a37c') {
-    return `
-      <h1>${clubInfo.name}</h1>
-      <p class="club-description">${clubInfo.description}</p>
-      
-      <div class="club-details">
-        <div class="club-info-section">
-          <h3>📍 Kontaktuppgifter</h3>
-          <p><strong>Adress:</strong> ${clubInfo.address}</p>
-          <p><strong>Telefon:</strong> ${clubInfo.phone}</p>
-          <p><strong>Email:</strong> <a href="mailto:${clubInfo.email}">${clubInfo.email}</a></p>
-        </div>
-        
-        <div class="club-info-section">
-          <h3>🕐 Öppettider</h3>
-          <div class="opening-hours">
-            ${formatOpeningHours(clubInfo.openingHours)}
-          </div>
-        </div>
-        
-        <div class="club-info-section">
-          <h3>🎭 Atmosfär & Miljö</h3>
-          <p>${clubInfo.atmosphere}</p>
-        </div>
-        
-        <div class="club-info-section">
-          <h3>ℹ️ Praktisk Information</h3>
-          <p><strong>Kapacitet:</strong> ${clubInfo.capacity}</p>
-          <p><strong>Åldersgräns:</strong> ${clubInfo.ageLimit}</p>
-          <p><strong>Klädkod:</strong> ${clubInfo.dressCode}</p>
-          <p><strong>Priskllass:</strong> ${clubInfo.priceRange}</p>
-        </div>
-        
-        <div class="club-info-section">
-          <h3>✨ Specialiteter</h3>
-          <ul class="special-features">
-            ${clubInfo.specialFeatures.map(feature => `<li>${feature}</li>`).join('')}
-          </ul>
-        </div>
-      </div>
-      
-      <h2>🎵 Kommande Events</h2>
-      ${events
-        .toSorted((a, b) => a.date > b.date ? 1 : -1)
-        .map(({ date, name, description }) => `
-          <article class="event">
-            <h3>${name} <span class="event-date">${date}</span></h3>
-            <p>${description}</p>
-          </article>
-        `)
-        .join('')
-      }
-    `;
-  }
-
-  // For metal club or any other club, use simple layout
-  if (clubInfo) {
-    return `
-      <h1>${clubInfo.name}</h1>
-      <p>${clubInfo.description}</p>
-      <h2>Events</h2>
-      ${events
-        .toSorted((a, b) => a.date > b.date ? 1 : -1)
-        .map(({ date, name, description }) => `
-          <article class="event">
-            <h3>${name} ${date}</h3>
-            <p>${description}</p>
-          </article>
-        `)
-        .join('')
-      }
-    `;
-  }
-
-  // Default return for start page (no clubId)
+  // Generic club/event display
   return `
-    <h1>Alla kommande events på Gala</h1>
-    <p>Gala är en samlingsplats för olika musikklubbar.</p>
+    <h1>${name}</h1>
+    <p>${description}</p>
     <h2>Events</h2>
     ${events
       .toSorted((a, b) => a.date > b.date ? 1 : -1)
