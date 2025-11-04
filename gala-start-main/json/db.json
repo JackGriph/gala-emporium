@@ -24,7 +24,7 @@
         "Live piano bar",
         "Whiskey-tasting",
         "Cigarr-rum",
-        "VIP-avskiljning"
+        "VIP-avdelning"
       ],
       "priceRange": "Drycker: 95-180 kr, Entré: 200 kr"
     },
@@ -36,18 +36,18 @@
   ],
   "events": [
     {
-      "id": "43ac",
-      "date": "2025-11-05 19:00",
-      "name": "New Orleans-bandet",
-      "description": "New Orleans-bandet spelar old school jazz från 30-talet, med sväng och klarinett.",
-      "clubId": "a37c"
-    },
-    {
       "id": "57f3",
       "date": "2025-11-06 21:00",
       "name": "Mega Death-die",
       "description": "En open stage för death-metal-rockare, 30 minuter per band, upp till 6 band per kväll. Stjäl inte varandras effektpedaler!",
       "clubId": "fg5i"
+    },
+    {
+      "id": "43ac",
+      "date": "2025-11-05 19:00",
+      "name": "New Orleans-bandet",
+      "description": "New Orleans-bandet spelar old school jazz från 30-talet, med sväng och klarinett.",
+      "clubId": "a37c"
     },
     {
       "id": "43ac",
