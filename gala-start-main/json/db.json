@@ -10,6 +10,12 @@
       "name": "Metal-klubben",
       "description": "Ylande metal som får dig att vilja erövra världen! Varje vecka med Tom som konferencier."
     }
+    ,
+    {
+      "id": "h1ph",
+      "name": "Hiphop-klubben",
+      "description": "En plats för beats, breakdance och freestyle — hiphop-vibbar varje vecka med lokala MC:s och DJs."
+    }
   ],
   "events": [
     {
@@ -24,7 +30,7 @@
       "date": "2025-11-06 21:00",
       "name": "Mega Death-die",
       "description": "En open stage för death-metal-rockare, 30 minuter per band, upp till 6 band per kväll. Stjäl inte varandras effektpedaler!",
-      "clubId": "fg5i"
+      "clubId": "b12d"
     },
     {
       "id": "43ac",
