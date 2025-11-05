@@ -1,13 +1,16 @@
 import start from './pages/start.js';
 import jazzClub from './pages/jazz-club.js';
 import metalClub from './pages/metal-club.js';
+import clubPopfesten from './pages/club-popfesten.js'; //lagt till denna
 
 // Our menu: label to display in menu and 
 // function to run on menu choice
 const menu = {
   "start": { label: 'Start', function: start },
   "jazz-klubben": { label: 'Jazz-klubben', function: jazzClub },
-  "metal-klubben": { label: 'Metal-klubben', function: metalClub }
+  "metal-klubben": { label: 'Metal-klubben', function: metalClub },
+  "club-popfesten": { label: 'Club Popfesten', function: clubPopfesten } //lagt till denna
+
 };
 
 function createMenu() {
