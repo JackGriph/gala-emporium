@@ -21,7 +21,8 @@ export default async function clubInfoAndEvents(clubId) {
       .toSorted((a, b) => a.date > b.date ? 1 : -1)
       .map(({ date, name, description }) => `
         <article class="event">
-          <h3>${name} ${date}</h3>
+          <h3> ${date}<br>
+           ${name}</h3>
           <p>${description}</p>
         </article>
       `)
