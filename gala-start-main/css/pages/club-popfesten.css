@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Almendra&family=Poiret+One&display=swap');
+/* 
+font-family: "Almendra", serif;
+*/
+
+body.club-popfesten {
+  background-color: rebeccapurple;
+  background-image: url();
+  font-family: "Almendra", serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 20px;
+  margin-top: 20px;
+}
+
+body.club-popfesten a {
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  text-decoration: none;
+}
+
+.club-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.club-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.club-image {
+  display: block;
+  margin: 0 auto;
+  margin-top: 50px;
+  /* flyttar ner bilden*/
+  justify-content: center;
+  align-items: center;
+}
+
+.club-info {
+  justify-content: center;
+  text-align: center;
+}
+
+
+ul {
+  font-family: "Almendra", serif;
+  font-size: 1.1rem;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.club-content {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+h1 {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* Eventlista till vänster, text till höger */
+.events-column {
+  flex: 2;
+}
+
+.extra-info {
+  flex: 1;
+}
+
+
+/* Om du vill få texten högerjusterad visuellt (valfritt) */
+.extra-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.event-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.event-card {
+  border: 2px solid #444;
+  /* Ram */
+  background-color: #b52af5;
+  /* Bakgrund i ramen */
+  padding: 8px;
+  /* Lite luft runt texten */
+  margin-bottom: 10px;
+  /* Avstånd mellan event-kort */
+  border-radius: 8px;
+  /* Rundade hörn (valfritt) */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.8);
+  width: 80%;
+}
+
+.event-card h3 {
+  margin: 3px 0;
+  /*top/bottom left/right */
+}
+
+
+/* Mobil */
+@media (max-width: 768px) {
+  .club-content {
+    flex-direction: column;
+  }
+
+  .events-column,
+  .extra-info {
+    flex: none;
+    width: 100%;
+  }
+
+  .extra-info {
+    margin-top: 1.5rem;
+  }
+}
