@@ -16,6 +16,7 @@ header {
   text-align: center;
   padding: 12px 0;
   /* lägger lite luft ovanför och under länkarna */
+  position: fixed;
   
 }
 
@@ -49,4 +50,27 @@ main {
   margin-bottom: 50px;
   text-align: left;
 
+}
+
+
+
+
+
+
+
+/* Mobil */
+@media (max-width: 768px) {
+  .club-content {
+    flex-direction: column;
+  }
+
+  .events-column,
+  .extra-info {
+    flex: none;
+    width: 100%;
+  }
+
+  .extra-info {
+    margin-top: 1.5rem;
+  }
 }
