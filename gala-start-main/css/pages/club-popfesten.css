@@ -34,9 +34,8 @@ body.club-popfesten {
   display: block;
   margin: 0 auto;
   margin-top: 50px;
-  /* flyttar ner bilden*/
-  justify-content: center;
-  align-items: center;
+  max-width: 100%;
+  height: auto;
 }
 
 .club-info {
