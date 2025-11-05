@@ -13,9 +13,19 @@
     {
       "id": "1234",
       "name": "Club PopFesten",
-      "description": "Svensk Pop när den är som bäst"
-    }
+      "description": "Svensk Pop när den är som bäst",
+      "openingHours": {
+        "monday": "Stängt",
+        "tuesday": "Stängt",
+        "wednesday": "17:00 - 00:30",
+        "thursday": "17:00 - 00:30",
+        "friday": "17:00 - 02:00",
+        "saturday": "17:00 - 02:00",
+        "sunday": "17:00 - 22.00"
+      }
+    } 
   ],
+  
   "events": [
     {
       "id": "43ac",

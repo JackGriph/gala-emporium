@@ -11,6 +11,17 @@ export default async function clubPopfesten() {
   const eventsRes = await fetch('http://localhost:3000/events?clubId=' + clubId);
   const events = await eventsRes.json();
 
+  const daysSwedish = {
+    monday: "Måndag",
+    tuesday: "Tisdag",
+    wednesday: "Onsdag",
+    thursday: "Torsdag",
+    friday: "Fredag",
+    saturday: "Lördag",
+    sunday: "Söndag"
+  };
+
+
   return `
     <section class="club-page">
 
@@ -23,7 +34,7 @@ export default async function clubPopfesten() {
 
 <div class="club-content">
     <div class="events-column">
-      <h3>Kommande event</h3>
+      <h1>Kommande event:</h1>
       DJ'n "Mr Music" spelar varje Torsdag-lördag blandad svensk popmusik.<br>
       <ul class="event-list">
         ${events.map(event => `
@@ -35,13 +46,19 @@ export default async function clubPopfesten() {
       </ul>
     </div>
 
-    <div class="extra-info">
-      <h3>Om klubben</h3>
-      <p>
-        Här kan du skriva valfri text om klubben, biljettinfo,
-        öppettider, VIP, eller annan information.
-      </p>
-    </div>
+  <div class="extra-info">
+  <h1>Öppettider:</h1>
+    <ul>
+      ${Object.keys(club.openingHours).map(day => `
+        <li>${daysSwedish[day]}: ${club.openingHours[day]}</li>
+      `).join("")}<br>
+  <h1>Prislista:</h1> 
+      Entré vid event: 200 kr<br>
+      Entré Övriga dagar: 100 kr<br>
+      Drycker: 90 - 180 kr.<br>
+      Snacks: 50 - 100 kr
+    </ul>
+  </div>
   </div>
     </section>
   `;

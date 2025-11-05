@@ -4,23 +4,21 @@ font-family: "Almendra", serif;
 */
 
 body.club-popfesten {
-  background-color: rebeccapurple;
-  background-image: url();
+  background-color: rgb(156, 111, 201);
   font-family: "Almendra", serif;
   font-size: 1.1rem;
   font-weight: bold;
-  margin: 20px;
-  margin-top: 20px;
+  margin: 0;
 }
 
-body.club-popfesten a {
+/*body.club-popfesten a {
   color: white;
   font-family: 'Times New Roman', Times, serif;
   text-decoration: none;
-}
+}*/
 
 .club-page {
-  max-width: 900px;
+  max-width: auto;
   margin: 0 auto;
   padding: 0 1rem;
 }
@@ -80,8 +78,6 @@ h3 {
   flex: 1;
 }
 
-
-/* Om du vill få texten högerjusterad visuellt (valfritt) */
 .extra-info {
   display: flex;
   flex-direction: column;
@@ -97,7 +93,7 @@ h3 {
 .event-card {
   border: 2px solid #444;
   /* Ram */
-  background-color: #b52af5;
+  background-color: lightgrey;
   /* Bakgrund i ramen */
   padding: 8px;
   /* Lite luft runt texten */
@@ -113,6 +109,7 @@ h3 {
   margin: 3px 0;
   /*top/bottom left/right */
 }
+
 
 
 /* Mobil */
