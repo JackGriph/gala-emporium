@@ -20,11 +20,10 @@ export default async function clubInfoAndEvents(clubId) {
     ${events
       .toSorted((a, b) => a.date > b.date ? 1 : -1)
       .map(({ date, name, description }) => `
-        <article class="event">
-          <h3> ${date}<br>
-           ${name}<br>
-          ${description}</h3>
-        </article>
+    <article class="event">
+        <h3>${name} ${date}</h3>
+        <p>${description}</p>
+    </article>
       `)
       .join('')
     }
