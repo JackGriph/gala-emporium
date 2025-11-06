@@ -4,10 +4,15 @@ font-family: "Almendra", serif;
 */
 
 body.club-popfesten {
+  background-image: url('../../pictures/bg-popfesten.jpg');
+  background-attachment: fixed;
   background-color: rgb(156, 111, 201);
+  background-repeat: no-repeat;
+  background-size: cover;
   font-family: "Almendra", serif;
   font-size: 1.1rem;
   font-weight: bold;
+  color: white;
   margin: 0;
 }
 
@@ -92,7 +97,7 @@ h3 {
 .event-card {
   border: 2px solid #444;
   /* Ram */
-  background-color: lightgrey;
+  background-color: rebeccapurple;
   /* Bakgrund i ramen */
   padding: 8px;
   /* Lite luft runt texten */
@@ -109,6 +114,21 @@ h3 {
   /*top/bottom left/right */
 }
 
+/*
+.extra-info {
+  background-image: url('../../pictures/bg-popfesten.jpg');
+  background-size: cover;
+  /* Täcker hela div:en 
+  background-position: center;
+  /* Centrerar bilden 
+  background-repeat: no-repeat;
+  /* Förhindrar upprepning 
+  padding: 40px;
+  /* Lite luft runt innehållet 
+  color: white;
+  /* Gör texten vit 
+} 
+*/
 
 
 /* Mobil */

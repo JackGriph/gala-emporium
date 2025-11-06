@@ -22,8 +22,8 @@ export default async function clubInfoAndEvents(clubId) {
       .map(({ date, name, description }) => `
         <article class="event">
           <h3> ${date}<br>
-           ${name}</h3>
-          <p>${description}</p>
+           ${name}<br>
+          ${description}</h3>
         </article>
       `)
       .join('')

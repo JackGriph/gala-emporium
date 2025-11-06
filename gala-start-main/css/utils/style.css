@@ -17,7 +17,7 @@ header {
   padding: 12px 0;
   /* lägger lite luft ovanför och under länkarna */
   position: fixed;
-  
+
 }
 
 nav {
@@ -34,7 +34,25 @@ nav a {
   text-decoration: none;
   font-weight: bold;
   font-size: 1.1rem;
+  /* Gör att länkarna ser ut som knappar */
+  border: 2px solid white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  /* lite transparens */
+  transition: all 0.3s ease;
 }
+
+nav a:hover {
+  background-color: white;
+  color: black;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.4);
+  /* ljusare skugga vid hover */
+  transform: translateY(-2px);
+  /* lyfter knappen lite */
+}
+
+
 .pet {
   border: 1px solid #ddd;
   border-radius: 10px;
@@ -51,10 +69,3 @@ main {
   text-align: left;
 
 }
-
-
-
-
-
-
-
