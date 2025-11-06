@@ -1,8 +1,17 @@
+
+
 body.hiphop-klubben {
-  background-color: rgb(60, 87, 69);
+  background-color: rgb(13, 44, 24);
   color: white;
+  background-image: url('gala-start-main/pictures/hiphop-background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+
 }
 
 body.hiphop-klubben a {
   color: white;
 }
+
