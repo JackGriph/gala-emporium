@@ -16,12 +16,12 @@
       "description": "Svensk Pop när den är som bäst",
       "openingHours": {
         "monday": "Stängt",
-        "tuesday": "Stängt",
+        "tuesday": "17:00 - 23.00",
         "wednesday": "17:00 - 00:30",
         "thursday": "17:00 - 00:30",
         "friday": "17:00 - 02:00",
         "saturday": "17:00 - 02:00",
-        "sunday": "17:00 - 22.00"
+        "sunday": "Stängt"
       }
     } 
   ],

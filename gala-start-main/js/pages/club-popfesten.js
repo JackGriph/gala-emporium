@@ -35,7 +35,7 @@ export default async function clubPopfesten() {
 <div class="club-content">
     <div class="events-column">
       <h1>Kommande event:</h1>
-      DJ'n "Mr Music" spelar varje Torsdag-lördag blandad svensk popmusik.<br>
+      Olika DJ's spelar varje dag blandad svensk popmusik.<br>
       <ul class="event-list">
         ${events.map(event => `
           <li class="event-card">
