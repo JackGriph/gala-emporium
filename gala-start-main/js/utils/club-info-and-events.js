@@ -24,6 +24,9 @@ export default async function clubInfoAndEvents(clubId) {
   const isHiphop = name.toLowerCase().includes('hiphop');
 
   // Returnera HTML
+  const events = await (await fetch(url)).json();
+
+  // Generic club/event display
   return `
     <div class="page" style="
       font-family: Arial, sans-serif;
