@@ -97,8 +97,10 @@ h3 {
 .event-card {
   border: 2px solid #444;
   /* Ram */
-  background-color: rebeccapurple;
+  background-color: rgba(102, 51, 153, 0.3);
   /* Bakgrund i ramen */
+  backdrop-filter: blur(8px);
+  /* frostad glas-effekt */
   padding: 8px;
   /* Lite luft runt texten */
   margin-bottom: 10px;
