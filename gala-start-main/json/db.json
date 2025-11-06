@@ -3,7 +3,30 @@
     {
       "id": "a37c",
       "name": "Jazz-klubben",
-      "description": "Vår laid-back jazz-klubb där vi varje vecka får träffa nya spännande artister."
+      "description": "Vår laid-back jazz-klubb där vi varje vecka får träffa nya spännande artister.",
+      "address": "Jazzgatan 42, 111 20 Stockholm",
+      "phone": "08-555 123 45",
+      "email": "info@jazzklubb.se",
+      "openingHours": {
+        "monday": "Stängt",
+        "tuesday": "19:00 - 01:00",
+        "wednesday": "19:00 - 01:00",
+        "thursday": "19:00 - 01:00",
+        "friday": "18:00 - 02:00",
+        "saturday": "18:00 - 02:00",
+        "sunday": "19:00 - 00:00"
+      },
+      "atmosphere": "Intimt och mysigt med dämpat ljus, läder och levande ljus på borden. Vår scen är designad för akustisk musik och skapar en nära kontakt mellan artister och publik.",
+      "capacity": "80 personer",
+      "ageLimit": "21+",
+      "dressCode": "Smart casual - vi uppskattar om du klär dig lite finare för kvällen",
+      "specialFeatures": [
+        "Live piano bar",
+        "Whiskey-tasting",
+        "Cigarr-rum",
+        "VIP-avdelning"
+      ],
+      "priceRange": "Drycker: 95-180 kr, Entré: 200 kr"
     },
     {
       "id": "fg5i",
@@ -13,13 +36,6 @@
   ],
   "events": [
     {
-      "id": "43ac",
-      "date": "2025-11-05 19:00",
-      "name": "New Orleans-bandet",
-      "description": "New Orleans-bandet spelar old school jazz från 30-talet, med sväng och klarinett.",
-      "clubId": "a37c"
-    },
-    {
       "id": "57f3",
       "date": "2025-11-06 21:00",
       "name": "Mega Death-die",
@@ -28,9 +44,44 @@
     },
     {
       "id": "43ac",
+      "date": "2025-11-05 19:00",
+      "name": "New Orleans-bandet",
+      "description": "New Orleans-bandet spelar old school jazz från 30-talet, med sväng och klarinett.",
+      "clubId": "a37c"
+    },
+    {
+      "id": "43ac",
       "date": "2025-11-01 19:00",
       "name": "Fusion-jazzarna Corea's Disciples",
       "description": "Cool fusion-jazz med en massa dim-ackord.",
+      "clubId": "a37c"
+    },
+    {
+      "id": "43ac",
+      "date": "2025-11-08 20:00",
+      "name": "Smooth Jazz Collective",
+      "description": "En mysig kväll med smooth jazz och saxophone. Perfekt för en avslappnad fredag.",
+      "clubId": "a37c"
+    },
+    {
+      "id": "jazz2",
+      "date": "2025-11-12 19:30",
+      "name": "Bebop Revival Night",
+      "description": "Återupplev bebop-erans mästerverk med lokala musiker som tolkar Charlie Parker och Dizzy Gillespie.",
+      "clubId": "a37c"
+    },
+    {
+      "id": "jazz3",
+      "date": "2025-11-15 21:00",
+      "name": "Latin Jazz Fiesta",
+      "description": "Dansbara rytmer från Sydamerika möter jazz-improvisation. Kom och svaja till mambo och bossa nova!",
+      "clubId": "a37c"
+    },
+    {
+      "id": "jazz4",
+      "date": "2025-11-19 20:30",
+      "name": "Jazz Jam Session",
+      "description": "Öppen scen för alla jazzmusiker! Ta med ditt instrument och jamm med andra. Nybörjare välkomna.",
       "clubId": "a37c"
     }
   ]

@@ -10,9 +10,9 @@ export default async function clubInfoAndEvents(clubId) {
     description = clubDescription;
     url += '?clubId=' + clubId;
   }
-  const events =
-    await (await fetch(url)).json();
-  // return html
+  const events = await (await fetch(url)).json();
+
+  // Generic club/event display
   return `
     <h1>${name}</h1>
     <p>${description}</p>
