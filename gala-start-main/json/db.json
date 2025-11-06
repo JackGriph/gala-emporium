@@ -37,7 +37,34 @@
     {
       "id": "h1ph",
       "name": "Hiphop-klubben",
-      "description": "En plats för beats, breakdance och freestyle — hiphop-vibbar varje vecka med lokala MC:s och DJs."
+      "description": "En plats för beats, breakdance och freestyle — hiphop-vibbar varje vecka med lokala MC:s och DJs.",
+      "address": "Beatgatan 7, 118 24 Stockholm",
+      "phone": "08-777 55 33",
+      "email": "kontakt@hiphopklubben.se",
+      "openingHours": {
+        "monday": "Stängt",
+        "tuesday": "19:00 - 01:00 (DJ-night)",
+        "wednesday": "19:00 - 01:00 (Open mic)",
+        "thursday": "19:00 - 02:00 (Freestyle & Battles)",
+        "friday": "18:00 - 03:00 (Live acts)",
+        "saturday": "18:00 - 03:00 (Headliner nights)",
+        "sunday": "18:00 - 23:00 (Chill & community)"
+      },
+      "atmosphere": "Rått men välkomnande — träbord, industrilampor och ett dansvänligt golv. Fokus på community, improvisation och god ljudkvalitet.",
+      "capacity": "220 personer",
+      "ageLimit": "18+",
+      "dressCode": "Casual — sneakers och streetwear är helt okej",
+      "specialFeatures": [
+        "Stor dansyta för breakdance",
+        "Analog mikrofon i vintagestil på baren",
+        "Ljudisolerat övningsrum för gästande artister",
+        "Lokalbar med specialdrinks och non-alcoholic alternativ"
+      ],
+      "priceRange": "Drycker: 60-160 kr, Entré: 120-220 kr",
+      "social": {
+        "instagram": "@hiphopklubben",
+        "facebook": "facebook.com/hiphopklubben"
+      }
     }
   ],
   "events": [
@@ -89,6 +116,35 @@
       "name": "Jazz Jam Session",
       "description": "Öppen scen för alla jazzmusiker! Ta med ditt instrument och jamm med andra. Nybörjare välkomna.",
       "clubId": "a37c"
+    }
+    ,
+    {
+      "id": "hh01",
+      "date": "2025-11-07 20:00",
+      "name": "Beat Cypher Night",
+      "description": "Open mic och cypher — ta med dina rim eller kom och lyssna. DJ på plats som matar tunga beats.",
+      "clubId": "h1ph"
+    },
+    {
+      "id": "hh02",
+      "date": "2025-11-14 20:00",
+      "name": "Break & Groove",
+      "description": "Breakdance-battles, showcase från lokala crews och live DJ-sets.",
+      "clubId": "h1ph"
+    },
+    {
+      "id": "hh03",
+      "date": "2025-11-21 19:30",
+      "name": "Producer Workshop: Sampling & Beats",
+      "description": "En kväll med en gästproducent som visar sina workflow, följt av Q&A och en mini-beatbattle.",
+      "clubId": "h1ph"
+    },
+    {
+      "id": "hh04",
+      "date": "2025-12-05 21:00",
+      "name": "Freestyle Finals",
+      "description": "Kvällens höjdpunkt — final i vår open freestyle-tävling. Stora priser och guest judges från scenen.",
+      "clubId": "h1ph"
     }
   ]
 }
