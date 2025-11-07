@@ -12,7 +12,7 @@ const menu = {
   "start": { label: 'Start', function: start },
   "jazz-klubben": { label: 'Jazz-klubben', function: jazzClub },
   "metal-klubben": { label: 'Metal-klubben', function: metalClub },
-  "club-popfesten": { label: 'Club Popfesten', function: clubPopfesten } //lagt till denna
+  "club-popfesten": { label: 'Club Popfesten', function: clubPopfesten }, //lagt till denna
 
   "create-club": { label: 'Skapa en klubb', function: createClub, isAdminPage: true }
 };
