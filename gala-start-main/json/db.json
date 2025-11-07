@@ -113,6 +113,20 @@
       "name": "Jazz Jam Session",
       "description": "Öppen scen för alla jazzmusiker! Ta med ditt instrument och jamm med andra. Nybörjare välkomna.",
       "clubId": "a37c"
+    },
+    {
+      "id": "cd6r",
+      "date": "2025-11-07 17:23",
+      "name": "Tenta-omtenta kravall",
+      "description": "Test test",
+      "clubId": "a37c"
+    },
+    {
+      "id": "guvy",
+      "date": "2025-11-06 16:26",
+      "name": "Tenta-omtenta kravall",
+      "description": "sdfsf",
+      "clubId": "a37c"
     }
   ],
   "bookings": [
