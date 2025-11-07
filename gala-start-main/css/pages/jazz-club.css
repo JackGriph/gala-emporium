@@ -58,6 +58,7 @@ body.jazz-klubben .event {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(5px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
 }
 
 body.jazz-klubben .event:hover {
@@ -120,9 +121,24 @@ body.jazz-klubben .club-description {
 
 body.jazz-klubben .club-details {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
   margin-bottom: 40px;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 1200px) {
+  body.jazz-klubben .club-details {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  body.jazz-klubben .club-details {
+    grid-template-columns: 1fr;
+  }
 }
 
 body.jazz-klubben .club-info-section {

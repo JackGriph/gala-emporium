@@ -1,7 +1,6 @@
 @import './setup-box-sizing.css';
 @import '../pages/start-page.css';
 @import '../pages/jazz-club.css';
-@import '../pages/metal-club.css';
 @import '../pages/club-popfesten.css';
 
 body {
@@ -51,14 +50,3 @@ nav a:hover {
   transform: translateY(-2px);
   /* lyfter knappen lite */
 }
-
-
-main {
-  padding-top: 40px;
-  /* Skjuter ner innehållet så det inte hamnar under headern */
-  margin-left: 50px;
-  margin-right: 50px;
-  margin-bottom: 50px;
-  text-align: left;
-}
-

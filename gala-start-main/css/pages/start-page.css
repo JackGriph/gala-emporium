@@ -13,6 +13,15 @@ body.start {
   font-family: "DM Serif Text", serif;
 }
 
+main {
+  padding-top: 40px;
+  /* Skjuter ner innehållet så det inte hamnar under headern */
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 50px;
+  text-align: left;
+}
+
 .event {
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(8px);
