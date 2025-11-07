@@ -20,13 +20,13 @@ export default async function clubPopfesten() {
     saturday: "Lördag",
     sunday: "Söndag"
   };
-
-
+  
+  // src="../../pictures/logo-popfesten.jpg"
   return `
     <section class="club-page">
 
       <div class="club-header">
-        <img class="club-image" src="../../pictures/logo-popfesten.jpg" alt="${club.name}">
+        <img class="club-image" src="pictures/logo-popfesten.jpg" alt="${club.name}"> 
         <h1>${club.name}<br>
         ${club.description}</h1>
         <p class="club-info">Club Popfesten är kvällsklubben där popälskare samlas för att fira den svenska musiken vi aldrig tröttnat på. Våra artister och DJ's bjuder på allt från tidlösa popklassiker till dagens största hits, med energifyllda liveframträdanden och välkända covers som får hela dansgolvet att sjunga med. Oavsett om du älskar ikoniska retrovibbar eller fräsch modern pop är Club Popfesten platsen där nostalgi möter nutid, och där festen aldrig stannar av. Älskar du svensk pop? Kom och studsa med oss.</p>
