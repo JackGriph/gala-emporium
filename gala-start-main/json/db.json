@@ -55,8 +55,7 @@
         "saturday": "19:00 - 03:00",
         "sunday": "Stängt"
       }
-    }
-    ,
+    },
     {
       "id": "h1ph",
       "name": "Hiphop-klubben",
@@ -202,6 +201,13 @@
       "name": "Breakdance Showcase",
       "description": "En kväll fylld med sjuka moves! Se Stockholms bästa b-boys och b-girls tävla. Öppen cypher efter showen där alla kan delta.",
       "clubId": "h1ph"
+    },
+    {
+      "id": "t11i",
+      "date": "2025-11-07 22:55",
+      "name": "disko",
+      "description": "jag vill dansa på klubbdisko",
+      "clubId": "1234"
     }
   ],
   "bookings": [
@@ -211,8 +217,7 @@
       "antal": 4,
       "clubId": "a37c",
       "createdAt": "2025-11-07T08:24:25.932Z"
-    }
-    ,
+    },
     {
       "id": "hh01",
       "date": "2025-11-07 20:00",

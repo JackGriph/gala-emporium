@@ -35,7 +35,7 @@ export default async function hiphopClub() {
       .toSorted((a, b) => a.date > b.date ? 1 : -1)
       .map(({ date, name, description }) => `
             <article class="hiphop-event">
-              <h3 class="special"><img src="path/to/microphone-icon.png" alt="Microphone Icon" style="width: 20px; height: 20px; margin-right: 5px;">${name} <small>(${date})</small></h3>
+              <h3 class="special">🎤 ${name} <strong>(${date})</strong></h3>
               <p class="text-light">${description}</p>
             </article>
           `)
