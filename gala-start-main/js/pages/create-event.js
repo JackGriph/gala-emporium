@@ -73,7 +73,7 @@ export default async function createEvent() {
 
   return `
     <h1>Skapa evenemang</h1>
-    <p class="page-description">Skapa ett nytt evenemang för din klubb</p>
+    <p class="page-description"> <strong>Skapa ett nytt evenemang för din klubb</strong></p>
     
     <div id="event-form" class="form-container">
       <form>
