@@ -1,15 +1,20 @@
 import start from './pages/start.js';
 import jazzClub from './pages/jazz-club.js';
-import metalClub from './pages/metal-club.js';
+import clubPopfesten from './pages/club-popfesten.js';
 import hiphopClub from './pages/hiphop-club.js';
+import createEvent from './pages/create-event.js';
+
+
+const isAdmin = true; //resultat av en inlogging
 
 // Our menu: label to display in menu and 
 // function to run on menu choice
 const menu = {
   "start": { label: 'Start', function: start },
   "jazz-klubben": { label: 'Jazz-klubben', function: jazzClub },
-  "metal-klubben": { label: 'Metal-klubben', function: metalClub },
-  "hiphop-klubben": { label: 'Hiphop-klubben', function: hiphopClub }
+  "club-popfesten": { label: 'Club Popfesten', function: clubPopfesten },
+  "hiphop-klubben": { label: 'Hiphop klubben', function: hiphopClub },
+  "create-event": { label: 'Skapa evenemang', function: createEvent, isAdminPage: true }
 };
 
 function createMenu() {

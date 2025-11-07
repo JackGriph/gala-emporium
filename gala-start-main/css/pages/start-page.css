@@ -1,8 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
+/*
+font-family: "DM Serif Text", serif; 
+*/
+
 body.start {
-  background-color: #eee;
-  color: #222;
+  background-color: rgb(9, 9, 9);
+  background-image: url('../../pictures/bg-index.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: whitesmoke;
+  font-family: "DM Serif Text", serif;
 }
 
-body.start a {
-  color: blue;
+main {
+  padding-top: 40px;
+  /* Skjuter ner innehållet så det inte hamnar under headern */
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 50px;
+  text-align: left;
+}
+
+.event {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  /* frostad glas-effekt */
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  width: 50%;
+  margin: 20px
 }

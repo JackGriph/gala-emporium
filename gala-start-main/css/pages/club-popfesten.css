@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Almendra&family=Poiret+One&display=swap');
+/* 
+font-family: "Almendra", serif;
+*/
+
+body.club-popfesten {
+  background-image: url('../../pictures/bg-popfesten.jpg');
+  background-attachment: fixed;
+  background-color: rgb(156, 111, 201);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Almendra", serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+}
+
+/*body.club-popfesten a {
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  text-decoration: none;
+}*/
+
+.club-page {
+  max-width: auto;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.club-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.club-image {
+  display: block;
+  margin: 0 auto;
+  margin-top: 50px;
+  max-width: 100%;
+  height: auto;
+}
+
+.club-info {
+  justify-content: center;
+  text-align: center;
+}
+
+
+ul {
+  font-family: "Almendra", serif;
+  font-size: 1.1rem;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.club-content {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+h1 {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* Eventlista till vänster, text till höger */
+.events-column {
+  flex: 2;
+}
+
+.extra-info {
+  flex: 1;
+}
+
+.extra-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.event-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.event-card {
+  border: 2px solid #444;
+  /* Ram */
+  background-color: rgba(102, 51, 153, 0.3);
+  /* Bakgrund i ramen */
+  backdrop-filter: blur(8px);
+  /* frostad glas-effekt */
+  padding: 8px;
+  /* Lite luft runt texten */
+  margin-bottom: 10px;
+  /* Avstånd mellan event-kort */
+  border-radius: 8px;
+  /* Rundade hörn (valfritt) */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.8);
+  width: 80%;
+}
+
+.event-card h3 {
+  margin: 3px 0;
+  /*top/bottom left/right */
+}
+
+/*
+.extra-info {
+  background-image: url('../../pictures/bg-popfesten.jpg');
+  background-size: cover;
+  /* Täcker hela div:en 
+  background-position: center;
+  /* Centrerar bilden 
+  background-repeat: no-repeat;
+  /* Förhindrar upprepning 
+  padding: 40px;
+  /* Lite luft runt innehållet 
+  color: white;
+  /* Gör texten vit 
+} 
+*/
+
+
+/* Mobil */
+@media (max-width: 768px) {
+  .club-content {
+    flex-direction: column;
+  }
+
+  .events-column,
+  .extra-info {
+    flex: none;
+    width: 100%;
+  }
+
+  .extra-info {
+    margin-top: 1.5rem;
+  }
+}

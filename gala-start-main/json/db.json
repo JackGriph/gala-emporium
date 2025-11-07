@@ -29,9 +29,32 @@
       "priceRange": "Drycker: 95-180 kr, Entré: 200 kr"
     },
     {
-      "id": "fg5i",
-      "name": "Metal-klubben",
-      "description": "Ylande metal som får dig att vilja erövra världen! Varje vecka med Tom som konferencier."
+      "id": "1234",
+      "name": "Club PopFesten",
+      "description": "Svensk Pop när den är som bäst",
+      "openingHours": {
+        "monday": "Stängt",
+        "tuesday": "17:00 - 23.00",
+        "wednesday": "17:00 - 00:30",
+        "thursday": "17:00 - 00:30",
+        "friday": "17:00 - 02:00",
+        "saturday": "17:00 - 02:00",
+        "sunday": "Stängt"
+      }
+    },
+    {
+      "id": "h1ph",
+      "name": "Hiphop-klubben",
+      "description": "Fresh beats och urban kultur. Här möts hiphop-älskare för att njuta av både gamla klassiker och nya bangers.",
+      "openingHours": {
+        "monday": "Stängt",
+        "tuesday": "Stängt",
+        "wednesday": "20:00 - 02:00",
+        "thursday": "20:00 - 02:00",
+        "friday": "19:00 - 03:00",
+        "saturday": "19:00 - 03:00",
+        "sunday": "Stängt"
+      }
     }
     ,
     {
@@ -69,13 +92,6 @@
   ],
   "events": [
     {
-      "id": "57f3",
-      "date": "2025-11-06 21:00",
-      "name": "Mega Death-die",
-      "description": "En open stage för death-metal-rockare, 30 minuter per band, upp till 6 band per kväll. Stjäl inte varandras effektpedaler!",
-      "clubId": "b12d"
-    },
-    {
       "id": "43ac",
       "date": "2025-11-05 19:00",
       "name": "New Orleans-bandet",
@@ -88,6 +104,34 @@
       "name": "Fusion-jazzarna Corea's Disciples",
       "description": "Cool fusion-jazz med en massa dim-ackord.",
       "clubId": "a37c"
+    },
+    {
+      "id": "2511151900",
+      "date": "2025-11-15 21:00",
+      "name": "Miss Li",
+      "description": "spelar sina stora svenska hits",
+      "clubId": "1234"
+    },
+    {
+      "id": "2511221900",
+      "date": "2025-11-22 19:00",
+      "name": "Robin & Ingela med Värsta Bästa Bandet",
+      "description": "Spelar blandad svensk popmusik från 70-talet och framåt. Bjuder på en show med både musik och humor.",
+      "clubId": "1234"
+    },
+    {
+      "id": "2511282000",
+      "date": "2025-11-28 20:00",
+      "name": "Svensk PopCovers",
+      "description": "Coverbandet 80-80 spelar svensk pop från 80-talet",
+      "clubId": "1234"
+    },
+    {
+      "id": "2511291700",
+      "date": "2025-11-29 17:00",
+      "name": "Karaokekväll",
+      "description": "Kom hit och sjung till populär svensk pop. Ta med ditt kompisgäng och ha roligt",
+      "clubId": "1234"
     },
     {
       "id": "43ac",
@@ -116,6 +160,57 @@
       "name": "Jazz Jam Session",
       "description": "Öppen scen för alla jazzmusiker! Ta med ditt instrument och jamm med andra. Nybörjare välkomna.",
       "clubId": "a37c"
+    },
+    {
+      "id": "cd6r",
+      "date": "2025-11-07 17:23",
+      "name": "Tenta-omtenta kravall",
+      "description": "Test test",
+      "clubId": "a37c"
+    },
+    {
+      "id": "guvy",
+      "date": "2025-11-06 16:26",
+      "name": "Tenta-omtenta kravall",
+      "description": "sdfsf",
+      "clubId": "a37c"
+    },
+    {
+      "id": "hh01",
+      "date": "2025-11-09 21:00",
+      "name": "90s Hiphop Night",
+      "description": "En nostalgisk resa tillbaka till hiphopens guldålder. DJ:n spinner klassiker från Tupac, Biggie, Wu-Tang och Nas hela kvällen!",
+      "clubId": "h1ph"
+    },
+    {
+      "id": "hh02",
+      "date": "2025-11-14 22:00",
+      "name": "Freestyle Battle",
+      "description": "Öppen scen för MC:s! Visa dina färdigheter i vår freestyle battle. Publikröstning avgör vinnaren som får 5000 kr i pris.",
+      "clubId": "h1ph"
+    },
+    {
+      "id": "hh03",
+      "date": "2025-11-21 20:30",
+      "name": "Svensk Hiphop Special",
+      "description": "Fira svensk hiphop med liveframträdanden av lokala artister. Featuring: 073, Kaliffa och Masse. Stötta den svenska scenen!",
+      "clubId": "h1ph"
+    },
+    {
+      "id": "hh04",
+      "date": "2025-11-28 21:30",
+      "name": "Breakdance Showcase",
+      "description": "En kväll fylld med sjuka moves! Se Stockholms bästa b-boys och b-girls tävla. Öppen cypher efter showen där alla kan delta.",
+      "clubId": "h1ph"
+    }
+  ],
+  "bookings": [
+    {
+      "id": "BK03865932BQL3",
+      "name": "Jack",
+      "antal": 4,
+      "clubId": "a37c",
+      "createdAt": "2025-11-07T08:24:25.932Z"
     }
     ,
     {
