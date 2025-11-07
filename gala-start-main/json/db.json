@@ -84,5 +84,34 @@
       "description": "Öppen scen för alla jazzmusiker! Ta med ditt instrument och jamm med andra. Nybörjare välkomna.",
       "clubId": "a37c"
     }
+  ],
+  "bookings": [
+    {
+      "id": "BK03865932BQL3",
+      "name": "Jack",
+      "antal": 4,
+      "clubId": "a37c",
+      "createdAt": "2025-11-07T08:24:25.932Z"
+    },
+    {
+      "id": "BK04173638VRNL",
+      "name": "Jack",
+      "antal": 3,
+      "eventId": "43ac",
+      "eventName": "Fusion-jazzarna Corea's Disciples",
+      "eventDate": "2025-11-01 19:00",
+      "clubId": "a37c",
+      "createdAt": "2025-11-07T08:29:33.638Z"
+    },
+    {
+      "id": "BK05091445G1ZP",
+      "name": "JackG",
+      "antal": 6,
+      "eventId": "43ac",
+      "eventName": "New Orleans-bandet",
+      "eventDate": "2025-11-05 19:00",
+      "clubId": "a37c",
+      "createdAt": "2025-11-07T08:44:51.446Z"
+    }
   ]
 }
