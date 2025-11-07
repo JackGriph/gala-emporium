@@ -1,7 +1,7 @@
 import start from './pages/start.js';
 import jazzClub from './pages/jazz-club.js';
-import metalClub from './pages/metal-club.js';
 import clubPopfesten from './pages/club-popfesten.js'; //lagt till denna
+import retroClub from './pages/retro-club.js';
 import createClub from './pages/create-club.js';
 
 const isAdmin = true; //resultat av en inlogging
@@ -11,9 +11,8 @@ const isAdmin = true; //resultat av en inlogging
 const menu = {
   "start": { label: 'Start', function: start },
   "jazz-klubben": { label: 'Jazz-klubben', function: jazzClub },
-  "metal-klubben": { label: 'Metal-klubben', function: metalClub },
+  "retro-klubben": { label: 'Retro-klubben', function: retroClub },
   "club-popfesten": { label: 'Club Popfesten', function: clubPopfesten }, //lagt till denna
-
   "create-club": { label: 'Skapa en klubb', function: createClub, isAdminPage: true }
 };
 
