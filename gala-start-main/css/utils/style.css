@@ -2,7 +2,81 @@
 @import '../pages/start-page.css';
 @import '../pages/jazz-club.css';
 @import '../pages/metal-club.css';
+@import '../pages/club-popfesten.css';
 
 body {
+  margin: 0;
+  
+}
+
+header {
+  background-color: black;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  padding: 12px 0;
+  /* lägger lite luft ovanför och under länkarna */
+  position: fixed;
+
+}
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  /* sprider länkarna */
+  align-items: center;
+  height: 100%;
+}
+
+nav a {
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  /* Gör att länkarna ser ut som knappar */
+  border: 2px solid white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  /* lite transparens */
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background-color: white;
+  color: black;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.4);
+  /* ljusare skugga vid hover */
+  transform: translateY(-2px);
+  /* lyfter knappen lite */
+}
+
+
+.pet {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}
+
+main {
+  padding-top: 40px;
+  /* Skjuter ner innehållet så det inte hamnar under headern */
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 50px;
+  text-align: left;
+}
+
+.event {
+background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  /* frostad glas-effekt */
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  width: 50%;
   margin: 20px
 }

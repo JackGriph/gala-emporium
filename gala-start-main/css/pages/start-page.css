@@ -1,8 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
+/*
+font-family: "DM Serif Text", serif; 
+*/
+
 body.start {
-  background-color: #eee;
-  color: #222;
+  background-color: rgb(9, 9, 9);
+  background-image: url('../../pictures/bg-index.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: whitesmoke;
+  font-family: "DM Serif Text", serif;
 }
 
-body.start a {
-  color: blue;
-}
