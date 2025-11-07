@@ -295,11 +295,6 @@ body.jazz-klubben .event-booking-form form {
   border-top: 1px solid rgba(255, 215, 0, 0.2);
 }
 
-/* Booking section styling - removed large section */
-body.jazz-klubben .booking-section {
-  display: none;
-}
-
 body.jazz-klubben .form-group {
   margin-bottom: 20px;
 }
@@ -406,24 +401,6 @@ body.jazz-klubben .info-text {
   color: #daa520;
   font-style: italic;
   margin-top: 15px !important;
-}
-
-body.jazz-klubben .confirmation-box button {
-  margin-top: 15px;
-  padding: 10px 20px;
-  background: linear-gradient(135deg, #ffd700, #daa520);
-  color: #000;
-  border: 2px solid #ffd700;
-  border-radius: 8px;
-  font-family: 'Georgia', serif;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-body.jazz-klubben .confirmation-box button:hover {
-  background: linear-gradient(135deg, #ffed4e, #ffd700);
-  transform: translateY(-2px);
 }
 
 body.jazz-klubben .error-box {
