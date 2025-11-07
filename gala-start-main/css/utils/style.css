@@ -2,6 +2,7 @@
 @import '../pages/start-page.css';
 @import '../pages/jazz-club.css';
 @import '../pages/club-popfesten.css';
+@import '../pages/create-event.css';
 
 body {
   margin: 0;
@@ -29,7 +30,6 @@ nav {
 
 nav a {
   color: white;
-  font-family: 'Times New Roman', Times, serif;
   text-decoration: none;
   font-weight: bold;
   font-size: 1.1rem;
