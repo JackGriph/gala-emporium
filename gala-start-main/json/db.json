@@ -29,11 +29,6 @@
       "priceRange": "Drycker: 95-180 kr, Entré: 200 kr"
     },
     {
-      "id": "fg5i",
-      "name": "Metal-klubben",
-      "description": "Ylande metal som får dig att vilja erövra världen! Varje vecka med Tom som konferencier."
-    },
-    {
       "id": "1234",
       "name": "Club PopFesten",
       "description": "Svensk Pop när den är som bäst",
@@ -46,17 +41,9 @@
         "saturday": "17:00 - 02:00",
         "sunday": "Stängt"
       }
-    } 
+    }
   ],
-  
   "events": [
-    {
-      "id": "57f3",
-      "date": "2025-11-06 21:00",
-      "name": "Mega Death-die",
-      "description": "En open stage för death-metal-rockare, 30 minuter per band, upp till 6 band per kväll. Stjäl inte varandras effektpedaler!",
-      "clubId": "fg5i"
-    },
     {
       "id": "43ac",
       "date": "2025-11-05 19:00",
@@ -135,26 +122,6 @@
       "antal": 4,
       "clubId": "a37c",
       "createdAt": "2025-11-07T08:24:25.932Z"
-    },
-    {
-      "id": "BK04173638VRNL",
-      "name": "Jack",
-      "antal": 3,
-      "eventId": "43ac",
-      "eventName": "Fusion-jazzarna Corea's Disciples",
-      "eventDate": "2025-11-01 19:00",
-      "clubId": "a37c",
-      "createdAt": "2025-11-07T08:29:33.638Z"
-    },
-    {
-      "id": "BK05091445G1ZP",
-      "name": "JackG",
-      "antal": 6,
-      "eventId": "43ac",
-      "eventName": "New Orleans-bandet",
-      "eventDate": "2025-11-05 19:00",
-      "clubId": "a37c",
-      "createdAt": "2025-11-07T08:44:51.446Z"
     }
   ]
 }
