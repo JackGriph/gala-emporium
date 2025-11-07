@@ -2,6 +2,9 @@ import start from './pages/start.js';
 import jazzClub from './pages/jazz-club.js';
 import metalClub from './pages/metal-club.js';
 import clubPopfesten from './pages/club-popfesten.js'; //lagt till denna
+import createClub from './pages/create-club.js';
+
+const isAdmin = true; //resultat av en inlogging
 
 // Our menu: label to display in menu and 
 // function to run on menu choice
@@ -11,6 +14,7 @@ const menu = {
   "metal-klubben": { label: 'Metal-klubben', function: metalClub },
   "club-popfesten": { label: 'Club Popfesten', function: clubPopfesten } //lagt till denna
 
+  "create-club": { label: 'Skapa en klubb', function: createClub, isAdminPage: true }
 };
 
 function createMenu() {
@@ -18,10 +22,15 @@ function createMenu() {
   // then map to create a-tags (links)
   // then join everything into one big string
   return Object.entries(menu)
-    .map(([urlHash, { label }]) => `
-      <a href="#${urlHash}">${label}</a>
-    `)
-    .join('');
+    .map(([urlHash, { label, isAdminPage }]) => {
+      if (isAdminPage && isAdmin) {
+        return `<a href="#${urlHash}">${label}</a>`;
+      }
+      else if (!isAdminPage) {
+        return `<a href="#${urlHash}">${label}</a>`;
+      }
+    })
+    .join(' ');
 }
 
 async function loadPageContent() {
