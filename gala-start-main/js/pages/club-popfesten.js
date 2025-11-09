@@ -58,15 +58,25 @@ export default async function clubPopfesten() {
         const formWrapper = e.target.closest('.event-booking-form');
         formWrapper.innerHTML = `
           <div class="confirmation-box">
-            <h4>✅ Bokning bekräftad!</h4>
+            <h4>Bokning bekräftad!</h4>
             <p><strong>Evenemang:</strong> ${eventName}</p>
             <p><strong>Datum:</strong> ${eventDate}</p>
             <p><strong>Namn:</strong> ${name}</p>
             <p><strong>Antal personer:</strong> ${antal}</p>
             <p><strong>Bokningsnummer:</strong> <span class="booking-id">${bookingId}</span></p>
             <p class="info-text">Spara ditt bokningsnummer! Du kommer att behöva det vid entrén.</p>
+            <button class="btn-secondary close-confirmation">✕ Stäng</button>
           </div>
         `;
+
+        // Add event listener for the close button
+        const closeButton = formWrapper.querySelector('.close-confirmation');
+        if (closeButton) {
+          closeButton.addEventListener('click', () => {
+            formWrapper.querySelector('.confirmation-box').remove();
+            formWrapper.querySelector('details').open = false;
+          });
+        }
       }
     } catch (error) {
       alert('Något gick fel. Försök igen senare.');
@@ -106,7 +116,7 @@ export default async function clubPopfesten() {
       } else {
         document.querySelector('#lookup-result').innerHTML = `
           <div class="error-box">
-            <p>❌ Ingen bokning hittades med detta nummer.</p>
+            <p>Ingen bokning hittades med detta nummer.</p>
           </div>
         `;
         document.querySelector('#lookup-result').style.display = 'block';
@@ -127,7 +137,7 @@ export default async function clubPopfesten() {
         const btn = document.querySelector('.booking-toggle-btn');
         if (menu.classList.contains('show')) {
           menu.classList.remove('show');
-          btn.textContent = '🎫 Din bokning';
+          btn.textContent = 'Din bokning';
         } else {
           menu.classList.add('show');
           btn.textContent = '✕ Stäng bokning';
