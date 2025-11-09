@@ -66,6 +66,7 @@ body.club-popfesten {
   margin-top: 1.5em;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
+
 .club-header h2 {
   font-family: "Limelight", sans-serif;
   color: white;
@@ -379,7 +380,7 @@ body.club-popfesten .event-booking-form details {
   border-radius: 10px;
   padding: 5px 10px;
   transition: all 0.3s ease;
-  width: 50%;
+  max-width: 90%;
   /*Änrar storlek på bokningsknappen*/
 }
 
@@ -552,7 +553,7 @@ body.club-popfesten .error-box p {
   .events-column,
   .extra-info {
     flex: none;
-    width: 100%;
+    max-width: 100%;
   }
 
   .extra-info {
