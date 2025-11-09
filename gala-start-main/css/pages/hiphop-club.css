@@ -1,0 +1,96 @@
+/* Main styles */
+body.hiphop-klubben {
+  color: #e4e1e1;
+  background-image: url('../../pictures/bild.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /* position image to show microphone/glass near right-bottom */
+  background-position: center;
+  background-color: rgb(13, 44, 24);
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+}
+
+/* Links */
+body.hiphop-klubben a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Navigation */
+.hiphop-menu {
+  border: 1px solid #f8b99e;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  background: rgba(189, 182, 180, 0.9);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.hiphop-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.hiphop-menu a:hover {
+  color: #ffd700;
+}
+
+/* Content sections */
+.hiphop-section {
+  margin-bottom: 2rem;
+  padding: 2rem;
+}
+
+.hiphop-about {
+  border: 1px solid hwb(47 43% 37%);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  background: rgba(22, 19, 19, 0.888);
+}
+
+/* Events */
+.hiphop-event {
+  border: 1px solid #968e8a;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: rgba(22, 19, 19, 0.888);
+}
+
+.hiphop-event h3 {
+  margin-bottom: 0.3rem;
+}
+
+.hiphop-event h3.special {
+  color: #ffd700;
+  /* Gold color for headings */
+}
+
+.hiphop-event small {
+  color: #bbb;
+}
+
+/* Headings */
+.hiphop-section h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.hiphop-section h2 {
+  margin-bottom: 1rem;
+}
+
+/* Text colors */
+.text-light {
+  color: #ddd;
+}
+
+.text-lighter {
+  color: #eee;
+}
