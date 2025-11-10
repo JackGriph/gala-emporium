@@ -179,13 +179,7 @@
     }
   ],
   "bookings": [
-    {
-      "id": "BK03865932BQL3",
-      "name": "Jack",
-      "antal": 4,
-      "clubId": "a37c",
-      "createdAt": "2025-11-07T08:24:25.932Z"
-    },
+    
     {
       "id": "POP14736593UNNZ",
       "name": "Sandra",
@@ -194,6 +188,17 @@
       "eventName": "Robin & Ingela med Värsta Bästa Bandet",
       "clubId": "1234",
       "createdAt": "2025-11-08T15:12:16.593Z"
+    },
+   
+    {
+      "id": "BK67924770B3BS",
+      "name": "Jack",
+      "antal": 2,
+      "eventId": "43ac",
+      "eventName": "New Orleans-bandet",
+      "eventDate": "2025-11-05 19:00",
+      "clubId": "a37c",
+      "createdAt": "2025-11-10T09:45:24.770Z"
     }
   ]
 }

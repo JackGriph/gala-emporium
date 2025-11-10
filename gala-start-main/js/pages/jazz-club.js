@@ -149,10 +149,15 @@ export default async function jazzClub() {
     }
 
     // Event booking forms
-    document.querySelectorAll('.event-booking-form form').forEach((form, index) => {
-      const event = events.toSorted((a, b) => a.date > b.date ? 1 : -1)[index];
-      if (event) {
-        form.addEventListener('submit', (e) => handleBooking(e, event.id, event.name, event.date));
+    document.querySelectorAll('.event-booking-form form').forEach((form) => {
+      // Get the event ID from the form's input fields
+      const eventIdInput = form.querySelector('input[name="name"]');
+      if (eventIdInput) {
+        const eventId = eventIdInput.id.split('-')[1]; // Extract from "name-{id}"
+        const event = events.find(e => e.id === eventId);
+        if (event) {
+          form.addEventListener('submit', (e) => handleBooking(e, event.id, event.name, event.date));
+        }
       }
     });
   }, 0);
