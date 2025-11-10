@@ -92,7 +92,7 @@ body.jazz-klubben a:hover {
 }
 
 
-/* Club details styling - only for jazz club */
+/* INFO*/
 body.jazz-klubben .club-description {
   font-size: 1.2em;
   font-style: italic;
@@ -131,6 +131,7 @@ body.jazz-klubben .opening-hours {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  
 }
 
 body.jazz-klubben .opening-hour {

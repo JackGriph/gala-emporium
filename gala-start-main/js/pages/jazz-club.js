@@ -235,17 +235,17 @@ export default async function jazzClub() {
           <div class="event-booking-form">
             <details>
               <summary>🎫 Boka till detta event</summary>
-              <form>
+              <div class="booking-form-content" data-event-id="${id}" data-event-name="${name}" data-event-date="${date}">
                 <div class="form-group">
                   <label for="name-${id}">Namn:</label>
-                  <input type="text" id="name-${id}" name="name" required placeholder="Ditt namn">
+                  <input type="text" id="name-${id}" class="booking-name" required placeholder="Ditt namn">
                 </div>
                 <div class="form-group">
                   <label for="antal-${id}">Antal personer:</label>
-                  <input type="number" id="antal-${id}" name="antal" min="1" max="10" required placeholder="1-10">
+                  <input type="number" id="antal-${id}" class="booking-antal" min="1" max="10" required placeholder="1-10">
                 </div>
-                <button type="submit" class="btn-primary">Boka nu</button>
-              </form>
+                <button type="button" class="btn-primary booking-submit-btn">Boka nu</button>
+              </div>
             </details>
           </div>
         </article>

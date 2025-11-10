@@ -136,20 +136,6 @@
       "clubId": "a37c"
     },
     {
-      "id": "cd6r",
-      "date": "2025-11-07 17:23",
-      "name": "Tenta-omtenta kravall",
-      "description": "Test test",
-      "clubId": "a37c"
-    },
-    {
-      "id": "guvy",
-      "date": "2025-11-06 16:26",
-      "name": "Tenta-omtenta kravall",
-      "description": "sdfsf",
-      "clubId": "a37c"
-    },
-    {
       "id": "hh01",
       "date": "2025-11-09 21:00",
       "name": "90s Hiphop Night",
@@ -176,10 +162,16 @@
       "name": "Breakdance Showcase",
       "description": "En kväll fylld med sjuka moves! Se Stockholms bästa b-boys och b-girls tävla. Öppen cypher efter showen där alla kan delta.",
       "clubId": "h1ph"
+    },
+    {
+      "id": "hk7y",
+      "date": "2025-11-19 14:21",
+      "name": "Vip Kväll",
+      "description": "dfdf",
+      "clubId": "a37c"
     }
   ],
   "bookings": [
-    
     {
       "id": "POP14736593UNNZ",
       "name": "Sandra",
@@ -189,7 +181,6 @@
       "clubId": "1234",
       "createdAt": "2025-11-08T15:12:16.593Z"
     },
-   
     {
       "id": "BK67924770B3BS",
       "name": "Jack",
@@ -199,6 +190,16 @@
       "eventDate": "2025-11-05 19:00",
       "clubId": "a37c",
       "createdAt": "2025-11-10T09:45:24.770Z"
+    },
+    {
+      "id": "BK70348281VTI0",
+      "name": "Jack",
+      "antal": 2,
+      "eventId": "43ac",
+      "eventName": "New Orleans-bandet",
+      "eventDate": "2025-11-05 19:00",
+      "clubId": "a37c",
+      "createdAt": "2025-11-10T10:25:48.281Z"
     }
   ]
 }
