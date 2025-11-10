@@ -65,7 +65,7 @@ body.jazz-klubben .event {
   border-radius: 15px;
   padding: 25px;
   margin: 0 auto 25px;
-  max-width: 800px;
+  max-width: 1000px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(5px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
