@@ -2,75 +2,6 @@ export default async function createEvent() {
   // Fetch all clubs for dropdown
   const clubs = await (await fetch('http://localhost:3000/clubs')).json();
 
-  // Generate a random event ID
-  function generateEventId() {
-    return Math.random().toString(36).substr(2, 4);
-  }
-
-  // Handle form submission
-  async function handleSubmit(e) {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-
-    const eventName = formData.get('event-name');
-    const description = formData.get('description');
-    const date = formData.get('date');
-    const time = formData.get('time');
-    const clubId = formData.get('club-id');
-
-    if (!eventName || !description || !date || !time || !clubId) {
-      alert('Vänligen fyll i alla fält.');
-      return;
-    }
-
-    const eventId = generateEventId();
-    const dateTime = `${date} ${time}`;
-
-    const newEvent = {
-      id: eventId,
-      date: dateTime,
-      name: eventName,
-      description: description,
-      clubId: clubId
-    };
-
-    try {
-      const response = await fetch('http://localhost:3000/events', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(newEvent)
-      });
-
-      if (response.ok) {
-        document.querySelector('#event-form').style.display = 'none';
-        document.querySelector('#confirmation').innerHTML = `
-          <div class="success-message">
-            <h3>✅ Evenemang skapat!</h3>
-            <p><strong>Namn:</strong> ${eventName}</p>
-            <p><strong>Datum:</strong> ${dateTime}</p>
-            <p><strong>Beskrivning:</strong> ${description}</p>
-            <p><strong>Event ID:</strong> ${eventId}</p>
-            <button onclick="location.reload()">Skapa ett nytt evenemang</button>
-          </div>
-        `;
-        document.querySelector('#confirmation').style.display = 'block';
-      }
-    } catch (error) {
-      alert('Något gick fel. Försök igen senare.');
-      console.error('Event creation error:', error);
-    }
-  }
-
-  // Setup event listener after HTML is rendered
-  setTimeout(() => {
-    const form = document.querySelector('#event-form form');
-    if (form) {
-      form.addEventListener('submit', handleSubmit);
-    }
-  }, 0);
-
   return `
     <h1>Skapa evenemang</h1>
     <p class="page-description"> <strong>Skapa ett nytt evenemang för din klubb</strong></p>
@@ -114,3 +45,81 @@ export default async function createEvent() {
     <div id="confirmation" style="display: none;"></div>
   `;
 }
+
+// Event delegation för create event form
+document.body.addEventListener('submit', async (event) => {
+  if (!event.target.closest('#event-form form')) { return; }
+
+  console.log('🎯 Form submit intercepted!');
+  event.preventDefault();
+  event.stopPropagation();
+  event.stopImmediatePropagation();
+
+  const formData = new FormData(event.target);
+
+  const eventName = formData.get('event-name');
+  const description = formData.get('description');
+  const date = formData.get('date');
+  const time = formData.get('time');
+  const clubId = formData.get('club-id');
+
+  if (!eventName || !description || !date || !time || !clubId) {
+    alert('Vänligen fyll i alla fält.');
+    return;
+  }
+
+  const eventId = Math.random().toString(36).substr(2, 4);
+  const dateTime = `${date} ${time}`;
+
+  const newEvent = {
+    id: eventId,
+    date: dateTime,
+    name: eventName,
+    description: description,
+    clubId: clubId
+  };
+
+  // Visa bekräftelsen FÖRST (innan vi postar till servern)
+  document.querySelector('#event-form').style.display = 'none';
+  document.querySelector('#confirmation').innerHTML = `
+    <div class="success-message">
+      <h3>✅ Evenemang skapat!</h3>
+      <p><strong>Namn:</strong> ${eventName}</p>
+      <p><strong>Datum:</strong> ${dateTime}</p>
+      <p><strong>Beskrivning:</strong> ${description}</p>
+      <p><strong>Event ID:</strong> ${eventId}</p>
+    </div>
+  `;
+  document.querySelector('#confirmation').style.display = 'block';
+
+  // Scrolla till bekräftelsen
+  const confirmation = document.querySelector('#confirmation');
+  if (confirmation) confirmation.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+  // ⏰ Efter 5 sekunder, spara till server och återgå automatiskt
+  setTimeout(async () => {
+    // Fade out effekt
+    const confirmationEl = document.querySelector('#confirmation');
+    confirmationEl.style.transition = "opacity 0.5s ease-out";
+    confirmationEl.style.opacity = "0";
+
+    // Spara till servern under fade-out
+    try {
+      await fetch('http://localhost:3000/events', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newEvent)
+      });
+    } catch (error) {
+      console.error('Error saving event:', error);
+    }
+
+    setTimeout(() => {
+      window.location.reload();
+    }, 500);
+  }, 5000);
+
+  return false; // Extra säkerhet för att förhindra formulär-submit
+});
