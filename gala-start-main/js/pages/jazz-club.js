@@ -40,16 +40,18 @@ export default async function jazzClub() {
 
   // Handle booking form submission
   async function handleBooking(e, eventId, eventName, eventDate) {
-    e.preventDefault();
+    e.preventDefault(); // Stoppar vanlig formulär-submit
     const formData = new FormData(e.target);
     const name = formData.get('name');
     const antal = formData.get('antal');
 
+    // Hämtar data och kollar så att alla fällt är ifyllda
     if (!name || !antal || antal < 1) {
       alert('Vänligen fyll i alla fält korrekt.');
       return;
     }
 
+      // Genererar bokningsnummer och skapar objekt med bokningsinformation
     const bookingId = generateBookingId();
     const booking = {
       id: bookingId,
@@ -62,7 +64,7 @@ export default async function jazzClub() {
       createdAt: new Date().toISOString()
     };
 
-    // Visa bekräftelsen FÖRST (innan vi postar till servern)
+    // Visa bekräftelsen FÖRST (VIKTIGT) (innan vi postar till servern)
     const formWrapper = e.target.closest('.event-booking-form');
     const originalForm = formWrapper.innerHTML; // Spara originalformuläret
 
@@ -91,6 +93,7 @@ export default async function jazzClub() {
       if (!bookingSaved) {
         bookingSaved = true;
         try {
+          // Nu sparar vi till servern
           await fetch('http://localhost:3000/bookings', {
             method: 'POST',
             headers: {
@@ -102,15 +105,15 @@ export default async function jazzClub() {
           console.error('Booking error:', error);
         }
       }
-
-      formWrapper.innerHTML = originalForm;
       // Återställ event listener för det nya formuläret
+      formWrapper.innerHTML = originalForm;
+      // Event listeners återställs för nya bokningar
       const newForm = formWrapper.querySelector('form');
       newForm.addEventListener('submit', (e) => handleBooking(e, eventId, eventName, eventDate));
     });
   }
 
-  // Handle booking lookup
+  // Söker efter bokningar med det angivna ID:t
   async function handleLookup(e) {
     e.preventDefault();
     const formData = new FormData(e.target);

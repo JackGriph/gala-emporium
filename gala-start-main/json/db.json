@@ -162,6 +162,13 @@
       "name": "Breakdance Showcase",
       "description": "En kväll fylld med sjuka moves! Se Stockholms bästa b-boys och b-girls tävla. Öppen cypher efter showen där alla kan delta.",
       "clubId": "h1ph"
+    },
+    {
+      "id": "6hz3",
+      "date": "2025-11-26 16:08",
+      "name": "Vip Kväll",
+      "description": "Test",
+      "clubId": "a37c"
     }
   ],
   "bookings": [

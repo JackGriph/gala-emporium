@@ -80,46 +80,55 @@ document.body.addEventListener('submit', async (event) => {
   };
 
   // Visa bekräftelsen FÖRST (innan vi postar till servern)
-  document.querySelector('#event-form').style.display = 'none';
-  document.querySelector('#confirmation').innerHTML = `
+  const eventFormContainer = document.querySelector('#event-form');
+  const confirmationContainer = document.querySelector('#confirmation');
+
+  // Spara originalformuläret för återställning
+  const originalForm = eventFormContainer.innerHTML;
+
+  eventFormContainer.style.display = 'none';
+  confirmationContainer.innerHTML = `
     <div class="success-message">
       <h3>✅ Evenemang skapat!</h3>
       <p><strong>Namn:</strong> ${eventName}</p>
       <p><strong>Datum:</strong> ${dateTime}</p>
       <p><strong>Beskrivning:</strong> ${description}</p>
       <p><strong>Event ID:</strong> ${eventId}</p>
+      <button class="btn-submit close-confirmation-btn">Stäng & Spara</button>
     </div>
   `;
-  document.querySelector('#confirmation').style.display = 'block';
+  confirmationContainer.style.display = 'block';
 
   // Scrolla till bekräftelsen
-  const confirmation = document.querySelector('#confirmation');
-  if (confirmation) confirmation.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  if (confirmationContainer) confirmationContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
-  // ⏰ Efter 5 sekunder, spara till server och återgå automatiskt
-  setTimeout(async () => {
-    // Fade out effekt
-    const confirmationEl = document.querySelector('#confirmation');
-    confirmationEl.style.transition = "opacity 0.5s ease-out";
-    confirmationEl.style.opacity = "0";
+  // Lägg till event listener för stäng-knappen
+  const closeBtn = confirmationContainer.querySelector('.close-confirmation-btn');
+  let eventSaved = false;
 
-    // Spara till servern under fade-out
-    try {
-      await fetch('http://localhost:3000/events', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(newEvent)
-      });
-    } catch (error) {
-      console.error('Error saving event:', error);
+  closeBtn.addEventListener('click', async () => {
+    // Spara till servern när användaren klickar på stäng (om inte redan sparat)
+    if (!eventSaved) {
+      eventSaved = true;
+      try {
+        await fetch('http://localhost:3000/events', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(newEvent)
+        });
+      } catch (error) {
+        console.error('Error saving event:', error);
+      }
     }
 
-    setTimeout(() => {
-      window.location.reload();
-    }, 500);
-  }, 5000);
+    // Återställ formuläret
+    confirmationContainer.style.display = 'none';
+    confirmationContainer.innerHTML = '';
+    eventFormContainer.innerHTML = originalForm;
+    eventFormContainer.style.display = 'block';
+  });
 
   return false; // Extra säkerhet för att förhindra formulär-submit
 });
