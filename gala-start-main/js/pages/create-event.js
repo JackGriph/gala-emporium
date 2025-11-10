@@ -3,8 +3,7 @@ export default async function createEvent() {
   const clubs = await (await fetch('http://localhost:3000/clubs')).json();
 
   return `
-    <h1>Skapa evenemang</h1>
-    <p class="page-description"> <strong>Skapa ett nytt evenemang för din klubb</strong></p>
+    <h1>Skapa ett nytt evenemang för din klubb</h1>
     
     <div id="event-form" class="form-container">
       <form>

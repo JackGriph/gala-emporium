@@ -51,7 +51,7 @@ export default async function jazzClub() {
       return;
     }
 
-      // Genererar bokningsnummer och skapar objekt med bokningsinformation
+    // Genererar bokningsnummer och skapar objekt med bokningsinformation
     const bookingId = generateBookingId();
     const booking = {
       id: bookingId,
@@ -237,7 +237,7 @@ export default async function jazzClub() {
       <div class="club-info-section">
         <h3>✨ Specialiteter</h3>
         <ul class="special-features">
-          ${clubInfo.specialFeatures.map(feature => `<li>${feature}</li>`).join('')}
+          ${clubInfo.specialFeatures.map(feature => `<li><strong>${feature}</strong></li>`).join('')}
         </ul>
       </div>
     </div>
