@@ -40,6 +40,20 @@ main {
   .event {
     max-width: 100%;
   }
+
+  main {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  .club-section {
+    padding: 10px;
+    margin-bottom: 30px;
+  }
+
+  .club-section-title {
+    font-size: 1.5em;
+  }
 }
 
 /* Klubb-sektioner */
