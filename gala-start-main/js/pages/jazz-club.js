@@ -62,33 +62,52 @@ export default async function jazzClub() {
       createdAt: new Date().toISOString()
     };
 
-    try {
-      const response = await fetch('http://localhost:3000/bookings', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(booking)
-      });
+    // Visa bekräftelsen FÖRST (innan vi postar till servern)
+    const formWrapper = e.target.closest('.event-booking-form');
+    const originalForm = formWrapper.innerHTML; // Spara originalformuläret
 
-      if (response.ok) {
-        const formWrapper = e.target.closest('.event-booking-form');
-        formWrapper.innerHTML = `
-          <div class="confirmation-box">
-            <h4>✅ Bokning bekräftad!</h4>
-            <p><strong>Evenemang:</strong> ${eventName}</p>
-            <p><strong>Datum:</strong> ${eventDate}</p>
-            <p><strong>Namn:</strong> ${name}</p>
-            <p><strong>Antal personer:</strong> ${antal}</p>
-            <p><strong>Bokningsnummer:</strong> <span class="booking-id">${bookingId}</span></p>
-            <p class="info-text">Spara ditt bokningsnummer! Du kommer att behöva det vid entrén.</p>
-          </div>
-        `;
+    formWrapper.innerHTML = `
+      <div class="confirmation-box">
+        <h4>✅ Bokning bekräftad!</h4>
+        <p><strong>Evenemang:</strong> ${eventName}</p>
+        <p><strong>Datum:</strong> ${eventDate}</p>
+        <p><strong>Namn:</strong> ${name}</p>
+        <p><strong>Antal personer:</strong> ${antal}</p>
+        <p><strong>Bokningsnummer:</strong> <span class="booking-id">${bookingId}</span></p>
+        <p class="info-text">Spara ditt bokningsnummer! Du kommer att behöva det vid entrén.</p>
+        <button class="btn-primary close-confirmation-btn">Stäng & Spara</button>
+      </div>
+    `;
+
+    // Scrolla till bekräftelsen
+    formWrapper.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    // Lägg till event listener för stäng-knappen
+    const closeBtn = formWrapper.querySelector('.close-confirmation-btn');
+    let bookingSaved = false;
+
+    closeBtn.addEventListener('click', async () => {
+      // Spara till servern när användaren klickar på stäng (om inte redan sparat)
+      if (!bookingSaved) {
+        bookingSaved = true;
+        try {
+          await fetch('http://localhost:3000/bookings', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(booking)
+          });
+        } catch (error) {
+          console.error('Booking error:', error);
+        }
       }
-    } catch (error) {
-      alert('Något gick fel. Försök igen senare.');
-      console.error('Booking error:', error);
-    }
+
+      formWrapper.innerHTML = originalForm;
+      // Återställ event listener för det nya formuläret
+      const newForm = formWrapper.querySelector('form');
+      newForm.addEventListener('submit', (e) => handleBooking(e, eventId, eventName, eventDate));
+    });
   }
 
   // Handle booking lookup
