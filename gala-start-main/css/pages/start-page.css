@@ -108,25 +108,25 @@ main {
   color: #ffd700;
 }
 
-/* PopFesten stil - Rosa & Party */
+/* PopFesten stil - Lila & Party */
 .club-section-1234 {
   background: transparent;
   backdrop-filter: none;
 }
 
 .club-section-1234 .club-section-title {
-  color: #663399;
+  color: #8c4dcb;
   border-bottom-color: #663399;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .club-section-1234 .event {
-  background: rgba(118, 23, 140, 0.64);
+  background: rgba(102, 51, 153, 0.3);
   border-color: #663399;
 }
 
 .club-section-1234 .event h3 {
-  color: #663399;
+  color: #8c4dcb;
 }
 
 /* Hiphop-klubben stil - Urban & Grön/Cyan */
