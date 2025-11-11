@@ -34,8 +34,104 @@ main {
   margin: 20px
 }
 
-@media (max-width: 600px) { /*lagt till så att eventen blir lite bredare på mobil*/
-.event {
-  max-width: 100%;
+@media (max-width: 600px) {
+
+  /*lagt till så att eventen blir lite bredare på mobil*/
+  .event {
+    max-width: 100%;
+  }
 }
+
+/* Klubb-sektioner */
+.club-section {
+  margin-bottom: 50px;
+  padding: 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+}
+
+.club-section-title {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: left;
+  padding-bottom: 15px;
+  border-bottom: none;
+}
+
+.club-events {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+}
+
+.no-events {
+  text-align: center;
+  font-style: italic;
+  opacity: 0.7;
+  padding: 20px;
+}
+
+/* Jazz-klubben stil - Guld & Elegant */
+.club-section-a37c {
+  background: transparent;
+  backdrop-filter: none;
+}
+
+.club-section-a37c .club-section-title {
+  color: #ffd700;
+  border-bottom-color: #ffd700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.club-section-a37c .event {
+  background: rgba(255, 215, 0, 0.1);
+  border-color: #daa520;
+
+}
+
+.club-section-a37c .event h3 {
+  color: #ffd700;
+}
+
+/* PopFesten stil - Rosa & Party */
+.club-section-1234 {
+  background: transparent;
+  backdrop-filter: none;
+}
+
+.club-section-1234 .club-section-title {
+  color: #663399;
+  border-bottom-color: #663399;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.club-section-1234 .event {
+  background: rgba(118, 23, 140, 0.64);
+  border-color: #663399;
+}
+
+.club-section-1234 .event h3 {
+  color: #663399;
+}
+
+/* Hiphop-klubben stil - Urban & Grön/Cyan */
+.club-section-h1ph {
+  background: transparent;
+  backdrop-filter: none;
+}
+
+.club-section-h1ph .club-section-title {
+  color: #00ff7f;
+  border-bottom-color: #00ff7f;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.club-section-h1ph .event {
+  background: rgba(0, 255, 127, 0.1);
+  border-color: #00fa9a;
+}
+
+.club-section-h1ph .event h3 {
+  color: #00fa9a;
 }
