@@ -52,30 +52,18 @@ export default async function hiphopClub() {
         <p><strong>Datum:</strong> ${eventDate}</p>
         <p><strong>Namn:</strong> ${name}</p>
         <p><strong>Antal personer:</strong> ${antal}</p>
-        <p class="info-text">Klicka "Spara bokning" för att faktiskt spara din bokning. Klicka "Stäng" för att ångra.</p>
+        <p style="margin-top: 20px; font-size: 1.2em;"><strong>Bokningsnummer:</strong></p>
+        <p><span class="booking-id">${bookingId}</span></p>
+        <p class="info-text">⚠️ Spara ditt bokningsnummer! Klicka "Spara & Stäng" för att spara bokningen till databasen.</p>
         <div style="display:flex; gap:10px; margin-top:10px;">
-          <button class="btn-primary save-booking">Spara bokning</button>
-          <button class="btn-secondary close-confirmation">Stäng</button>
+          <button class="btn-primary save-booking">Spara & Stäng</button>
         </div>
       </div>
     `;
 
     const saveBtn = formWrapper.querySelector('.save-booking');
-    const closeBtn = formWrapper.querySelector('.close-confirmation');
 
-    // Cancel - restore original form and reattach listener
-    closeBtn.addEventListener('click', () => {
-      const orig = formWrapper.dataset.orig || '';
-      formWrapper.innerHTML = orig;
-      delete formWrapper.dataset.orig;
-      delete formWrapper.dataset.booking;
-      const restoredForm = formWrapper.querySelector('form');
-      if (restoredForm) {
-        restoredForm.addEventListener('submit', (ev) => handleBooking(ev, eventDate, eventName));
-      }
-    });
-
-    // Save - POST to API
+    // Save & Close - POST to API then restore form
     saveBtn.addEventListener('click', async () => {
       const bookingStr = formWrapper.dataset.booking;
       if (!bookingStr) return alert('Ingen bokningsdata hittades.');
@@ -88,43 +76,14 @@ export default async function hiphopClub() {
         });
 
         if (response.ok) {
-          // Store booking ID in the details element
-          const detailsElement = formWrapper.closest('.event-card')?.querySelector('details');
-          if (detailsElement) {
-            detailsElement.dataset.bookingId = b.id;
-            // Keep details open
-            detailsElement.setAttribute('open', 'open');
-          }
-          
-          formWrapper.innerHTML = `
-            <div class="confirmation-box success-confirmation">
-              <h4>✅ Bokning sparad!</h4>
-              <p><strong>Evenemang:</strong> ${b.eventName}</p>
-              <p><strong>Datum:</strong> ${b.eventDate}</p>
-              <p><strong>Namn:</strong> ${b.name}</p>
-              <p><strong>Antal personer:</strong> ${b.antal}</p>
-              <p style="margin-top: 20px; font-size: 1.2em;"><strong>Bokningsnummer:</strong></p>
-              <p><span class="booking-id">${b.id}</span></p>
-              <p class="info-text">⚠️ Spara ditt bokningsnummer! Du kommer att behöva det vid entrén.</p>
-              <button class="btn-secondary close-confirmation" style="margin-top: 20px;">✕ Stäng och återgå till formuläret</button>
-            </div>
-          `;
-
-          const closeAfterSave = formWrapper.querySelector('.close-confirmation');
-          if (closeAfterSave) {
-            closeAfterSave.addEventListener('click', (ev) => {
-              ev.preventDefault();
-              ev.stopPropagation();
-              // Restore the original form
-              const orig = formWrapper.dataset.orig || '';
-              formWrapper.innerHTML = orig;
-              delete formWrapper.dataset.orig;
-              delete formWrapper.dataset.booking;
-              const restoredForm = formWrapper.querySelector('form');
-              if (restoredForm) {
-                restoredForm.addEventListener('submit', (e) => handleBooking(e, eventDate, eventName));
-              }
-            });
+          // Restore the original form
+          const orig = formWrapper.dataset.orig || '';
+          formWrapper.innerHTML = orig;
+          delete formWrapper.dataset.orig;
+          delete formWrapper.dataset.booking;
+          const restoredForm = formWrapper.querySelector('form');
+          if (restoredForm) {
+            restoredForm.addEventListener('submit', (e) => handleBooking(e, eventDate, eventName));
           }
         } else {
           alert('Kunde inte spara bokningen. Försök igen.');
