@@ -13,8 +13,7 @@ body.retro-klubben {
 body.retro-klubben header {
   background: rgba(126, 76, 187, 0.5);
   color: #ff0080;
-  text-shadow: 0 0 10px #ff0080, 0 0 20px #8000ff, 0 0 30px #ff0080;
-  padding: 1rem;
+  text-shadow: 0 0 10px #ff0080, 0 0 20px #8000ff, 0 0 30px #ff0080; */
   text-align: center;
   font-family: "Syncopate", sans-serif;
   font-size: 2rem;
@@ -111,33 +110,4 @@ main.retro-klubben p {
   color: #f5f5f5;
   font-style: italic;
   font-size: 1rem;
-}
-
-/* Navigation styles */
-.retro-nav {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.retro-nav a {
-  display: inline-block;
-  margin: 0 1rem;
-  padding: 0.75rem 1.5rem;
-  background: rgba(255, 0, 128, 0.1);
-  border: 2px solid #ff0080;
-  border-radius: 30px;
-  color: #ff0080;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1rem;
-  text-shadow: 0 0 5px #ff0080;
-  transition: all 0.2s ease;
-  box-shadow: 0 0 10px rgba(255, 0, 128, 0.2);
-  will-change: transform, box-shadow;
-}
-
-.retro-nav a:hover {
-  background: rgba(255, 0, 128, 0.2);
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(255, 0, 128, 0.4);
 }
