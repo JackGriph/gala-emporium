@@ -169,6 +169,13 @@
       "name": "Classic Jaxzz-Night ",
       "description": "Bästa klassikerna hela natten lång",
       "clubId": "a37c"
+    },
+    {
+      "id": "w17j",
+      "date": "2025-11-17 00:59",
+      "name": "Tenta-omtenta kravall",
+      "description": "Fest",
+      "clubId": "a37c"
     }
   ],
   "bookings": [
@@ -190,6 +197,15 @@
       "eventDate": "2025-11-01 19:00",
       "clubId": "a37c",
       "createdAt": "2025-11-10T13:26:50.689Z"
+    },
+    {
+      "id": "POP5109809994KX",
+      "name": "Jack",
+      "antal": 8,
+      "eventDate": "2025-11-15 21:00",
+      "eventName": "Miss Li",
+      "clubId": "1234",
+      "createdAt": "2025-11-11T08:51:38.099Z"
     }
   ]
 }
