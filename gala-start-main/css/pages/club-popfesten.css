@@ -138,7 +138,7 @@ h3 {
   justify-content: flex-start;
   border: 2px solid #444;
   /* Ram */
-  background-color: rgba(102, 51, 153, 0.2);
+  background-color: rgba(19, 18, 19, 0.2);
   /* Bakgrund i ramen */
   backdrop-filter: blur(8px);
   /* frostad glas-effekt */
@@ -164,7 +164,7 @@ h3 {
 .event-card {
   border: 2px solid #444;
   /* Ram */
-  background-color: rgba(102, 51, 153, 0.3);
+  background-color: rgba(14, 14, 14, 0.3);
   /* Bakgrund i ramen */
   backdrop-filter: blur(8px);
   /* frostad glas-effekt */

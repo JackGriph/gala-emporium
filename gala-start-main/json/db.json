@@ -61,39 +61,17 @@
         "friday": "19:00 - 03:00",
         "saturday": "19:00 - 03:00",
         "sunday": "Stängt"
-      }
-    },
-    {
-      "id": "h1ph",
-      "name": "Hiphop-klubben",
-      "description": "En plats för beats, breakdance och freestyle — hiphop-vibbar varje vecka med lokala MC:s och DJs.",
-      "address": "Beatgatan 7, 118 24 Stockholm",
-      "phone": "08-777 55 33",
-      "email": "kontakt@hiphopklubben.se",
-      "openingHours": {
-        "monday": "Stängt",
-        "tuesday": "19:00 - 01:00 (DJ-night)",
-        "wednesday": "19:00 - 01:00 (Open mic)",
-        "thursday": "19:00 - 02:00 (Freestyle & Battles)",
-        "friday": "18:00 - 03:00 (Live acts)",
-        "saturday": "18:00 - 03:00 (Headliner nights)",
-        "sunday": "18:00 - 23:00 (Chill & community)"
       },
-      "atmosphere": "Rått men välkomnande — träbord, industrilampor och ett dansvänligt golv. Fokus på community, improvisation och god ljudkvalitet.",
-      "capacity": "220 personer",
-      "ageLimit": "18+",
-      "dressCode": "Casual — sneakers och streetwear är helt okej",
-      "specialFeatures": [
-        "Stor dansyta för breakdance",
-        "Analog mikrofon i vintagestil på baren",
-        "Ljudisolerat övningsrum för gästande artister",
-        "Lokalbar med specialdrinks och non-alcoholic alternativ"
-      ],
-      "priceRange": "Drycker: 60-160 kr, Entré: 120-220 kr",
-      "social": {
-        "instagram": "@hiphopklubben",
-        "facebook": "facebook.com/hiphopklubben"
-      }
+      "priceList": {
+        "Entré vardagar": "120 kr",
+        "Entré helger": "180 kr",
+        "Entré special events": "220 kr",
+        "Öl (33cl)": "65 kr",
+        "Drinks": "95 - 140 kr",
+        "Alkoholfritt": "45 kr",
+        "Snacks": "40 - 80 kr"
+      },
+      "atmosphere": "Urban och rå atmosfär med graffitiväggar, neonskyltning och kraftfulla bassystem. Stor dansyta perfekt för breakdance, chill-zoner med vintage sneakers på display, och en bar designad som en New York subway-station. Ljudsystemet är toppmodernt och ger dig den autentiska hip-hop känslan."
     }
   ],
   "events": [
@@ -222,6 +200,132 @@
       "eventDate": "2025-11-01 19:00",
       "clubId": "a37c",
       "createdAt": "2025-11-10T13:26:50.689Z"
+    },
+    {
+      "id": "HIP52527217FULE",
+      "name": "faalfla",
+      "antal": 4,
+      "eventDate": "2025-11-09 21:00",
+      "eventName": "90s Hiphop Night",
+      "clubId": "h1ph",
+      "createdAt": "2025-11-11T09:15:27.217Z"
+    },
+    {
+      "id": "HIP52910795T52H",
+      "name": "hej",
+      "antal": 2,
+      "eventDate": "2025-11-09 21:00",
+      "eventName": "90s Hiphop Night",
+      "clubId": "h1ph",
+      "createdAt": "2025-11-11T09:21:50.795Z"
+    },
+    {
+      "id": "HIP52936953KGP7",
+      "name": "hello",
+      "antal": 3,
+      "eventDate": "2025-11-21 20:30",
+      "eventName": "Svensk Hiphop Special",
+      "clubId": "h1ph",
+      "createdAt": "2025-11-11T09:22:16.953Z"
+    },
+    {
+      "id": "HIP53116495PBQP",
+      "name": "hejehe5",
+      "antal": 1,
+      "eventDate": "2025-11-09 21:00",
+      "eventName": "90s Hiphop Night",
+      "clubId": "h1ph",
+      "createdAt": "2025-11-11T09:25:16.495Z"
+    },
+    {
+      "id": "HIP53982639F2CH",
+      "name": "helloan",
+      "antal": 2,
+      "eventDate": "2025-11-09 21:00",
+      "eventName": "90s Hiphop Night",
+      "clubId": "h1ph",
+      "createdAt": "2025-11-11T09:39:42.639Z"
+    },
+    {
+      "id": "HIP54028355OTD0",
+      "name": "tetet",
+      "antal": 2,
+      "eventDate": "2025-11-14 22:00",
+      "eventName": "Freestyle Battle",
+      "clubId": "h1ph",
+      "createdAt": "2025-11-11T09:40:28.355Z"
+    },
+    {
+      "id": "HIP543204562MXS",
+      "name": "hej",
+      "antal": 3,
+      "eventDate": "2025-11-09 21:00",
+      "eventName": "90s Hiphop Night",
+      "clubId": "h1ph",
+      "createdAt": "2025-11-11T09:45:20.456Z"
+    },
+    {
+      "id": "HIP545258188D28",
+      "name": "leo3",
+      "antal": 3,
+      "eventDate": "2025-11-09 21:00",
+      "eventName": "90s Hiphop Night",
+      "clubId": "h1ph",
+      "createdAt": "2025-11-11T09:48:45.818Z"
+    },
+    {
+      "id": "HIP54861432EV5G",
+      "name": "hh",
+      "antal": 6,
+      "eventDate": "2025-11-09 21:00",
+      "eventName": "90s Hiphop Night",
+      "clubId": "h1ph",
+      "createdAt": "2025-11-11T09:54:21.432Z"
+    },
+    {
+      "id": "HIP56520914BC8H",
+      "name": "3",
+      "antal": 3,
+      "eventDate": "2025-11-09 21:00",
+      "eventName": "90s Hiphop Night",
+      "clubId": "h1ph",
+      "createdAt": "2025-11-11T10:22:00.914Z"
+    },
+    {
+      "id": "HIP56541135US0B",
+      "name": "23",
+      "antal": 3,
+      "eventDate": "2025-11-09 21:00",
+      "eventName": "90s Hiphop Night",
+      "clubId": "h1ph",
+      "createdAt": "2025-11-11T10:22:21.135Z"
+    },
+    {
+      "id": "HIP56705720ULXH",
+      "name": "2",
+      "antal": 2,
+      "eventDate": "2025-11-09 21:00",
+      "eventName": "90s Hiphop Night",
+      "clubId": "h1ph",
+      "createdAt": "2025-11-11T10:25:05.720Z"
+    },
+    {
+      "id": "POP56722527II20",
+      "name": "2",
+      "antal": 2,
+      "eventDate": "2025-11-15 21:00",
+      "eventName": "Miss Li",
+      "clubId": "1234",
+      "createdAt": "2025-11-11T10:25:22.527Z"
+    },
+    {
+      "id": "POP56733250R914",
+      "name": "2",
+      "antal": 1,
+      "eventDate": "2025-11-15 21:00",
+      "eventName": "Miss Li",
+      "clubId": "1234",
+      "createdAt": "2025-11-11T10:25:33.250Z"
     }
   ]
 }
