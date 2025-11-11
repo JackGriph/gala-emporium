@@ -13,11 +13,31 @@ export default async function hiphopClub() {
       <!-- Navigation -->
  
       <!-- Club info -->
-      <section>
-        <h1>${name}</h1>
-        <p class="text-light">${description}</p>
+      <section class="club-header">
+        <div>
+          <h1>${name}</h1>
+          <p class="text-light">${description}</p>
+        </div>
       </section>
- 
+
+      <!-- Audio element (hidden) -->
+      <audio id="hiphop-audio" preload="none">
+        <source src="audio/hiphopaudio.mp3" type="audio/mpeg">
+        Din webbläsare stödjer inte audioelementet.
+      </audio>
+
+      <!-- Player (left, above About) -->
+      <div class="player-left">
+        <button
+          class="play-btn"
+          type="button"
+          aria-pressed="false"
+          title="Spela / pausa"
+          onclick="(function(btn){const a=document.getElementById('hiphop-audio'); if(!a) return; if(a.paused){a.play(); btn.classList.add('playing'); btn.setAttribute('aria-pressed','true'); btn.innerText='⏸️ Pausa';} else {a.pause(); btn.classList.remove('playing'); btn.setAttribute('aria-pressed','false'); btn.innerText='▶️ Spela';}})(this)">
+          ▶️ Spela
+        </button>
+      </div>
+
       <!-- About -->
       <section class="hiphop-about">
         <h2 class="special">Om oss</h2>
