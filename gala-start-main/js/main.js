@@ -3,6 +3,7 @@ import jazzClub from './pages/jazz-club.js';
 import clubPopfesten from './pages/club-popfesten.js';
 import hiphopClub from './pages/hiphop-club.js';
 import createEvent from './pages/create-event.js';
+import retroClub from './pages/retro-club.js';
 
 
 const isAdmin = true; //resultat av en inlogging
@@ -14,6 +15,7 @@ const menu = {
   "jazz-klubben": { label: 'Jazz-klubben', function: jazzClub },
   "club-popfesten": { label: 'Club Popfesten', function: clubPopfesten },
   "hiphop-klubben": { label: 'Hiphop klubben', function: hiphopClub },
+  "retro-klubben": { label: 'Retro-klubben', function: retroClub },
   "create-event": { label: 'Skapa evenemang', function: createEvent, isAdminPage: true }
 };
 

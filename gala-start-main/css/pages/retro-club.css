@@ -1,5 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Syncopate:wght@400;700&display=swap');
+
+/* Retrowave theme for retro club */
 body.retro-klubben {
-  background-color: #f0e68c;
-  color: #00008b;
-  position: fixed;
+  margin: 0;
+  font-family: "Syncopate", sans-serif;
+  background: linear-gradient(162deg, rgba(63, 94, 251, 1) 0%, rgba(100, 25, 176, 1) 53%, rgba(252, 70, 107, 1) 100%);
+  color: #f5f5f5;
+  min-height: 100vh;
+}
+
+/* Header styles */
+body.retro-klubben header {
+  background: rgba(126, 76, 187, 0.5);
+  color: #ff0080;
+  text-shadow: 0 0 10px #ff0080, 0 0 20px #8000ff, 0 0 30px #ff0080;
+  padding: 1rem;
+  text-align: center;
+  font-family: "Syncopate", sans-serif;
+  font-size: 2rem;
+  border-bottom: 2px solid #ff0080;
+  box-shadow: 0 0 20px rgba(255, 0, 128, 0.5);
+}
+
+body.retro-klubben a {
+  font-family: "Syncopate", sans-serif;
+}
+
+/* Main content styles */
+main.retro-klubben {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+main.retro-klubben h1 {
+  font-family: "Rubik 80s Fade", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  text-shadow: 0 0 15px #ff0080, 0 0 30px #8000ff, 0 0 45px #ff0080;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+main.retro-klubben p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  line-height: 1.8;
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+/* Section styles */
+.retro-section {
+  padding: 2rem;
+  margin: 2rem auto;
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid #ff0080;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 0, 128, 0.3), inset 0 0 20px rgba(255, 0, 128, 0.1);
+  max-width: 900px;
+  backdrop-filter: blur(10px);
+}
+
+.retro-section h1, .retro-section h2 {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 4rem;
+  text-align: center;
+  color: #ff0080;
+  text-shadow: 0 0 10px #ff0080, 0 0 20px #8000ff, 0 0 30px #ff0080;
+  margin-bottom: 1rem;
+}
+.retro-section h2 {
+  font-size: 2.5rem;
+}
+
+.retro-section p {
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: #e0e0e0;
+}
+
+/* Event card styles */
+.retro-event {
+  background: rgba(255, 0, 128, 0.1);
+  border: 2px solid #ff0080;
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 15px rgba(255, 0, 128, 0.2), inset 0 0 10px rgba(255, 0, 128, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  backdrop-filter: blur(5px);
+  will-change: transform, box-shadow;
+}
+
+.retro-event:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(255, 0, 128, 0.4), inset 0 0 15px rgba(255, 0, 128, 0.1);
+}
+
+.retro-event h3 {
+  color: #ff0080;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 5px #ff0080;
+}
+
+.retro-event p {
+  color: #f5f5f5;
+  font-style: italic;
+  font-size: 1rem;
+}
+
+/* Navigation styles */
+.retro-nav {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.retro-nav a {
+  display: inline-block;
+  margin: 0 1rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(255, 0, 128, 0.1);
+  border: 2px solid #ff0080;
+  border-radius: 30px;
+  color: #ff0080;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  text-shadow: 0 0 5px #ff0080;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 10px rgba(255, 0, 128, 0.2);
+  will-change: transform, box-shadow;
+}
+
+.retro-nav a:hover {
+  background: rgba(255, 0, 128, 0.2);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 0, 128, 0.4);
 }

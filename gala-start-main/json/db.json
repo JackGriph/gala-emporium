@@ -62,6 +62,11 @@
         "saturday": "19:00 - 03:00",
         "sunday": "Stängt"
       }
+    },
+    {
+      "id": "fg5i",
+      "name": "Retro-klubben",
+      "description": "En tidsresa tillbaka till 80- och 90-talet med synthwave, new wave och retro-futuristiska vibes. Dansa under neonljus och känn nostalgins puls."
     }
   ],
   "events": [
@@ -169,6 +174,27 @@
       "name": "Classic Jazz-Night ",
       "description": "Bästa klassikerna hela natten lång",
       "clubId": "a37c"
+    },
+    {
+      "id": "91b2",
+      "date": "2025-11-14 22:00",
+      "name": "Neon Pulse",
+      "description": "En helkväll i synthens tecken! DJ Chrome bjuder på mörka retrobeats och glittrande synthwave medan dansgolvet badar i laserljus och rök. Klä dig i neon – eller försvinn i mängden.",
+      "clubId": "fg5i"
+    },
+    {
+      "id": "2ca8",
+      "date": "2025-11-21 20:30",
+      "name": "Cassette Future",
+      "description": "Tema: framtiden som 1985 trodde den skulle se ut. Robotmasker, VHS-filter och space disco hela natten. Ta med ditt bästa 'Back to the Future'-leende!",
+      "clubId": "fg5i"
+    },
+    {
+      "id": "6de4",
+      "date": "2025-11-28 23:00",
+      "name": "Midnight Mirage",
+      "description": "En natt för den som vill drömma i neon. Chillwave blandas med slow motion visuals och digital konst på väggarna. Ta ett steg in i den syntetiska drömvärlden.",
+      "clubId": "fg5i"
     }
   ],
   "bookings": [
