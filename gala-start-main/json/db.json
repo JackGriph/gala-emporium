@@ -344,6 +344,15 @@
       "eventName": "90s Hiphop Night",
       "clubId": "h1ph",
       "createdAt": "2025-11-11T10:41:48.103Z"
+    },
+    {
+      "id": "HIP57790650BJQU",
+      "name": "6",
+      "antal": 5,
+      "eventDate": "2025-11-09 21:00",
+      "eventName": "90s Hiphop Night",
+      "clubId": "h1ph",
+      "createdAt": "2025-11-11T10:43:10.650Z"
     }
   ]
 }
