@@ -17,7 +17,7 @@ body.club-popfesten {
   margin: 0;
 }
 
-.club-page {
+body.club-popfesten .club-page {
   max-width: auto;
   margin: 0 auto;
   padding: 0 1rem;
@@ -26,7 +26,7 @@ body.club-popfesten {
 }
 
 /* Lägg till stil för den fasta knappen */
-.booking-toggle-btn {
+body.club-popfesten .booking-toggle-btn {
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -44,20 +44,20 @@ body.club-popfesten {
   transition: all 0.3s ease;
 }
 
-.booking-toggle-btn:hover {
+body.club-popfesten .booking-toggle-btn:hover {
   background: linear-gradient(135deg, #b384e3, #9c6fc9);
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
-.club-header {
+body.club-popfesten .club-header {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
 
-.club-header h1 {
+body.club-popfesten .club-header h1 {
   font-family: "Limelight", sans-serif;
   color: white;
   font-size: 3.0rem;
@@ -67,7 +67,7 @@ body.club-popfesten {
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
 
-.club-header h2 {
+body.club-popfesten .club-header h2 {
   font-family: "Limelight", sans-serif;
   color: white;
   font-size: 1.4rem;
@@ -77,7 +77,7 @@ body.club-popfesten {
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
 
-.club-image {
+body.club-popfesten .club-image {
   display: block;
   margin: 0 auto;
   margin-top: 50px;
@@ -85,12 +85,12 @@ body.club-popfesten {
   height: auto;
 }
 
-.club-info {
+body.club-popfesten .club-info {
   justify-content: center;
   text-align: center;
 }
 
-ul {
+body.club-popfesten ul {
   font-family: "Almendra", serif;
   font-size: 1.1rem;
   list-style-type: none;
@@ -98,25 +98,25 @@ ul {
   margin: 0;
 }
 
-.club-content {
+body.club-popfesten .club-content {
   display: flex;
   gap: 2rem;
   margin-top: 2rem;
 }
 
-h1 {
+body.club-popfesten h1 {
   font-size: 2.0rem;
   font-weight: bold;
   margin-bottom: 0;
   /* mindre mellanrum under rubriken */
 }
 
-h2 {
+body.club-popfesten h2 {
   font-size: 1.4rem;
   font-weight: bold;
 }
 
-h3 {
+body.club-popfesten h3 {
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 0;
@@ -124,15 +124,15 @@ h3 {
 }
 
 /* Eventlista till vänster, text till höger */
-.events-column {
+body.club-popfesten .events-column {
   flex: 2;
 }
 
-.extra-info {
+body.club-popfesten .extra-info {
   flex: 1;
 }
 
-.extra-info {
+body.club-popfesten .extra-info {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -155,13 +155,13 @@ h3 {
   /* För att hantera position:absolute i booking-confirmation */
 }
 
-.event-list {
+body.club-popfesten .event-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.event-card {
+body.club-popfesten .event-card {
   border: 2px solid #444;
   /* Ram */
   background-color: rgba(14, 14, 14, 0.3);
@@ -180,22 +180,22 @@ h3 {
   /* För att hantera position:absolute i booking-confirmation */
 }
 
-.event-card h3 {
+body.club-popfesten .event-card h3 {
   margin: 3px 0 10px 0;
   /*top/bottom left/right */
 }
 
-.event-card .quick-booking-form {
+body.club-popfesten .event-card .quick-booking-form {
   margin-top: 15px;
 }
 
-.event-card .booking-inputs {
+body.club-popfesten .event-card .booking-inputs {
   display: flex;
   gap: 10px;
   margin-bottom: 10px;
 }
 
-.event-card .booking-inputs input {
+body.club-popfesten .event-card .booking-inputs input {
   padding: 8px;
   border: 1px solid #9c6fc9;
   border-radius: 4px;
@@ -204,20 +204,20 @@ h3 {
   font-family: "Almendra", serif;
 }
 
-.event-card .booking-inputs input::placeholder {
+body.club-popfesten .event-card .booking-inputs input::placeholder {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.event-card .booking-name {
+body.club-popfesten .event-card .booking-name {
   flex: 2;
 }
 
-.event-card .booking-quantity {
+body.club-popfesten .event-card .booking-quantity {
   flex: 1;
   width: 80;
 }
 
-.event-card .event-booking-btn {
+body.club-popfesten .event-card .event-booking-btn {
   width: 100%;
   padding: 8px 16px;
   margin-top: 10px;
@@ -230,13 +230,13 @@ h3 {
   transition: all 0.3s ease;
 }
 
-.event-card .event-booking-btn:hover {
+body.club-popfesten .event-card .event-booking-btn:hover {
   background: linear-gradient(135deg, #b384e3, #9c6fc9);
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(156, 111, 201, 0.4);
 }
 
-.booking-confirmation {
+body.club-popfesten .booking-confirmation {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -251,25 +251,25 @@ h3 {
   min-width: 300px;
 }
 
-.event-card .booking-confirmation h4 {
+body.club-popfesten .event-card .booking-confirmation h4 {
   color: #9c6fc9;
   margin: 0 0 15px 0;
   font-size: 1.2em;
 }
 
-.event-card .booking-confirmation p {
+body.club-popfesten .event-card .booking-confirmation p {
   margin: 8px 0;
   color: white;
 }
 
-.event-card .booking-id-container {
+body.club-popfesten .event-card .booking-id-container {
   background: rgba(156, 111, 201, 0.1);
   padding: 10px;
   border-radius: 5px;
   margin: 15px 0;
 }
 
-.event-card .booking-id {
+body.club-popfesten .event-card .booking-id {
   display: block;
   font-family: 'Courier New', monospace;
   font-size: 1.2em;
@@ -280,7 +280,7 @@ h3 {
   border-radius: 4px;
 }
 
-.event-card .close-confirmation {
+body.club-popfesten .event-card .close-confirmation {
   margin-top: 10px;
   padding: 8px 20px;
   background: transparent;
@@ -291,13 +291,13 @@ h3 {
   transition: all 0.3s ease;
 }
 
-.event-card .close-confirmation:hover {
+body.club-popfesten .event-card .close-confirmation:hover {
   background: rgba(156, 111, 201, 0.1);
   transform: translateY(-2px);
 }
 
 /*
-.extra-info {
+body.club-popfesten .extra-info {
   background-image: url('../../pictures/bg-popfesten.jpg');
   background-size: cover;
   /* Täcker hela div:en 
@@ -314,7 +314,7 @@ h3 {
 
 
 /* Overlay för bokningsbekräftelse */
-.booking-overlay {
+body.club-popfesten .booking-overlay {
   position: fixed;
   top: 0;
   left: 0;
