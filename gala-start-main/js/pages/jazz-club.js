@@ -40,16 +40,18 @@ export default async function jazzClub() {
 
   // Handle booking form submission
   async function handleBooking(e, eventId, eventName, eventDate) {
-    e.preventDefault();
+    e.preventDefault(); // Stoppar vanlig formulär-submit
     const formData = new FormData(e.target);
     const name = formData.get('name');
     const antal = formData.get('antal');
 
+    // Hämtar data och kollar så att alla fällt är ifyllda
     if (!name || !antal || antal < 1) {
       alert('Vänligen fyll i alla fält korrekt.');
       return;
     }
 
+    // Genererar bokningsnummer och skapar objekt med bokningsinformation
     const bookingId = generateBookingId();
     const booking = {
       id: bookingId,
@@ -62,36 +64,56 @@ export default async function jazzClub() {
       createdAt: new Date().toISOString()
     };
 
-    try {
-      const response = await fetch('http://localhost:3000/bookings', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(booking)
-      });
+    // Visa bekräftelsen FÖRST (VIKTIGT) (innan vi postar till servern)
+    const formWrapper = e.target.closest('.event-booking-form');
+    const originalForm = formWrapper.innerHTML; // Spara originalformuläret
 
-      if (response.ok) {
-        const formWrapper = e.target.closest('.event-booking-form');
-        formWrapper.innerHTML = `
-          <div class="confirmation-box">
-            <h4>✅ Bokning bekräftad!</h4>
-            <p><strong>Evenemang:</strong> ${eventName}</p>
-            <p><strong>Datum:</strong> ${eventDate}</p>
-            <p><strong>Namn:</strong> ${name}</p>
-            <p><strong>Antal personer:</strong> ${antal}</p>
-            <p><strong>Bokningsnummer:</strong> <span class="booking-id">${bookingId}</span></p>
-            <p class="info-text">Spara ditt bokningsnummer! Du kommer att behöva det vid entrén.</p>
-          </div>
-        `;
+    formWrapper.innerHTML = `
+      <div class="confirmation-box">
+        <h4>✅ Bokning bekräftad!</h4>
+        <p><strong>Evenemang:</strong> ${eventName}</p>
+        <p><strong>Datum:</strong> ${eventDate}</p>
+        <p><strong>Namn:</strong> ${name}</p>
+        <p><strong>Antal personer:</strong> ${antal}</p>
+        <p><strong>Bokningsnummer:</strong> <span class="booking-id">${bookingId}</span></p>
+        <p class="info-text">Spara ditt bokningsnummer! Du kommer att behöva det vid entrén.</p>
+        <button class="btn-primary close-confirmation-btn">Stäng & Spara</button>
+      </div>
+    `;
+
+    // Scrolla till bekräftelsen
+    formWrapper.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    // Lägg till event listener för stäng-knappen
+    const closeBtn = formWrapper.querySelector('.close-confirmation-btn');
+    let bookingSaved = false;
+
+    closeBtn.addEventListener('click', async () => {
+      // Spara till servern när användaren klickar på stäng (om inte redan sparat)
+      if (!bookingSaved) {
+        bookingSaved = true;
+        try {
+          // Nu sparar vi till servern
+          await fetch('http://localhost:3000/bookings', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(booking)
+          });
+        } catch (error) {
+          console.error('Booking error:', error);
+        }
       }
-    } catch (error) {
-      alert('Något gick fel. Försök igen senare.');
-      console.error('Booking error:', error);
-    }
+      // Återställ event listener för det nya formuläret
+      formWrapper.innerHTML = originalForm;
+      // Event listeners återställs för nya bokningar
+      const newForm = formWrapper.querySelector('form');
+      newForm.addEventListener('submit', (e) => handleBooking(e, eventId, eventName, eventDate));
+    });
   }
 
-  // Handle booking lookup
+  // Söker efter bokningar med det angivna ID:t
   async function handleLookup(e) {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -149,11 +171,12 @@ export default async function jazzClub() {
     }
 
     // Event booking forms
-    document.querySelectorAll('.event-booking-form form').forEach((form, index) => {
-      const event = events.toSorted((a, b) => a.date > b.date ? 1 : -1)[index];
-      if (event) {
-        form.addEventListener('submit', (e) => handleBooking(e, event.id, event.name, event.date));
-      }
+    document.querySelectorAll('.event-booking-form form').forEach((form) => {
+      const eventId = form.dataset.eventId;
+      const eventName = form.dataset.eventName;
+      const eventDate = form.dataset.eventDate;
+
+      form.addEventListener('submit', (e) => handleBooking(e, eventId, eventName, eventDate));
     });
   }, 0);
 
@@ -214,7 +237,7 @@ export default async function jazzClub() {
       <div class="club-info-section">
         <h3>✨ Specialiteter</h3>
         <ul class="special-features">
-          ${clubInfo.specialFeatures.map(feature => `<li>${feature}</li>`).join('')}
+          ${clubInfo.specialFeatures.map(feature => `<li><strong>${feature}</strong></li>`).join('')}
         </ul>
       </div>
     </div>
@@ -230,7 +253,7 @@ export default async function jazzClub() {
           <div class="event-booking-form">
             <details>
               <summary>🎫 Boka till detta event</summary>
-              <form>
+              <form data-event-id="${id}" data-event-name="${name}" data-event-date="${date}">
                 <div class="form-group">
                   <label for="name-${id}">Namn:</label>
                   <input type="text" id="name-${id}" name="name" required placeholder="Ditt namn">

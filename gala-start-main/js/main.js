@@ -54,3 +54,19 @@ window.onhashchange = loadPageContent;
 
 // create the menu and display it
 document.querySelector('header nav').innerHTML = createMenu();
+
+// funktion för att inte menyn ska ligga över annan text på någon sida.
+function adjustMainPadding() {
+  const header = document.querySelector('header');
+  const main = document.querySelector('main');
+  if (!header || !main) return; // säkerhetskoll
+
+  const headerHeight = header.offsetHeight;
+  main.style.paddingTop = `${headerHeight + 10}px`; // 10px extra luft
+}
+
+// Kör funktionen när sidan laddas
+window.addEventListener('load', adjustMainPadding);
+
+// Kör igen om användaren ändrar fönsterstorlek
+window.addEventListener('resize', adjustMainPadding);

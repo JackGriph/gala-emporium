@@ -10,6 +10,12 @@ body.jazz-klubben {
   position: relative;
 }
 
+/* Transparant navbar för jazz-klubben */
+body.jazz-klubben header {
+  background: rgba(0, 0, 0, 0.4) !important;
+  backdrop-filter: blur(10px);
+}
+
 /* Dark overlay for better text readability */
 body.jazz-klubben::before {
   content: '';
@@ -32,33 +38,37 @@ body.jazz-klubben h1 {
 }
 
 body.jazz-klubben h2 {
-  color: #daa520;
-  font-size: 1.8em;
+  color: #ffd700;
+  font-size: 2em;
   margin-top: 30px;
   margin-bottom: 20px;
-  border-bottom: 2px solid #ffd700;
+  border-bottom: 3px solid #ffd700;
   padding-bottom: 10px;
+  text-align: center;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+  letter-spacing: 1px;
 }
 
 body.jazz-klubben p {
   line-height: 1.8;
-  font-size: 1.1em;
-  color: #e6e6fa;
+  font-size: 1.15em;
+  color: #f5f5dc;
   text-align: center;
   max-width: 800px;
   margin: 0 auto 30px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 body.jazz-klubben .event {
-  background: rgba(255, 215, 0, 0.1);
+  background: rgba(255, 215, 0, 0.15);
   border: 1px solid #ffd700;
   border-radius: 15px;
   padding: 25px;
-  margin-bottom: 25px;
+  margin: 0 auto 25px;
+  max-width: 800px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(5px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 100%;
 }
 
 body.jazz-klubben .event:hover {
@@ -92,27 +102,8 @@ body.jazz-klubben a:hover {
   text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
 }
 
-body.jazz-klubben nav {
-  text-align: center;
-  margin-bottom: 40px;
-}
 
-body.jazz-klubben nav a {
-  display: inline-block;
-  margin: 0 15px;
-  padding: 12px 25px;
-  background: rgba(255, 215, 0, 0.1);
-  border: 2px solid #ffd700;
-  border-radius: 25px;
-  transition: all 0.2s ease;
-}
-
-body.jazz-klubben nav a:hover {
-  background: rgba(255, 215, 0, 0.2);
-  transform: scale(1.05);
-}
-
-/* Club details styling - only for jazz club */
+/* INFO*/
 body.jazz-klubben .club-description {
   font-size: 1.2em;
   font-style: italic;
@@ -121,28 +112,13 @@ body.jazz-klubben .club-description {
 
 body.jazz-klubben .club-details {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
   margin-bottom: 40px;
-  max-width: 1400px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@media (max-width: 1200px) {
-  body.jazz-klubben .club-details {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  body.jazz-klubben .club-details {
-    grid-template-columns: 1fr;
-  }
 }
 
 body.jazz-klubben .club-info-section {
-  background: rgba(255, 215, 0, 0.1);
+  background: rgba(255, 215, 0, 0.15);
   border: 1px solid #ffd700;
   border-radius: 15px;
   padding: 20px;
@@ -166,6 +142,7 @@ body.jazz-klubben .opening-hours {
   display: flex;
   flex-direction: column;
   gap: 5px;
+
 }
 
 body.jazz-klubben .opening-hour {
@@ -216,7 +193,7 @@ body.jazz-klubben .booking-toggle-btn:hover {
   box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
 }
 
-/* Booking menu - sliding from bottom */
+/* Booking menu */
 body.jazz-klubben .booking-menu {
   position: fixed;
   bottom: 0;
@@ -245,8 +222,7 @@ body.jazz-klubben .booking-menu-content {
 body.jazz-klubben .booking-menu-content h3 {
   color: #ffd700;
   font-size: 1.6em;
-  margin-top: 0;
-  margin-bottom: 25px;
+  margin: 0 0 25px;
   text-align: center;
   border-bottom: 2px solid #ffd700;
   padding-bottom: 10px;
@@ -258,7 +234,7 @@ body.jazz-klubben .booking-lookup-section h4 {
   margin-bottom: 15px;
 }
 
-/* Event booking form - collapsible */
+/* Event booking forms */
 body.jazz-klubben .event-booking-form {
   margin-top: 20px;
   border-top: 1px solid rgba(255, 215, 0, 0.3);
@@ -271,19 +247,16 @@ body.jazz-klubben .event-booking-form details {
   border-radius: 10px;
   padding: 5px 10px;
   transition: all 0.3s ease;
-  width: 15%;
+  width: auto;
+  max-width: 250px;
 }
 
-body.jazz-klubben .event-booking-form details .btn-primary {
-  width: 35%;
-}
-
-body.jazz-klubben .event-booking-form details:hover {
+body.jazz-klubben .event-booking-form details:hover,
+body.jazz-klubben .event-booking-form details[open] {
   background: rgba(255, 215, 0, 0.1);
 }
 
 body.jazz-klubben .event-booking-form details[open] {
-  background: rgba(255, 215, 0, 0.1);
   padding-bottom: 20px;
 }
 
@@ -311,6 +284,7 @@ body.jazz-klubben .event-booking-form form {
   border-top: 1px solid rgba(255, 215, 0, 0.2);
 }
 
+/* Form elements */
 body.jazz-klubben .form-group {
   margin-bottom: 20px;
 }
@@ -344,6 +318,7 @@ body.jazz-klubben .form-group input:focus {
   box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
 }
 
+/* Buttons */
 body.jazz-klubben .btn-primary,
 body.jazz-klubben .btn-secondary {
   width: 100%;
@@ -362,23 +337,31 @@ body.jazz-klubben .btn-primary {
   color: #000;
 }
 
-body.jazz-klubben .btn-primary:hover {
-  background: linear-gradient(135deg, #ffed4e, #ffd700);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(255, 215, 0, 0.4);
-}
-
 body.jazz-klubben .btn-secondary {
   background: rgba(255, 215, 0, 0.1);
   color: #ffd700;
 }
 
+body.jazz-klubben .btn-primary:hover,
+body.jazz-klubben .btn-secondary:hover {
+  transform: translateY(-2px);
+}
+
+body.jazz-klubben .btn-primary:hover {
+  background: linear-gradient(135deg, #ffed4e, #ffd700);
+  box-shadow: 0 6px 12px rgba(255, 215, 0, 0.4);
+}
+
 body.jazz-klubben .btn-secondary:hover {
   background: rgba(255, 215, 0, 0.2);
-  transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(255, 215, 0, 0.3);
 }
 
+body.jazz-klubben .event-booking-form .btn-primary {
+  width: 35%;
+}
+
+/* Confirmation and error boxes */
 body.jazz-klubben .confirmation-box {
   background: rgba(0, 100, 0, 0.2);
   border: 2px solid #4caf50;
@@ -388,7 +371,6 @@ body.jazz-klubben .confirmation-box {
   margin-top: 15px;
 }
 
-body.jazz-klubben .confirmation-box h3,
 body.jazz-klubben .confirmation-box h4 {
   color: #4caf50;
   margin-top: 0;
@@ -397,7 +379,6 @@ body.jazz-klubben .confirmation-box h4 {
 body.jazz-klubben .confirmation-box p {
   color: #e6e6fa;
   margin: 10px 0;
-  text-align: center;
 }
 
 body.jazz-klubben .booking-id {
