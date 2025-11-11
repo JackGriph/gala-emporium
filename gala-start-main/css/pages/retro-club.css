@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik+80s+Fade&family=Syncopate:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Syncopate:wght@400;700&display=swap');
 
 /* Retrowave theme for retro club */
 body.retro-klubben {
@@ -22,6 +22,10 @@ body.retro-klubben header {
   box-shadow: 0 0 20px rgba(255, 0, 128, 0.5);
 }
 
+body.retro-klubben a {
+  font-family: "Syncopate", sans-serif;
+}
+
 /* Main content styles */
 main.retro-klubben {
   padding: 2rem;
@@ -30,7 +34,7 @@ main.retro-klubben {
 }
 
 main.retro-klubben h1 {
-  font-family: "Rubik 80s Fade";
+  font-family: "Rubik 80s Fade", system-ui;
   font-weight: 400;
   font-style: normal;
   text-shadow: 0 0 15px #ff0080, 0 0 30px #8000ff, 0 0 45px #ff0080;
@@ -59,10 +63,17 @@ main.retro-klubben p {
 }
 
 .retro-section h1, .retro-section h2 {
-  font-family: "Rubik 80s Fade", system-ui;
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 4rem;
+  text-align: center;
   color: #ff0080;
-  /* text-shadow: 0 0 10px #ff0080, 0 0 20px #8000ff, 0 0 30px #ff0080; */
+  text-shadow: 0 0 10px #ff0080, 0 0 20px #8000ff, 0 0 30px #ff0080;
   margin-bottom: 1rem;
+}
+.retro-section h2 {
+  font-size: 2.5rem;
 }
 
 .retro-section p {
