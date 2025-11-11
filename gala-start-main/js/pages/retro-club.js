@@ -9,15 +9,11 @@ export default async function hiphopClub() {
 
   return `
     <div class="retro-section">
-      <!-- Navigation -->
- 
-      <!-- Club info -->
       <section>
         <h1>${name}</h1>
         <p>${description}</p>
       </section>
  
-      <!-- About -->
       <section class="retro-about">
         <h2>Om oss</h2>
         <p>
@@ -35,8 +31,8 @@ export default async function hiphopClub() {
       .toSorted((a, b) => a.date > b.date ? 1 : -1)
       .map(({ date, name, description }) => `
             <article class="retro-event">
-              <h3 class="special"><img src="path/to/microphone-icon.png" alt="Microphone Icon" style="width: 20px; height: 20px; margin-right: 5px;">${name} <small>(${date})</small></h3>
-              <p class="text-light">${description}</p>
+              <h3>${name} <small>(${date})</small></h3>
+              <p>${description}</p>
             </article>
           `)
       .join('')}
