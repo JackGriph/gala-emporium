@@ -144,6 +144,11 @@ body.jazz-klubben .opening-hour {
   border-bottom: 1px dotted rgba(255, 215, 0, 0.3);
 }
 
+body.jazz-klubben .special-features {
+  list-style: none;
+  padding: 0;
+}
+
 body.jazz-klubben .special-features li {
   background: rgba(255, 215, 0, 0.2);
   margin: 8px 0;
