@@ -141,20 +141,6 @@
       "clubId": "a37c"
     },
     {
-      "id": "cd6r",
-      "date": "2025-11-07 17:23",
-      "name": "Tenta-omtenta kravall",
-      "description": "Test test",
-      "clubId": "a37c"
-    },
-    {
-      "id": "guvy",
-      "date": "2025-11-06 16:26",
-      "name": "Tenta-omtenta kravall",
-      "description": "sdfsf",
-      "clubId": "a37c"
-    },
-    {
       "id": "hh01",
       "date": "2025-11-09 21:00",
       "name": "90s Hiphop Night",
@@ -183,6 +169,13 @@
       "clubId": "h1ph"
     },
     {
+      "id": "fj30",
+      "date": "2025-11-15 23:30",
+      "name": "Classic Jazz-Night ",
+      "description": "Bästa klassikerna hela natten lång",
+      "clubId": "a37c"
+    },
+    {
       "id": "91b2",
       "date": "2025-11-14 22:00",
       "name": "Neon Pulse",
@@ -205,13 +198,6 @@
     }
   ],
   "bookings": [
-    {
-      "id": "BK03865932BQL3",
-      "name": "Jack",
-      "antal": 4,
-      "clubId": "a37c",
-      "createdAt": "2025-11-07T08:24:25.932Z"
-    },
     {
       "id": "POP14736593UNNZ",
       "name": "Sandra",
