@@ -43,7 +43,7 @@ main.retro-klubben h1 {
 }
 
 main.retro-klubben p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   max-width: 800px;
   line-height: 1.8;
   margin: 0 auto 2rem;
@@ -67,7 +67,7 @@ main.retro-klubben p {
   font-family: "Press Start 2P", system-ui;
   font-weight: 400;
   font-style: normal;
-  font-size: 4rem;
+  font-size: 3rem;
   text-align: center;
   color: #ff0080;
   text-shadow: 0 0 10px #ff0080, 0 0 20px #8000ff, 0 0 30px #ff0080;
@@ -75,12 +75,12 @@ main.retro-klubben p {
 }
 
 .retro-section h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 
 .retro-section p {
   line-height: 1.8;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #e0e0e0;
 }
 
@@ -104,7 +104,7 @@ main.retro-klubben p {
 
 .retro-event h3 {
   color: #ff0080;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin-bottom: 0.5rem;
   text-shadow: 0 0 5px #ff0080;
 }
@@ -112,7 +112,7 @@ main.retro-klubben p {
 .retro-event p {
   color: #f5f5f5;
   font-style: italic;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 /* Navigation styles */
@@ -170,11 +170,11 @@ main.retro-klubben p {
 
   .retro-section h1,
   .retro-section h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .retro-section h2 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   .retro-nav a {
@@ -191,7 +191,7 @@ main.retro-klubben p {
   }
 
   .retro-event h3 {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 }
 
