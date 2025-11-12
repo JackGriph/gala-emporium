@@ -111,7 +111,7 @@ export default async function jazzClub() {
         <p><strong>Kapacitet:</strong> ${clubInfo.capacity}</p>
         <p><strong>Åldersgräns:</strong> ${clubInfo.ageLimit}</p>
         <p><strong>Klädkod:</strong> ${clubInfo.dressCode}</p>
-        <p><strong>Priskllass:</strong> ${clubInfo.priceRange}</p>
+        <p><strong>Prisklass:</strong> ${clubInfo.priceRange}</p>
       </div>
       
       <div class="club-info-section">
