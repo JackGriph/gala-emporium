@@ -119,7 +119,7 @@ body.start .main-title {
 
 body.start .hero-subtitle {
   font-size: 1.5em;
-  color: #ffd700;
+  color: rgb(253, 250, 250);
   margin: 0 0 30px 0;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -500,4 +500,25 @@ body.start .info-card p {
 
 .club-section-h1ph .event h3 {
   color: #00fa9a;
+}
+
+/* Retro-klubben stil - Röd & Nostalgi */
+.club-section-fg5i {
+  background: transparent;
+  backdrop-filter: none;
+}
+
+.club-section-fg5i .club-section-title {
+  color: #ff6b6b;
+  border-bottom-color: #ff6b6b;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.club-section-fg5i .event {
+  background: rgba(255, 107, 107, 0.1);
+  border-color: #ff6b6b;
+}
+
+.club-section-fg5i .event h3 {
+  color: #ff6b6b;
 }
