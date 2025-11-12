@@ -61,7 +61,17 @@
         "friday": "19:00 - 03:00",
         "saturday": "19:00 - 03:00",
         "sunday": "Stängt"
-      }
+      },
+      "priceList": {
+        "Entré vardagar": "120 kr",
+        "Entré helger": "180 kr",
+        "Entré special events": "220 kr",
+        "Öl (33cl)": "65 kr",
+        "Drinks": "95 - 140 kr",
+        "Alkoholfritt": "45 kr",
+        "Snacks": "40 - 80 kr"
+      },
+      "atmosphere": "Urban och rå atmosfär med graffitiväggar, neonskyltning och kraftfulla bassystem. Stor dansyta perfekt för breakdance, chill-zoner med vintage sneakers på display, och en bar designad som en New York subway-station. Ljudsystemet är toppmodernt och ger dig den autentiska hip-hop känslan."
     },
     {
       "id": "fg5i",
@@ -102,7 +112,7 @@
       "id": "pop03",
       "date": "2025-11-28 20:00",
       "name": "Svensk PopCovers",
-      "description": "Coverbandet 80-80 spelar svensk pop från 80-talet",
+      "description": "Coverartisten Dolores sjunger svenska coverlåtar.",
       "clubId": "1234"
     },
     {
@@ -228,14 +238,24 @@
       "createdAt": "2025-11-12T09:08:44.712Z"
     },
     {
-      "id": "BK39472669TH0Y",
-      "name": "Jack",
-      "antal": 3,
-      "eventId": "43ac",
-      "eventName": "Fusion-jazzarna Corea's Disciples",
-      "eventDate": "2025-11-01 19:00",
-      "clubId": "a37c",
-      "createdAt": "2025-11-12T09:24:32.669Z"
+      "id": "BK395883817A9A",
+      "name": "Sandra",
+      "antal": 5,
+      "eventId": "pop01",
+      "eventName": "Miss Li",
+      "eventDate": "2025-11-15 21:00",
+      "clubId": "1234",
+      "createdAt": "2025-11-12T09:26:28.381Z"
+    },
+    {
+      "id": "BK42128952PACJ",
+      "name": "John",
+      "antal": 2,
+      "eventId": "6de4",
+      "eventName": "Midnight Mirage",
+      "eventDate": "2025-11-28 23:00",
+      "clubId": "fg5i",
+      "createdAt": "2025-11-12T10:08:48.952Z"
     }
   ]
 }

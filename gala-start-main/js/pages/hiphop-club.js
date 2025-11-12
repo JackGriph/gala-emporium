@@ -1,3 +1,4 @@
+import { handleBooking, handleLookup, toggleBookingMenu } from '../utils/eventbooking.js';
 
 export default async function hiphopClub() {
   // Hämta klubbdata och events från API
@@ -8,150 +9,11 @@ export default async function hiphopClub() {
   // Extrahera klubbinfo
   const { name, description } = clubData;
 
-  // Booking helpers (copied/adapted from club-popfesten)
-  function generateBookingId() {
-    return 'HIP' + Date.now().toString().slice(-8) + Math.random().toString(36).substr(2, 4).toUpperCase();
-  }
-
-  async function handleBooking(e, eventDate, eventName) {
-    e.preventDefault();
-    const form = e.target;
-    const formData = new FormData(form);
-    const name = formData.get('name');
-    const antal = formData.get('antal');
-
-    if (!name || !antal || antal < 1) {
-      alert('Vänligen fyll i alla fält korrekt.');
-      return;
-    }
-
-    const bookingId = generateBookingId();
-    const booking = {
-      id: bookingId,
-      name: name,
-      antal: parseInt(antal),
-      eventDate: eventDate,
-      eventName: eventName,
-      clubId: clubId,
-      createdAt: new Date().toISOString()
-    };
-
-    // Show a confirmation box first; only save when user clicks "Spara bokning"
-    const formWrapper = form.closest('.event-booking-form');
-    if (!formWrapper) return;
-
-    // Save original HTML so we can restore if user cancels
-    formWrapper.dataset.orig = formWrapper.innerHTML;
-    // Store booking data safely
-    formWrapper.dataset.booking = encodeURIComponent(JSON.stringify(booking));
-
-    formWrapper.innerHTML = `
-      <div class="confirmation-box pending-confirmation">
-        <h4>Bekräfta din bokning</h4>
-        <p><strong>Evenemang:</strong> ${eventName}</p>
-        <p><strong>Datum:</strong> ${eventDate}</p>
-        <p><strong>Namn:</strong> ${name}</p>
-        <p><strong>Antal personer:</strong> ${antal}</p>
-        <p style="margin-top: 20px; font-size: 1.2em;"><strong>Bokningsnummer:</strong></p>
-        <p><span class="booking-id">${bookingId}</span></p>
-        <p class="info-text">⚠️ Spara ditt bokningsnummer! Klicka "Spara & Stäng" för att spara bokningen till databasen.</p>
-        <div style="display:flex; gap:10px; margin-top:10px;">
-          <button class="btn-primary save-booking">Spara & Stäng</button>
-        </div>
-      </div>
-    `;
-
-    const saveBtn = formWrapper.querySelector('.save-booking');
-
-    // Save & Close - POST to API then restore form
-    saveBtn.addEventListener('click', async () => {
-      const bookingStr = formWrapper.dataset.booking;
-      if (!bookingStr) return alert('Ingen bokningsdata hittades.');
-      const b = JSON.parse(decodeURIComponent(bookingStr));
-      try {
-        const response = await fetch('http://localhost:3000/bookings', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(b)
-        });
-
-        if (response.ok) {
-          // Restore the original form
-          const orig = formWrapper.dataset.orig || '';
-          formWrapper.innerHTML = orig;
-          delete formWrapper.dataset.orig;
-          delete formWrapper.dataset.booking;
-          const restoredForm = formWrapper.querySelector('form');
-          if (restoredForm) {
-            restoredForm.addEventListener('submit', (e) => handleBooking(e, eventDate, eventName));
-          }
-        } else {
-          alert('Kunde inte spara bokningen. Försök igen.');
-        }
-      } catch (err) {
-        console.error('Booking save error:', err);
-        alert('Ett fel uppstod vid sparande av din bokning.');
-      }
-    });
-  }
-
-  async function handleLookup(e) {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-    const bookingId = formData.get('lookupId');
-
-    if (!bookingId) {
-      alert('Vänligen ange ett bokningsnummer.');
-      return;
-    }
-
-    try {
-      const response = await fetch(`http://localhost:3000/bookings?id=${bookingId}`);
-      const bookings = await response.json();
-
-      if (bookings.length > 0) {
-        const booking = bookings[0];
-        document.querySelector('#lookup-result').innerHTML = `
-          <div class="confirmation-box">
-            <h4>Din bokning</h4>
-            <p><strong>Evenemang:</strong> ${booking.eventName}</p>
-            <p><strong>Datum:</strong> ${booking.eventDate}</p>
-            <p><strong>Namn:</strong> ${booking.name}</p>
-            <p><strong>Antal personer:</strong> ${booking.antal}</p>
-            <p><strong>Bokningsnummer:</strong> <span class="booking-id">${booking.id}</span></p>
-            <p class="info-text">Visa detta vid entrén.</p>
-          </div>
-        `;
-        document.querySelector('#lookup-result').style.display = 'block';
-      } else {
-        document.querySelector('#lookup-result').innerHTML = `
-          <div class="error-box">
-            <p>Ingen bokning hittades med detta nummer.</p>
-          </div>
-        `;
-        document.querySelector('#lookup-result').style.display = 'block';
-      }
-    } catch (error) {
-      alert('Något gick fel. Försök igen senare.');
-      console.error('Lookup error:', error);
-    }
-  }
-
   // Setup listeners after HTML renders
   setTimeout(() => {
     const toggleBtn = document.querySelector('.booking-toggle-btn');
     if (toggleBtn) {
-      toggleBtn.addEventListener('click', () => {
-        const menu = document.querySelector('#booking-menu');
-        const btn = document.querySelector('.booking-toggle-btn');
-        if (menu.classList.contains('show')) {
-          menu.classList.remove('show');
-          btn.textContent = 'Din bokning';
-        } else {
-          menu.classList.add('show');
-          btn.textContent = '✕ Stäng bokning';
-        }
-      });
+      toggleBtn.addEventListener('click', toggleBookingMenu);
     }
 
     const lookupForm = document.querySelector('#lookup-form form');
@@ -160,7 +22,7 @@ export default async function hiphopClub() {
     document.querySelectorAll('.event-booking-form form').forEach((form, index) => {
       const event = events.toSorted((a, b) => a.date > b.date ? 1 : -1)[index];
       if (event) {
-        form.addEventListener('submit', (e) => handleBooking(e, event.date, event.name));
+        form.addEventListener('submit', (e) => handleBooking(e, event.id, event.name, event.date, clubId));
       }
     });
   }, 0);

@@ -49,14 +49,6 @@ body.hiphop-klubben .hiphop-section {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
 }
 
-body.hiphop-klubben .hiphop-section h1,
-body.hiphop-klubben .hiphop-section h2 {
-  color: #ffd700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 0 0 15px rgba(255, 215, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.8);
-}
-
 /* Club header with player button */
 body.hiphop-klubben .club-header {
   display: flex;
@@ -74,14 +66,14 @@ body.hiphop-klubben .club-header h1 {
   font-weight: 900;
   letter-spacing: 8px;
   text-transform: uppercase;
-  color: #ffd700;
+  color: #00ff88;
   text-shadow:
     3px 3px 0 #000,
     -1px -1px 0 #000,
     1px -1px 0 #000,
     -1px 1px 0 #000,
-    0 0 30px rgba(255, 215, 0, 0.6),
-    0 0 60px rgba(255, 140, 0, 0.4);
+    0 0 30px rgba(0, 255, 136, 0.6),
+    0 0 60px rgba(0, 255, 136, 0.4);
   -webkit-text-stroke: 2px #000;
   paint-order: stroke fill;
   margin: 0;
@@ -104,19 +96,19 @@ body.hiphop-klubben .player-left {
 
 body.hiphop-klubben .hiphop-about {
   border: 2px solid transparent;
-  border-image: linear-gradient(135deg, #ffd700, #ff8c00, #ffd700) 1;
+  border-image: linear-gradient(135deg, #00ff88, #00cc66, #00ff88) 1;
   border-radius: 12px;
   padding: 2rem;
   margin-bottom: 2rem;
   background: rgba(0, 0, 0, 0.75);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6), 0 0 40px rgba(255, 215, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 255, 136, 0.1);
 }
 
 body.hiphop-klubben .hiphop-about h2 {
-  color: #ffd700;
+  color: #00ff88;
   text-transform: uppercase;
   letter-spacing: 2px;
-  text-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
   margin-bottom: 1rem;
 }
 
@@ -144,12 +136,12 @@ body.hiphop-klubben .play-btn {
   align-items: center;
   gap: 0.5rem;
   background: linear-gradient(180deg, #111 0%, #222 100%);
-  color: #ffd700;
-  border: 2px solid #ffd700;
+  color: #00ff88;
+  border: 2px solid #00ff88;
   padding: 0.5rem 0.9rem;
   border-radius: 999px;
   font-weight: 700;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6), 0 2px 6px rgba(255, 215, 0, 0.06) inset;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6), 0 2px 6px rgba(0, 255, 136, 0.06) inset;
   cursor: pointer;
   transition: transform 120ms ease, box-shadow 120ms ease, opacity 120ms ease;
 }
@@ -174,14 +166,20 @@ body.hiphop-klubben .play-btn.playing {
 }
 
 /* Events */
+body.hiphop-klubben .event-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 body.hiphop-klubben .hiphop-event {
   border: 2px solid transparent;
-  border-image: linear-gradient(135deg, #ffd700, #ff8c00, #ffd700) 1;
+  border-image: linear-gradient(135deg, #00ff88, #00cc66, #00ff88) 1;
   border-radius: 12px;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
   background: rgba(14, 12, 12, 0.75);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6), 0 0 40px rgba(255, 215, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 255, 136, 0.1);
   position: relative;
   overflow: hidden;
 }
@@ -193,7 +191,7 @@ body.hiphop-klubben .hiphop-event::before {
   left: -100%;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #ffd700, transparent);
+  background: linear-gradient(90deg, transparent, #00ff88, transparent);
   animation: shimmer 3s infinite;
 }
 
@@ -212,33 +210,44 @@ body.hiphop-klubben .hiphop-event h3 {
   font-size: 1.4em;
   text-transform: uppercase;
   letter-spacing: 1px;
+  color: #00ff88;
+  text-shadow: 0 0 15px rgba(0, 255, 136, 0.6), 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 body.hiphop-klubben .hiphop-event h3.special {
-  color: #ffd700;
-  text-shadow: 0 0 10px rgba(255, 215, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.8);
+  color: #00ff88;
+  text-shadow: 0 0 15px rgba(0, 255, 136, 0.6), 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 body.hiphop-klubben .hiphop-event small {
-  color: #ff8c00;
+  color: #66ffaa;
   font-weight: 500;
 }
 
 /* Headings */
 body.hiphop-klubben .hiphop-section h1 {
-  font-size: 2rem;
+  font-size: 3rem;
   margin-bottom: 0.5rem;
+  color: #00ff88;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 15px rgba(0, 255, 136, 0.5), 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 body.hiphop-klubben .hiphop-section h2 {
   margin-bottom: 1rem;
+  color: #00ff88;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 15px rgba(0, 255, 136, 0.5), 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 /* Text colors */
 body.hiphop-klubben .text-light {
-  color: #ff8c00;
+  color: #66ffaa;
   font-family: 'Impact', 'Arial Black', sans-serif;
-  font-weight: 700;
+  font-weight: 500;
+  font-size: 120%;
   letter-spacing: 0.5px;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -253,23 +262,23 @@ body.hiphop-klubben .booking-toggle-btn {
   bottom: 20px;
   right: 20px;
   padding: 14px 24px;
-  background: linear-gradient(135deg, #ffd700 0%, #ff8c00 50%, #ffd700 100%);
+  background: linear-gradient(135deg, #00ff88 0%, #00cc66 50%, #00ff88 100%);
   color: #000;
-  border: 3px solid #ffd700;
+  border: 3px solid #00ff88;
   border-radius: 12px;
   cursor: pointer;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 1px;
   z-index: 1000;
-  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4), 0 0 30px rgba(255, 140, 0, 0.3);
+  box-shadow: 0 6px 20px rgba(0, 255, 136, 0.4), 0 0 30px rgba(0, 204, 102, 0.3);
   transition: all 0.3s ease;
   font-size: 1.05em;
 }
 
 body.hiphop-klubben .booking-toggle-btn:hover {
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.6), 0 0 40px rgba(255, 140, 0, 0.5);
+  box-shadow: 0 8px 25px rgba(0, 255, 136, 0.6), 0 0 40px rgba(0, 204, 102, 0.5);
 }
 
 /* Booking menu sliding from bottom */
@@ -279,8 +288,8 @@ body.hiphop-klubben .booking-menu {
   left: 0;
   right: 0;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.98) 0%, rgba(10, 10, 10, 0.98) 100%);
-  border-top: 4px solid #ffd700;
-  box-shadow: 0 -10px 40px rgba(255, 215, 0, 0.2);
+  border-top: 4px solid #00ff88;
+  box-shadow: 0 -10px 40px rgba(0, 255, 136, 0.2);
   padding: 30px;
   max-height: 70vh;
   overflow-y: auto;
@@ -300,18 +309,18 @@ body.hiphop-klubben .booking-menu-content {
 }
 
 body.hiphop-klubben .booking-menu-content h3 {
-  color: #ffd700;
+  color: #00ff88;
   font-size: 1.8em;
   text-align: center;
   margin-top: 0;
   margin-bottom: 25px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+  text-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
 }
 
 body.hiphop-klubben .booking-lookup-section h4 {
-  color: #ffd700;
+  color: #00ff88;
   font-size: 1.2em;
   margin-bottom: 15px;
   text-transform: uppercase;
@@ -320,28 +329,28 @@ body.hiphop-klubben .booking-lookup-section h4 {
 
 body.hiphop-klubben .event-booking-form {
   margin-top: 25px;
-  border-top: 2px solid rgba(255, 215, 0, 0.3);
+  border-top: 2px solid rgba(0, 255, 136, 0.3);
   padding-top: 20px;
 }
 
 body.hiphop-klubben .event-booking-form details {
-  background: linear-gradient(135deg, rgba(255, 140, 0, 0.15) 0%, rgba(204, 85, 0, 0.2) 100%);
-  border: 2px solid rgba(255, 215, 0, 0.4);
+  background: linear-gradient(135deg, rgba(0, 255, 136, 0.15) 0%, rgba(0, 204, 102, 0.2) 100%);
+  border: 2px solid rgba(0, 255, 136, 0.4);
   border-radius: 10px;
   padding: 10px 15px;
   transition: all 0.3s ease;
   max-width: 100%;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 255, 136, 0.1);
 }
 
 body.hiphop-klubben .event-booking-form details:hover {
-  border-color: rgba(255, 215, 0, 0.7);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 215, 0, 0.2);
-  background: linear-gradient(135deg, rgba(255, 140, 0, 0.25) 0%, rgba(204, 85, 0, 0.3) 100%);
+  border-color: rgba(0, 255, 136, 0.7);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 255, 136, 0.2);
+  background: linear-gradient(135deg, rgba(0, 255, 136, 0.25) 0%, rgba(0, 204, 102, 0.3) 100%);
 }
 
 body.hiphop-klubben .event-booking-form summary {
-  color: #ffd700;
+  color: #00ff88;
   font-weight: bold;
   cursor: pointer;
   padding: 8px 0;
@@ -357,7 +366,7 @@ body.hiphop-klubben .event-booking-form summary::-webkit-details-marker {
 body.hiphop-klubben .event-booking-form form {
   margin-top: 15px;
   padding-top: 15px;
-  border-top: 2px dashed rgba(255, 215, 0, 0.15);
+  border-top: 2px dashed rgba(0, 255, 136, 0.15);
 }
 
 body.hiphop-klubben .form-group {
@@ -366,7 +375,7 @@ body.hiphop-klubben .form-group {
 
 body.hiphop-klubben .form-group label {
   display: block;
-  color: #ffd700;
+  color: #00ff88;
   margin-bottom: 8px;
   font-weight: 600;
   text-transform: uppercase;
@@ -378,7 +387,7 @@ body.hiphop-klubben .form-group input {
   width: 100%;
   padding: 12px 15px;
   border-radius: 8px;
-  border: 2px solid rgba(255, 215, 0, 0.3);
+  border: 2px solid rgba(0, 255, 136, 0.3);
   background: rgba(0, 0, 0, 0.5);
   color: white;
   font-size: 1em;
@@ -388,8 +397,8 @@ body.hiphop-klubben .form-group input {
 
 body.hiphop-klubben .form-group input:focus {
   outline: none;
-  border-color: #ffd700;
-  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+  border-color: #00ff88;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
 }
 
 body.hiphop-klubben .btn-primary,
@@ -398,7 +407,7 @@ body.hiphop-klubben .btn-secondary {
   padding: 12px 18px;
   font-weight: bold;
   border-radius: 10px;
-  border: 3px solid #ffd700;
+  border: 3px solid #00ff88;
   cursor: pointer;
   font-size: 1.05em;
   text-transform: uppercase;
@@ -408,24 +417,24 @@ body.hiphop-klubben .btn-secondary {
 }
 
 body.hiphop-klubben .btn-primary {
-  background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
+  background: linear-gradient(135deg, #00ff88 0%, #00cc66 100%);
   color: #000;
-  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+  box-shadow: 0 4px 15px rgba(0, 255, 136, 0.4);
 }
 
 body.hiphop-klubben .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
+  box-shadow: 0 6px 20px rgba(0, 255, 136, 0.6);
 }
 
 body.hiphop-klubben .btn-secondary {
   background: rgba(0, 0, 0, 0.6);
-  color: #ffd700;
-  border: 2px solid #ffd700;
+  color: #00ff88;
+  border: 2px solid #00ff88;
 }
 
 body.hiphop-klubben .btn-secondary:hover {
-  background: rgba(255, 215, 0, 0.1);
+  background: rgba(0, 255, 136, 0.1);
   transform: translateY(-2px);
 }
 
@@ -460,14 +469,14 @@ body.hiphop-klubben .error-box {
 body.hiphop-klubben .booking-id {
   font-family: 'Courier New', monospace;
   font-size: 1.3em;
-  color: #ffd700;
+  color: #00ff88;
   background: rgba(0, 0, 0, 0.6);
   padding: 10px 15px;
   border-radius: 8px;
   display: inline-block;
   font-weight: bold;
-  border: 2px solid rgba(255, 215, 0, 0.4);
-  box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+  border: 2px solid rgba(0, 255, 136, 0.4);
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
   letter-spacing: 2px;
 }
 

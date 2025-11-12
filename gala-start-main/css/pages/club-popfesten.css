@@ -138,7 +138,7 @@ body.club-popfesten .extra-info {
   justify-content: flex-start;
   border: 2px solid #444;
   /* Ram */
-  background-color: rgba(19, 18, 19, 0.2);
+  background: rgba(102, 51, 153, 0.3);
   /* Bakgrund i ramen */
   backdrop-filter: blur(8px);
   /* frostad glas-effekt */
@@ -164,7 +164,7 @@ body.club-popfesten .event-list {
 body.club-popfesten .event-card {
   border: 2px solid #444;
   /* Ram */
-  background-color: rgba(14, 14, 14, 0.3);
+  background: rgba(102, 51, 153, 0.3);
   /* Bakgrund i ramen */
   backdrop-filter: blur(8px);
   /* frostad glas-effekt */
@@ -263,7 +263,7 @@ body.club-popfesten .event-card .booking-confirmation p {
 }
 
 body.club-popfesten .event-card .booking-id-container {
-  background: rgba(156, 111, 201, 0.1);
+  background: rgba(102, 51, 153, 0.3);
   padding: 10px;
   border-radius: 5px;
   margin: 15px 0;
