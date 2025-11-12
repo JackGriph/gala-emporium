@@ -4,12 +4,9 @@ import clubPopfesten from './pages/club-popfesten.js';
 import hiphopClub from './pages/hiphop-club.js';
 import createEvent from './pages/create-event.js';
 import retroClub from './pages/retro-club.js';
+import { getUserRole, isAdmin } from './utils/user-roles.js';
 
 
-const isAdmin = true; //resultat av en inlogging
-
-// Our menu: label to display in menu and 
-// function to run on menu choice
 const menu = {
   "start": { label: 'Start', function: start },
   "jazz-klubben": { label: 'Jazz-klubben', function: jazzClub },
@@ -20,19 +17,17 @@ const menu = {
 };
 
 function createMenu() {
-  // Object.entries -> convert object to array
-  // then map to create a-tags (links)
-  // then join everything into one big string
+  // Konvertera menu-objektet till en array och skapa HTML-länkar
   return Object.entries(menu)
-    .map(([urlHash, { label, isAdminPage }]) => {
-      if (isAdminPage && isAdmin) {
-        return `<a href="#${urlHash}">${label}</a>`;
-      }
-      else if (!isAdminPage) {
-        return `<a href="#${urlHash}">${label}</a>`;
-      }
+    .filter(([, menuItem]) => {
+      // Visa sidan om den INTE är en admin-sida, eller om användaren ÄR admin
+      return !menuItem.isAdminPage || isAdmin();
     })
-    .join(' ');
+    .map(([urlHash, menuItem]) => {
+      // Skapa en länk för varje menyalternativ
+      return `<a href="#${urlHash}">${menuItem.label}</a>`;
+    })
+    .join(' '); // Kombinera alla länkar med mellanslag
 }
 
 async function loadPageContent() {

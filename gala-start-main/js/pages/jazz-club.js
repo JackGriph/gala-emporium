@@ -1,3 +1,5 @@
+import { handleBooking, handleLookup } from '../utils/eventbooking.js';
+
 export default async function jazzClub() {
   // Fetch club info and events for jazz club
   const clubInfo = await (await fetch('http://localhost:3000/clubs/a37c')).json();
@@ -20,11 +22,6 @@ export default async function jazzClub() {
       .join('');
   }
 
-  // Generate a simple booking ID
-  function generateBookingId() {
-    return 'BK' + Date.now().toString().slice(-8) + Math.random().toString(36).substr(2, 4).toUpperCase();
-  }
-
   // Toggle booking menu visibility
   function toggleBookingMenu() {
     const menu = document.querySelector('#booking-menu');
@@ -35,121 +32,6 @@ export default async function jazzClub() {
     } else {
       menu.classList.add('show');
       btn.textContent = '✕ Stäng bokning';
-    }
-  }
-
-  // Handle booking form submission
-  async function handleBooking(e, eventId, eventName, eventDate) {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-    const name = formData.get('name');
-    const antal = formData.get('antal');
-
-    if (!name || !antal || antal < 1) {
-      alert('Vänligen fyll i alla fält korrekt.');
-      return;
-    }
-
-    const bookingId = generateBookingId();
-    const booking = {
-      id: bookingId,
-      name: name,
-      antal: parseInt(antal),
-      eventId: eventId,
-      eventName: eventName,
-      eventDate: eventDate,
-      clubId: 'a37c',
-      createdAt: new Date().toISOString()
-    };
-
-    // Visa bekräftelsen FÖRST (innan vi postar till servern)
-    const formWrapper = e.target.closest('.event-booking-form');
-    const originalForm = formWrapper.innerHTML; // Spara originalformuläret
-
-    formWrapper.innerHTML = `
-      <div class="confirmation-box">
-        <h4>✅ Bokning bekräftad!</h4>
-        <p><strong>Evenemang:</strong> ${eventName}</p>
-        <p><strong>Datum:</strong> ${eventDate}</p>
-        <p><strong>Namn:</strong> ${name}</p>
-        <p><strong>Antal personer:</strong> ${antal}</p>
-        <p><strong>Bokningsnummer:</strong> <span class="booking-id">${bookingId}</span></p>
-        <p class="info-text">Spara ditt bokningsnummer! Du kommer att behöva det vid entrén.</p>
-        <button class="btn-primary close-confirmation-btn">Stäng & Spara</button>
-      </div>
-    `;
-
-    // Scrolla till bekräftelsen
-    formWrapper.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-    // Lägg till event listener för stäng-knappen
-    const closeBtn = formWrapper.querySelector('.close-confirmation-btn');
-    let bookingSaved = false;
-
-    closeBtn.addEventListener('click', async () => {
-      // Spara till servern när användaren klickar på stäng (om inte redan sparat)
-      if (!bookingSaved) {
-        bookingSaved = true;
-        try {
-          await fetch('http://localhost:3000/bookings', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(booking)
-          });
-        } catch (error) {
-          console.error('Booking error:', error);
-        }
-      }
-
-      formWrapper.innerHTML = originalForm;
-      // Återställ event listener för det nya formuläret
-      const newForm = formWrapper.querySelector('form');
-      newForm.addEventListener('submit', (e) => handleBooking(e, eventId, eventName, eventDate));
-    });
-  }
-
-  // Handle booking lookup
-  async function handleLookup(e) {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-    const bookingId = formData.get('lookupId');
-
-    if (!bookingId) {
-      alert('Vänligen ange ett bokningsnummer.');
-      return;
-    }
-
-    try {
-      const response = await fetch(`http://localhost:3000/bookings?id=${bookingId}`);
-      const bookings = await response.json();
-
-      if (bookings.length > 0) {
-        const booking = bookings[0];
-        document.querySelector('#lookup-result').innerHTML = `
-          <div class="confirmation-box">
-            <h4>📋 Din bokning</h4>
-            <p><strong>Evenemang:</strong> ${booking.eventName}</p>
-            <p><strong>Datum:</strong> ${booking.eventDate}</p>
-            <p><strong>Namn:</strong> ${booking.name}</p>
-            <p><strong>Antal personer:</strong> ${booking.antal}</p>
-            <p><strong>Bokningsnummer:</strong> <span class="booking-id">${booking.id}</span></p>
-            <p class="info-text">Visa detta vid entrén.</p>
-          </div>
-        `;
-        document.querySelector('#lookup-result').style.display = 'block';
-      } else {
-        document.querySelector('#lookup-result').innerHTML = `
-          <div class="error-box">
-            <p>❌ Ingen bokning hittades med detta nummer.</p>
-          </div>
-        `;
-        document.querySelector('#lookup-result').style.display = 'block';
-      }
-    } catch (error) {
-      alert('Något gick fel. Försök igen senare.');
-      console.error('Lookup error:', error);
     }
   }
 
@@ -167,11 +49,13 @@ export default async function jazzClub() {
       lookupForm.addEventListener('submit', handleLookup);
     }
 
-    // Event booking forms
+    // Event booking forms - använd handleBooking från eventbooking.js
     document.querySelectorAll('.event-booking-form form').forEach((form, index) => {
       const event = events.toSorted((a, b) => a.date > b.date ? 1 : -1)[index];
       if (event) {
-        form.addEventListener('submit', (e) => handleBooking(e, event.id, event.name, event.date));
+        form.addEventListener('submit', (e) =>
+          handleBooking(e, event.id, event.name, event.date, 'a37c')
+        );
       }
     });
   }, 0);
@@ -222,12 +106,12 @@ export default async function jazzClub() {
         <p>${clubInfo.atmosphere}</p>
       </div>
       
-      <div class="club-info-section">
+      <div class="club-info-section"> 
         <h3>ℹ️ Praktisk Information</h3>
         <p><strong>Kapacitet:</strong> ${clubInfo.capacity}</p>
         <p><strong>Åldersgräns:</strong> ${clubInfo.ageLimit}</p>
         <p><strong>Klädkod:</strong> ${clubInfo.dressCode}</p>
-        <p><strong>Priskllass:</strong> ${clubInfo.priceRange}</p>
+        <p><strong>Prisklass:</strong> ${clubInfo.priceRange}</p>
       </div>
       
       <div class="club-info-section">
