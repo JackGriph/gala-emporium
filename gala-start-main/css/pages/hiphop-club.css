@@ -49,14 +49,6 @@ body.hiphop-klubben .hiphop-section {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
 }
 
-body.hiphop-klubben .hiphop-section h1,
-body.hiphop-klubben .hiphop-section h2 {
-  color: #ffd700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 0 0 15px rgba(255, 215, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.8);
-}
-
 /* Club header with player button */
 body.hiphop-klubben .club-header {
   display: flex;
@@ -174,6 +166,12 @@ body.hiphop-klubben .play-btn.playing {
 }
 
 /* Events */
+body.hiphop-klubben .event-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 body.hiphop-klubben .hiphop-event {
   border: 2px solid transparent;
   border-image: linear-gradient(135deg, #ffd700, #ff8c00, #ffd700) 1;
@@ -212,11 +210,13 @@ body.hiphop-klubben .hiphop-event h3 {
   font-size: 1.4em;
   text-transform: uppercase;
   letter-spacing: 1px;
+  color: #ff8c00;
+  text-shadow: 0 0 15px rgba(255, 140, 0, 0.6), 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 body.hiphop-klubben .hiphop-event h3.special {
-  color: #ffd700;
-  text-shadow: 0 0 10px rgba(255, 215, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.8);
+  color: #ff8c00;
+  text-shadow: 0 0 15px rgba(255, 140, 0, 0.6), 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 body.hiphop-klubben .hiphop-event small {
@@ -228,10 +228,18 @@ body.hiphop-klubben .hiphop-event small {
 body.hiphop-klubben .hiphop-section h1 {
   font-size: 2rem;
   margin-bottom: 0.5rem;
+  color: #ffd700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 body.hiphop-klubben .hiphop-section h2 {
   margin-bottom: 1rem;
+  color: #ffd700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 /* Text colors */
