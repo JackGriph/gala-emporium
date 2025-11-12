@@ -61,7 +61,17 @@
         "friday": "19:00 - 03:00",
         "saturday": "19:00 - 03:00",
         "sunday": "Stängt"
-      }
+      },
+      "priceList": {
+        "Entré vardagar": "120 kr",
+        "Entré helger": "180 kr",
+        "Entré special events": "220 kr",
+        "Öl (33cl)": "65 kr",
+        "Drinks": "95 - 140 kr",
+        "Alkoholfritt": "45 kr",
+        "Snacks": "40 - 80 kr"
+      },
+      "atmosphere": "Urban och rå atmosfär med graffitiväggar, neonskyltning och kraftfulla bassystem. Stor dansyta perfekt för breakdance, chill-zoner med vintage sneakers på display, och en bar designad som en New York subway-station. Ljudsystemet är toppmodernt och ger dig den autentiska hip-hop känslan."
     },
     {
       "id": "fg5i",
