@@ -21,8 +21,7 @@ body.club-popfesten .club-page {
   max-width: auto;
   margin: 0 auto;
   padding: 0 1rem;
-  padding-bottom: 80px;
-  /* Lägg till padding i botten för att undvika att innehåll hamnar under knappen */
+  padding-bottom: 80px;  /* Lägg till padding i botten för att undvika att innehåll hamnar under knappen */
 }
 
 /* Lägg till stil för den fasta knappen */
@@ -107,8 +106,7 @@ body.club-popfesten .club-content {
 body.club-popfesten h1 {
   font-size: 2.0rem;
   font-weight: bold;
-  margin-bottom: 0;
-  /* mindre mellanrum under rubriken */
+  margin-bottom: 0;   /* mindre mellanrum under rubriken */
 }
 
 body.club-popfesten h2 {
@@ -119,11 +117,10 @@ body.club-popfesten h2 {
 body.club-popfesten h3 {
   font-size: 1.2rem;
   font-weight: bold;
-  margin-bottom: 0;
-  /* mindre mellanrum under rubriken */
+  margin-bottom: 0;   /* mindre mellanrum under rubriken */
 }
 
-/* Eventlista till vänster, text till höger */
+/* Eventlista till vänster, extra info till höger */
 body.club-popfesten .events-column {
   flex: 2;
 }
@@ -136,23 +133,16 @@ body.club-popfesten .extra-info {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  border: 2px solid #444;
-  /* Ram */
-  background: rgba(102, 51, 153, 0.3);
-  /* Bakgrund i ramen */
-  backdrop-filter: blur(8px);
-  /* frostad glas-effekt */
-  padding: 20px;
-  /* Lite luft runt texten */
-  margin-bottom: 10px;
-  /* Avstånd mellan event-kort */
-  border-radius: 20px;
-  /* Rundade hörn (valfritt) */
+  border: 2px solid #444;  /* Ram */
+  background: rgba(102, 51, 153, 0.3);   /* Bakgrund i ramen */
+  backdrop-filter: blur(8px);   /* frostad glas-effekt */
+  padding: 20px;   /* Lite luft runt texten */
+  margin-bottom: 10px;   /* Avstånd mellan event-kort */
+  border-radius: 20px;   /* Rundade hörn (valfritt) */
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.8);
   width: 80%;
   height: fit-content;
-  position: relative;
-  /* För att hantera position:absolute i booking-confirmation */
+  position: relative;   /* För att hantera position:absolute i booking-confirmation */
 }
 
 body.club-popfesten .event-list {
@@ -162,27 +152,19 @@ body.club-popfesten .event-list {
 }
 
 body.club-popfesten .event-card {
-  border: 2px solid #444;
-  /* Ram */
-  background: rgba(102, 51, 153, 0.3);
-  /* Bakgrund i ramen */
-  backdrop-filter: blur(8px);
-  /* frostad glas-effekt */
-  padding: 8px;
-  /* Lite luft runt texten */
-  margin-bottom: 10px;
-  /* Avstånd mellan event-kort */
-  border-radius: 8px;
-  /* Rundade hörn (valfritt) */
+  border: 2px solid #444;   /* Ram */
+  background: rgba(102, 51, 153, 0.3);   /* Bakgrund i ramen */
+  backdrop-filter: blur(8px);   /* frostad glas-effekt */
+  padding: 8px;   /* Lite luft runt texten */
+  margin-bottom: 10px;   /* Avstånd mellan event-kort */
+  border-radius: 8px;   /* Rundade hörn */
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.8);
   width: 80%;
-  position: relative;
-  /* För att hantera position:absolute i booking-confirmation */
+  position: relative;  /* För att hantera position:absolute i booking-confirmation */
 }
 
 body.club-popfesten .event-card h3 {
-  margin: 3px 0 10px 0;
-  /*top/bottom left/right */
+  margin: 3px 0 10px 0;   /*top/bottom left/right */
 }
 
 body.club-popfesten .event-card .quick-booking-form {
@@ -295,24 +277,6 @@ body.club-popfesten .event-card .close-confirmation:hover {
   background: rgba(156, 111, 201, 0.1);
   transform: translateY(-2px);
 }
-
-/*
-body.club-popfesten .extra-info {
-  background-image: url('../../pictures/bg-popfesten.jpg');
-  background-size: cover;
-  /* Täcker hela div:en 
-  background-position: center;
-  /* Centrerar bilden 
-  background-repeat: no-repeat;
-  /* Förhindrar upprepning 
-  padding: 40px;
-  /* Lite luft runt innehållet 
-  color: white;
-  /* Gör texten vit 
-} 
-*/
-
-
 /* Overlay för bokningsbekräftelse */
 body.club-popfesten .booking-overlay {
   position: fixed;
@@ -380,8 +344,7 @@ body.club-popfesten .event-booking-form details {
   border-radius: 10px;
   padding: 5px 10px;
   transition: all 0.3s ease;
-  max-width: 90%;
-  /*Änrar storlek på bokningsknappen*/
+  max-width: 90%;   /*Ändrar storlek på bokningsknappen*/
 }
 
 body.club-popfesten .event-booking-form details .btn-primary {
@@ -452,6 +415,22 @@ body.club-popfesten .form-group input:focus {
   outline: none;
   border-color: #b384e3;
   box-shadow: 0 0 10px rgba(156, 111, 201, 0.3);
+}
+
+body.club-popfesten input:-webkit-autofill,
+body.club-popfesten input:-webkit-autofill:hover,
+body.club-popfesten input:-webkit-autofill:focus,
+body.club-popfesten input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.3) inset;
+  box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.3) inset;
+  -webkit-text-fill-color: white;
+  border: 1px solid #9c6fc9;
+}
+
+body.club-popfesten input:-moz-autofill {
+  box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.3) inset;
+  -moz-text-fill-color: white;
+  border: 1px solid #9c6fc9;
 }
 
 body.club-popfesten .btn-primary,
