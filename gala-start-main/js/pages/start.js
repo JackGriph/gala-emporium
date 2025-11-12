@@ -1,4 +1,5 @@
 import clubInfoAndEvents from "../utils/club-info-and-events.js";
+import { getUserRole, setUserRole } from "../utils/user-roles.js";
 
 export default async function start() {
   // Hämta alla klubbar
@@ -6,6 +7,19 @@ export default async function start() {
   const clubs = await clubsResponse.json();
 
   const eventHtml = await clubInfoAndEvents();
+
+  // Setup event listeners after HTML is rendered
+  setTimeout(() => {
+    const roleSwitchBtn = document.querySelector('.role-switch-btn');
+    if (roleSwitchBtn) {
+      roleSwitchBtn.addEventListener('click', () => {
+        const currentRole = getUserRole();
+        const newRole = currentRole === 'User' ? 'Club-Admin' : 'User';
+        setUserRole(newRole);
+        location.reload(); // Reload to update menu
+      });
+    }
+  }, 0);
 
   return `
     <div class="hero-section">
@@ -16,6 +30,7 @@ export default async function start() {
         Oavsett om du älskar intimt jazz, svensk pop, urban hiphop eller retro-nostalgi, 
         hittar du din perfekta kväll hos oss.
       </p>
+      <button class="role-switch-btn">Byt roll: ${getUserRole()}</button>
     </div>
 
     <div class="clubs-showcase">
