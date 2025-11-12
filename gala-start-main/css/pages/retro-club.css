@@ -42,12 +42,47 @@ main.retro-klubben h1 {
   margin-bottom: 1rem;
 }
 
-main.retro-klubben p {
-  font-size: 1.2rem;
+/* Intro section - centered title and description without box */
+.intro-section {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 2rem 0;
+}
+
+.intro-section h1 {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3rem;
+  text-align: center;
+  color: #ff0080;
+  text-shadow: 0 0 10px #ff0080, 0 0 20px #8000ff, 0 0 30px #ff0080;
+  margin-bottom: 1rem;
+}
+
+.intro-section p {
+  font-size: 1rem;
   max-width: 800px;
   line-height: 1.8;
   margin: 0 auto 2rem;
   text-align: center;
+}
+
+/* Columns container */
+.columns-container {
+  display: flex;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.left-column,
+.right-column {
+  flex: 1;
+}
+
+.left-column {
+  align-self: flex-start;
 }
 
 /* Section styles */
@@ -60,6 +95,14 @@ main.retro-klubben p {
   box-shadow: 0 0 20px rgba(255, 0, 128, 0.3), inset 0 0 20px rgba(255, 0, 128, 0.1);
   max-width: 900px;
   backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Adjust retro-section for columns */
+.columns-container .retro-section {
+  margin: 0;
+  max-width: none;
 }
 
 .retro-section h1,
@@ -67,7 +110,7 @@ main.retro-klubben p {
   font-family: "Press Start 2P", system-ui;
   font-weight: 400;
   font-style: normal;
-  font-size: 4rem;
+  font-size: 3rem;
   text-align: center;
   color: #ff0080;
   text-shadow: 0 0 10px #ff0080, 0 0 20px #8000ff, 0 0 30px #ff0080;
@@ -75,12 +118,12 @@ main.retro-klubben p {
 }
 
 .retro-section h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 
 .retro-section p {
   line-height: 1.8;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #e0e0e0;
 }
 
@@ -104,7 +147,7 @@ main.retro-klubben p {
 
 .retro-event h3 {
   color: #ff0080;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin-bottom: 0.5rem;
   text-shadow: 0 0 5px #ff0080;
 }
@@ -112,7 +155,7 @@ main.retro-klubben p {
 .retro-event p {
   color: #f5f5f5;
   font-style: italic;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 /* Navigation styles */
@@ -155,12 +198,13 @@ main.retro-klubben p {
     padding: 1rem;
   }
 
-  main.retro-klubben h1 {
-    font-size: 2rem;
+  .intro-section {
+    padding: 1rem 0;
   }
 
-  main.retro-klubben p {
-    font-size: 1rem;
+  .columns-container {
+    flex-direction: column;
+    gap: 1rem;
   }
 
   .retro-section {
@@ -170,11 +214,11 @@ main.retro-klubben p {
 
   .retro-section h1,
   .retro-section h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .retro-section h2 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   .retro-nav a {
@@ -191,7 +235,7 @@ main.retro-klubben p {
   }
 
   .retro-event h3 {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 }
 
@@ -201,24 +245,24 @@ body.retro-klubben .booking-toggle-btn {
   bottom: 30px;
   right: 30px;
   padding: 15px 30px;
-  background: linear-gradient(135deg, #ff0080, #8000ff);
+  background: linear-gradient(135deg, #9c6fc9, #663399);
   color: #f5f5f5;
-  border: 2px solid #ff0080;
+  border: 2px solid #9c6fc9;
   border-radius: 50px;
   font-family: "Syncopate", sans-serif;
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 0 20px rgba(255, 0, 128, 0.5);
+  box-shadow: 0 0 20px rgba(156, 111, 201, 0.5);
   transition: all 0.3s ease;
   z-index: 1000;
-  text-shadow: 0 0 5px #ff0080;
+  text-shadow: 0 0 5px #9c6fc9;
 }
 
 body.retro-klubben .booking-toggle-btn:hover {
-  background: linear-gradient(135deg, #ff0080, #ff0080);
+  background: linear-gradient(135deg, #b384e3, #9c6fc9);
   transform: translateY(-3px);
-  box-shadow: 0 0 30px rgba(255, 0, 128, 0.7);
+  box-shadow: 0 0 30px rgba(156, 111, 201, 0.7);
 }
 
 /* Booking menu */
@@ -228,7 +272,7 @@ body.retro-klubben .booking-menu {
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.9);
-  border-top: 3px solid #ff0080;
+  border-top: 3px solid #9c6fc9;
   padding: 30px;
   max-height: 60vh;
   overflow-y: auto;
@@ -248,34 +292,34 @@ body.retro-klubben .booking-menu-content {
 }
 
 body.retro-klubben .booking-menu-content h3 {
-  color: #ff0080;
+  color: #9c6fc9;
   font-family: "Syncopate", sans-serif;
   font-size: 1.6rem;
   margin: 0 0 25px;
   text-align: center;
-  border-bottom: 2px solid #ff0080;
+  border-bottom: 2px solid #9c6fc9;
   padding-bottom: 10px;
-  text-shadow: 0 0 10px #ff0080;
+  text-shadow: 0 0 10px #9c6fc9;
 }
 
 body.retro-klubben .booking-lookup-section h4 {
-  color: #8000ff;
+  color: #b384e3;
   font-family: "Syncopate", sans-serif;
   font-size: 1.2rem;
   margin-bottom: 15px;
-  text-shadow: 0 0 5px #8000ff;
+  text-shadow: 0 0 5px #b384e3;
 }
 
 /* Event booking forms */
 body.retro-klubben .event-booking-form {
   margin-top: 20px;
-  border-top: 1px solid rgba(255, 0, 128, 0.3);
+  border-top: 1px solid rgba(156, 111, 201, 0.3);
   padding-top: 15px;
 }
 
 body.retro-klubben .event-booking-form details {
-  background: rgba(255, 0, 128, 0.1);
-  border: 1px solid #ff0080;
+  background: rgba(156, 111, 201, 0.1);
+  border: 1px solid #9c6fc9;
   border-radius: 10px;
   padding: 5px 10px;
   transition: all 0.3s ease;
@@ -285,7 +329,7 @@ body.retro-klubben .event-booking-form details {
 
 body.retro-klubben .event-booking-form details:hover,
 body.retro-klubben .event-booking-form details[open] {
-  background: rgba(255, 0, 128, 0.2);
+  background: rgba(156, 111, 201, 0.2);
 }
 
 body.retro-klubben .event-booking-form details[open] {
@@ -293,7 +337,7 @@ body.retro-klubben .event-booking-form details[open] {
 }
 
 body.retro-klubben .event-booking-form summary {
-  color: #ff0080;
+  color: #9c6fc9;
   font-family: "Syncopate", sans-serif;
   font-weight: bold;
   font-size: 1rem;
@@ -301,7 +345,7 @@ body.retro-klubben .event-booking-form summary {
   list-style: none;
   padding: 5px 0;
   transition: color 0.2s ease;
-  text-shadow: 0 0 5px #ff0080;
+  text-shadow: 0 0 5px #9c6fc9;
 }
 
 body.retro-klubben .event-booking-form summary::-webkit-details-marker {
@@ -309,13 +353,13 @@ body.retro-klubben .event-booking-form summary::-webkit-details-marker {
 }
 
 body.retro-klubben .event-booking-form summary:hover {
-  color: #8000ff;
+  color: #b384e3;
 }
 
 body.retro-klubben .event-booking-form form {
   margin-top: 15px;
   padding-top: 15px;
-  border-top: 1px solid rgba(255, 0, 128, 0.2);
+  border-top: 1px solid rgba(156, 111, 201, 0.2);
 }
 
 /* Form elements */
@@ -325,11 +369,11 @@ body.retro-klubben .form-group {
 
 body.retro-klubben .form-group label {
   display: block;
-  color: #ff0080;
+  color: #9c6fc9;
   font-family: "Syncopate", sans-serif;
   margin-bottom: 8px;
   font-weight: bold;
-  text-shadow: 0 0 5px #ff0080;
+  text-shadow: 0 0 5px #9c6fc9;
 }
 
 body.retro-klubben .form-group input {
@@ -350,8 +394,8 @@ body.retro-klubben .form-group input::placeholder {
 
 body.retro-klubben .form-group input:focus {
   outline: none;
-  border-color: #ff0080;
-  box-shadow: 0 0 10px rgba(255, 0, 128, 0.3);
+  border-color: #9c6fc9;
+  box-shadow: 0 0 10px rgba(156, 111, 201, 0.3);
 }
 
 /* Buttons */
@@ -362,21 +406,21 @@ body.retro-klubben .btn-secondary {
   font-family: "Syncopate", sans-serif;
   font-size: 1rem;
   font-weight: bold;
-  border: 2px solid #ff0080;
+  border: 2px solid #9c6fc9;
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 body.retro-klubben .btn-primary {
-  background: linear-gradient(135deg, #ff0080, #8000ff);
+  background: linear-gradient(135deg, #9c6fc9, #663399);
   color: #f5f5f5;
-  text-shadow: 0 0 5px #ff0080;
+  text-shadow: 0 0 5px #9c6fc9;
 }
 
 body.retro-klubben .btn-secondary {
-  background: rgba(255, 0, 128, 0.1);
-  color: #ff0080;
+  background: rgba(156, 111, 201, 0.1);
+  color: #9c6fc9;
 }
 
 body.retro-klubben .btn-primary:hover,
@@ -385,13 +429,13 @@ body.retro-klubben .btn-secondary:hover {
 }
 
 body.retro-klubben .btn-primary:hover {
-  background: linear-gradient(135deg, #ff0080, #ff0080);
-  box-shadow: 0 0 20px rgba(255, 0, 128, 0.4);
+  background: linear-gradient(135deg, #b384e3, #9c6fc9);
+  box-shadow: 0 0 20px rgba(156, 111, 201, 0.4);
 }
 
 body.retro-klubben .btn-secondary:hover {
-  background: rgba(255, 0, 128, 0.2);
-  box-shadow: 0 0 20px rgba(255, 0, 128, 0.3);
+  background: rgba(156, 111, 201, 0.2);
+  box-shadow: 0 0 20px rgba(156, 111, 201, 0.3);
 }
 
 body.retro-klubben .event-booking-form .btn-primary {
@@ -422,19 +466,19 @@ body.retro-klubben .confirmation-box p {
 body.retro-klubben .booking-id {
   font-family: 'Courier New', monospace;
   font-size: 1.3rem;
-  color: #ff0080;
+  color: #9c6fc9;
   background: rgba(0, 0, 0, 0.5);
   padding: 8px 15px;
   border-radius: 8px;
   display: inline-block;
   font-weight: bold;
   letter-spacing: 2px;
-  text-shadow: 0 0 5px #ff0080;
+  text-shadow: 0 0 5px #9c6fc9;
 }
 
 body.retro-klubben .info-text {
   font-size: 0.95rem;
-  color: #8000ff;
+  color: #b384e3;
   font-style: italic;
   margin-top: 15px !important;
 }
