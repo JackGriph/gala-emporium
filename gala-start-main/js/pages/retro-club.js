@@ -2,7 +2,7 @@ import { handleBooking, handleLookup, toggleBookingMenu } from '../utils/eventbo
 
 export default async function retroClub() {
   // Hämta klubbdata och events från API
-  const clubId = 'fg5i ';
+  const clubId = 'fg5i';
   const clubData = await (await fetch('http://localhost:3000/clubs/' + clubId)).json();
   const events = await (await fetch('http://localhost:3000/events?clubId=' + clubId)).json();
 
