@@ -134,6 +134,26 @@ body.start .hero-description {
   color: rgba(255, 255, 255, 0.9);
 }
 
+body.start .role-switch-btn {
+  display: block;
+  margin: 20px auto 0;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 25px;
+  color: #ffd700;
+  font-family: "DM Serif Text", serif;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+body.start .role-switch-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #ffd700;
+  transform: translateY(-2px);
+}
+
 /* Clubs Showcase */
 body.start .clubs-showcase {
   margin-bottom: 80px;

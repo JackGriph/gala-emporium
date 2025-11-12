@@ -4,12 +4,9 @@ import clubPopfesten from './pages/club-popfesten.js';
 import hiphopClub from './pages/hiphop-club.js';
 import createEvent from './pages/create-event.js';
 import retroClub from './pages/retro-club.js';
+import { getUserRole, isAdmin } from './utils/user-roles.js';
 
 
-const isAdmin = true; //resultat av en inlogging
-
-// Our menu: label to display in menu and 
-// function to run on menu choice
 const menu = {
   "start": { label: 'Start', function: start },
   "jazz-klubben": { label: 'Jazz-klubben', function: jazzClub },
@@ -24,7 +21,7 @@ function createMenu() {
   return Object.entries(menu)
     .filter(([, menuItem]) => {
       // Visa sidan om den INTE är en admin-sida, eller om användaren ÄR admin
-      return !menuItem.isAdminPage || isAdmin;
+      return !menuItem.isAdminPage || isAdmin();
     })
     .map(([urlHash, menuItem]) => {
       // Skapa en länk för varje menyalternativ
