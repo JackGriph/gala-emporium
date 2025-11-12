@@ -96,11 +96,6 @@ body.jazz-klubben a {
   transition: color 0.2s ease;
 }
 
-body.jazz-klubben a:hover {
-  color: #ffed4e;
-  text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
-}
-
 
 /* INFO*/
 body.jazz-klubben .club-description {
@@ -147,11 +142,6 @@ body.jazz-klubben .opening-hours {
 body.jazz-klubben .opening-hour {
   padding: 5px 0;
   border-bottom: 1px dotted rgba(255, 215, 0, 0.3);
-}
-
-body.jazz-klubben .special-features {
-  list-style: none;
-  padding: 0;
 }
 
 body.jazz-klubben .special-features li {
