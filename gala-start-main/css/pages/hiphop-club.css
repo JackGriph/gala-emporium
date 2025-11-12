@@ -18,6 +18,12 @@ body.hiphop-klubben a {
   text-decoration: none;
 }
 
+/* Navigation hover - ensure black text on white background */
+body.hiphop-klubben nav a:hover {
+  color: black !important;
+  background-color: white;
+}
+
 /* Navigation */
 body.hiphop-klubben .hiphop-menu {
   border: 1px solid #f8b99e;
@@ -37,7 +43,7 @@ body.hiphop-klubben .hiphop-menu ul {
 }
 
 body.hiphop-klubben .hiphop-menu a:hover {
-  color: #ffd700;
+  color: black;
 }
 
 /* Content sections */
