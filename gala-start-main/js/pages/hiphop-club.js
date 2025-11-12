@@ -269,7 +269,7 @@ export default async function hiphopClub() {
         </ul>
 
           <h2>Atmosfär:</h2> 
-          ${clubData.atmosphere || ''}</p>
+          <p>${clubData.atmosphere || ''}</p>
       </div>
       </div>
       <button class="booking-toggle-btn">Din bokning</button>
