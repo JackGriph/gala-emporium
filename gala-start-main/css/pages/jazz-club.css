@@ -96,11 +96,6 @@ body.jazz-klubben a {
   transition: color 0.2s ease;
 }
 
-body.jazz-klubben a:hover {
-  color: #ffed4e;
-  text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
-}
-
 
 /* INFO*/
 body.jazz-klubben .club-description {

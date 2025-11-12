@@ -1,42 +1,381 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap');
 /*
 font-family: "DM Serif Text", serif; 
+font-family: "Playfair Display", serif;
 */
 
 body.start {
-  background-color: rgb(9, 9, 9);
-  background-image: url('../../pictures/bg-index.jpg');
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: linear-gradient(135deg,
+      #0a0a0a 0%,
+      #1a0f1f 25%,
+      #0f1a1a 50%,
+      #1a1410 75%,
+      #0a0a0a 100%);
+  background-size: 400% 400%;
+  animation: backgroundShift 20s ease infinite;
+  min-height: 100vh;
+  position: relative;
   color: whitesmoke;
   font-family: "DM Serif Text", serif;
 }
 
+/* Subtle moving background animation */
+@keyframes backgroundShift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Optional: Lägg till subtila ljuspunkter som "ljus från scenen" */
+body.start::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(ellipse at 20% 30%, rgba(255, 215, 0, 0.08) 0%, transparent 40%),
+    radial-gradient(ellipse at 80% 70%, rgba(255, 107, 107, 0.06) 0%, transparent 40%),
+    radial-gradient(ellipse at 50% 50%, rgba(0, 255, 127, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 30% 80%, rgba(156, 111, 201, 0.07) 0%, transparent 40%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Lägg till textur/grain effect för en mer sofistikerad look */
+body.start::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+}
+
+body.start main {
+  position: relative;
+  z-index: 2;
+}
+
 main {
   padding-top: 40px;
-  /* Skjuter ner innehållet så det inte hamnar under headern */
   margin-left: 50px;
   margin-right: 50px;
   margin-bottom: 50px;
-  text-align: left;
+}
+
+/* Hero Section */
+body.start .hero-section {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%);
+  border-radius: 20px;
+  margin-bottom: 60px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.start .main-title {
+  font-family: "Playfair Display", serif;
+  font-size: 5em;
+  font-weight: 900;
+  margin: 0 0 20px 0;
+  background: linear-gradient(135deg, #ffd700, #ff6b6b, #4ecdc4, #a78bfa);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 8s ease infinite;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+body.start .hero-subtitle {
+  font-size: 1.5em;
+  color: #ffd700;
+  margin: 0 0 30px 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+body.start .hero-description {
+  font-size: 1.2em;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Clubs Showcase */
+body.start .clubs-showcase {
+  margin-bottom: 80px;
+}
+
+body.start .section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 3em;
+  text-align: center;
+  margin: 0 0 50px 0;
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: 2px;
+}
+
+body.start .clubs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+body.start .club-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  transition: all 0.4s ease;
+  text-decoration: none;
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+body.start .club-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Jazz Club (Gold) */
+body.start .club-card[href="#jazz-klubben"]:hover {
+  border-color: #ffd700;
+  background: rgba(255, 215, 0, 0.1);
+  box-shadow: 0 10px 40px rgba(255, 215, 0, 0.3);
+}
+
+body.start .club-card[href="#jazz-klubben"] .club-icon {
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+}
+
+body.start .club-card[href="#jazz-klubben"] h3 {
+  color: #ffd700;
+}
+
+body.start .club-card[href="#jazz-klubben"] .visit-link {
+  color: #ffd700;
+}
+
+/* PopFesten Club (Purple) */
+body.start .club-card[href="#club-popfesten"]:hover {
+  border-color: #9c6fc9;
+  background: rgba(156, 111, 201, 0.1);
+  box-shadow: 0 10px 40px rgba(156, 111, 201, 0.3);
+}
+
+body.start .club-card[href="#club-popfesten"] .club-icon {
+  filter: drop-shadow(0 0 10px rgba(156, 111, 201, 0.5));
+}
+
+body.start .club-card[href="#club-popfesten"] h3 {
+  color: #9c6fc9;
+}
+
+body.start .club-card[href="#club-popfesten"] .visit-link {
+  color: #9c6fc9;
+}
+
+/* Hiphop Club (Green/Cyan) */
+body.start .club-card[href="#hiphop-klubben"]:hover {
+  border-color: #00ff7f;
+  background: rgba(0, 255, 127, 0.1);
+  box-shadow: 0 10px 40px rgba(0, 255, 127, 0.3);
+}
+
+body.start .club-card[href="#hiphop-klubben"] .club-icon {
+  filter: drop-shadow(0 0 10px rgba(0, 255, 127, 0.5));
+}
+
+body.start .club-card[href="#hiphop-klubben"] h3 {
+  color: #00ff7f;
+}
+
+body.start .club-card[href="#hiphop-klubben"] .visit-link {
+  color: #00ff7f;
+}
+
+/* Retro Club (Orange/Red) */
+body.start .club-card[href="#retro-klubben"]:hover {
+  border-color: #ff6b6b;
+  background: rgba(255, 107, 107, 0.1);
+  box-shadow: 0 10px 40px rgba(255, 107, 107, 0.3);
+}
+
+body.start .club-card[href="#retro-klubben"] .club-icon {
+  filter: drop-shadow(0 0 10px rgba(255, 107, 107, 0.5));
+}
+
+body.start .club-card[href="#retro-klubben"] h3 {
+  color: #ff6b6b;
+}
+
+body.start .club-card[href="#retro-klubben"] .visit-link {
+  color: #ff6b6b;
+}
+
+/* Default styling for club icons and titles */
+body.start .club-icon {
+  font-size: 4em;
+  margin-bottom: 20px;
+}
+
+body.start .club-card h3 {
+  font-size: 1.8em;
+  margin: 0 0 15px 0;
+}
+
+body.start .club-card p {
+  font-size: 1em;
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+  color: rgba(255, 255, 255, 0.8);
+  flex-grow: 1;
+}
+
+body.start .visit-link {
+  font-weight: bold;
+  font-size: 1.1em;
+  transition: all 0.3s ease;
+}
+
+body.start .club-card:hover .visit-link {
+  transform: translateX(5px);
+  display: inline-block;
+}
+
+/* Events Section */
+body.start .events-section {
+  margin-bottom: 80px;
+}
+
+body.start .section-subtitle {
+  text-align: center;
+  font-size: 1.2em;
+  color: rgba(255, 255, 255, 0.7);
+  margin: -30px 0 40px 0;
+}
+
+/* Info Section */
+body.start .info-section {
+  margin-bottom: 40px;
+}
+
+body.start .info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+body.start .info-card {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+body.start .info-card:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(255, 255, 255, 0.1);
+}
+
+body.start .info-icon {
+  font-size: 3em;
+  margin-bottom: 15px;
+}
+
+body.start .info-card h3 {
+  font-size: 1.5em;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0 0 15px 0;
+}
+
+body.start .info-card p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.8;
+  margin: 0;
 }
 
 .event {
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(8px);
-  /* frostad glas-effekt */
   border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 10px;
   padding: 1rem;
   margin-bottom: 1rem;
   max-width: 60%;
-  margin: 20px
+  margin: 20px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  body.start .main-title {
+    font-size: 3em;
+  }
+
+  body.start .hero-section {
+    padding: 50px 20px;
+  }
+
+  body.start .hero-description {
+    font-size: 1em;
+  }
+
+  body.start .section-title {
+    font-size: 2em;
+  }
+
+  body.start .clubs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.start .info-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 600px) {
-
-  /*lagt till så att eventen blir lite bredare på mobil*/
   .event {
     max-width: 100%;
   }
@@ -44,6 +383,19 @@ main {
   main {
     margin-left: 15px;
     margin-right: 15px;
+  }
+
+  body.start .main-title {
+    font-size: 2.5em;
+    letter-spacing: 1px;
+  }
+
+  body.start .hero-subtitle {
+    font-size: 1.2em;
+  }
+
+  body.start .hero-section {
+    padding: 40px 15px;
   }
 
   .club-section {
@@ -108,25 +460,25 @@ main {
   color: #ffd700;
 }
 
-/* PopFesten stil - Rosa & Party */
+/* PopFesten stil - Lila & Party */
 .club-section-1234 {
   background: transparent;
   backdrop-filter: none;
 }
 
 .club-section-1234 .club-section-title {
-  color: #663399;
+  color: #8c4dcb;
   border-bottom-color: #663399;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .club-section-1234 .event {
-  background: rgba(118, 23, 140, 0.64);
+  background: rgba(102, 51, 153, 0.3);
   border-color: #663399;
 }
 
 .club-section-1234 .event h3 {
-  color: #663399;
+  color: #8c4dcb;
 }
 
 /* Hiphop-klubben stil - Urban & Grön/Cyan */

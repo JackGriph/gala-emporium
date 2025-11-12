@@ -112,7 +112,7 @@
       "id": "pop03",
       "date": "2025-11-28 20:00",
       "name": "Svensk PopCovers",
-      "description": "Coverbandet 80-80 spelar svensk pop från 80-talet",
+      "description": "Coverartisten Dolores sjunger svenska coverlåtar.",
       "clubId": "1234"
     },
     {
@@ -236,6 +236,16 @@
       "eventDate": "2025-11-14 22:00",
       "clubId": "fg5i ",
       "createdAt": "2025-11-12T09:08:44.712Z"
+    },
+    {
+      "id": "BK395883817A9A",
+      "name": "Sandra",
+      "antal": 5,
+      "eventId": "pop01",
+      "eventName": "Miss Li",
+      "eventDate": "2025-11-15 21:00",
+      "clubId": "1234",
+      "createdAt": "2025-11-12T09:26:28.381Z"
     }
   ]
 }

@@ -2,7 +2,7 @@ import { handleBooking, handleLookup, toggleBookingMenu } from '../utils/eventbo
 
 export default async function retroClub() {
   // Hämta klubbdata och events från API
-  const clubId = 'fg5i ';
+  const clubId = 'fg5i';
   const clubData = await (await fetch('http://localhost:3000/clubs/' + clubId)).json();
   const events = await (await fetch('http://localhost:3000/events?clubId=' + clubId)).json();
 
@@ -54,52 +54,55 @@ export default async function retroClub() {
       </div>
     </div>
 
-    <div class="retro-section">
-      <section>
-        <h1>${name}</h1>
-        <p>${description}</p>
-      </section>
- 
-      <section class="retro-about">
-        <h2>Om oss</h2>
-        <p>
-          Välkommen till ${name}! Vi är en passionerad gemenskap som älskar
-          musiken och kulturen från 80- och 90-talet. Vårt mål är att skapa en
-          plats där nostalgi möter nutid, och där du kan dansa till de bästa
-          retro-låtarna under neonljus.
-        </p>
-      </section>
- 
-      <!-- Events -->
-      <section>
-        <h2>Kommande Evenemang</h2>
-        ${events
+    <div class="intro-section">
+      <h1>${name}</h1>
+      <p>${description}</p>
+    </div>
+
+    <div class="columns-container">
+      <div class="retro-section left-column">
+        <section class="retro-about">
+          <h2>Om oss</h2>
+          <p>
+            Välkommen till ${name}! Vi är en passionerad gemenskap som älskar
+            musiken och kulturen från 80- och 90-talet. Vårt mål är att skapa en
+            plats där nostalgi möter nutid, och där du kan dansa till de bästa
+            retro-låtarna under neonljus.
+          </p>
+        </section>
+      </div>
+
+      <div class="retro-section right-column">
+        <section>
+          <h2>Kommande Evenemang</h2>
+          ${events
       .toSorted((a, b) => a.date > b.date ? 1 : -1)
       .map(({ id, date, name, description }) => `
-            <article class="retro-event">
-              <h3>${name} <small>(${date})</small></h3>
-              <p>${description}</p>
-              
-              <div class="event-booking-form">
-                <details>
-                  <summary>🎫 Boka till detta event</summary>
-                  <form>
-                    <div class="form-group">
-                      <label for="name-${id}">Namn:</label>
-                      <input type="text" id="name-${id}" name="name" required placeholder="Ditt namn">
-                    </div>
-                    <div class="form-group">
-                      <label for="antal-${id}">Antal personer:</label>
-                      <input type="number" id="antal-${id}" name="antal" min="1" max="10" required placeholder="1-10">
-                    </div>
-                    <button type="submit" class="btn-primary">Boka nu</button>
-                  </form>
-                </details>
-              </div>
-            </article>
-          `)
+              <article class="retro-event">
+                <h3>${name} <small>(${date})</small></h3>
+                <p>${description}</p>
+                
+                <div class="event-booking-form">
+                  <details>
+                    <summary>🎫 Boka till detta event</summary>
+                    <form>
+                      <div class="form-group">
+                        <label for="name-${id}">Namn:</label>
+                        <input type="text" id="name-${id}" name="name" required placeholder="Ditt namn">
+                      </div>
+                      <div class="form-group">
+                        <label for="antal-${id}">Antal personer:</label>
+                        <input type="number" id="antal-${id}" name="antal" min="1" max="10" required placeholder="1-10">
+                      </div>
+                      <button type="submit" class="btn-primary">Boka nu</button>
+                    </form>
+                  </details>
+                </div>
+              </article>
+            `)
       .join('')}
-      </section>
+        </section>
+      </div>
     </div>
   `;
 }
