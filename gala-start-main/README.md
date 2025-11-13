@@ -7,7 +7,7 @@ En interaktiv webbplats för musikklubbar där besökare kan utforska olika klub
 ### 🎵 Klubbsidor
 - **Hip-Hop Klubben** - Urban kultur med fresh beats
 - **Jazz Klubben** - Elegant jazzupplevelse
-- **Metal Klubben** - Hård musik och intensiv atmosfär
+- **Retro-klubben** - Nostalgiska synthar och neonljus
 - **Club Popfesten** - Popmusik och feststämning
 
 ### ✨ Huvudfunktioner
@@ -50,7 +50,7 @@ En interaktiv webbplats för musikklubbar där besökare kan utforska olika klub
 │   ├── pages/             # Klubb-specifik styling
 │   │   ├── hiphop-club.css
 │   │   ├── jazz-club.css
-│   │   ├── metal-club.css
+│   │   ├── retro-club.css
 │   │   └── club-popfesten.css
 │   └── utils/             # Global styling
 ├── js/
@@ -93,7 +93,7 @@ Bokningslogiken är modulariserad i `eventbooking.js` med funktioner:
 Varje klubb har sitt unika färgtema:
 - **Hip-Hop:** Ljusgrön (#00ff88, #00cc66, #66ffaa)
 - **Jazz:** Guld/Orange (#ffd700, #ff8c00)
-- **Metal:** Röd/Svart
+- **Retro:** Röd/Blå
 - **Popfesten:** Custom tema
 
 ## Senaste Uppdateringar
