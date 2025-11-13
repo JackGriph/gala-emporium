@@ -4,7 +4,7 @@ import clubPopfesten from './pages/club-popfesten.js';
 import hiphopClub from './pages/hiphop-club.js';
 import createEvent from './pages/create-event.js';
 import retroClub from './pages/retro-club.js';
-import { getUserRole, isAdmin } from './utils/user-roles.js';
+import { isAdmin } from './utils/user-roles.js';
 
 
 const menu = {
