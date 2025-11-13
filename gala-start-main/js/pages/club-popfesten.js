@@ -1,4 +1,4 @@
-import { handleBooking as ebHandleBooking, handleLookup as ebHandleLookup, toggleBookingMenu } from '../utils/eventbooking.js';
+import { handleBooking, handleLookup, toggleBookingMenu } from '../utils/eventbooking.js';
 
 export default async function clubPopfesten() {
   const clubId = '1234';
@@ -30,14 +30,14 @@ export default async function clubPopfesten() {
     // Lookup form
     const lookupForm = document.querySelector('#lookup-form form');
     if (lookupForm) {
-      lookupForm.addEventListener('submit', ebHandleLookup);
+      lookupForm.addEventListener('submit', handleLookup);
     }
 
     // Event booking forms
     document.querySelectorAll('.event-booking-form form').forEach((form, index) => {
       const event = events.toSorted((a, b) => a.date > b.date ? 1 : -1)[index];
       if (event) {
-        form.addEventListener('submit', (e) => ebHandleBooking(e, event.id, event.name, event.date, clubId));
+        form.addEventListener('submit', (e) => handleBooking(e, event.id, event.name, event.date, clubId));
       }
     });
   }, 0);
@@ -45,7 +45,6 @@ export default async function clubPopfesten() {
   return `
     <section class="club-page">
       <div class="club-header">
-        <!---<img class="club-image" src="pictures/logo-popfesten.jpg" alt="${club.name}">--->
         <h1>${club.name}</h1>
         <h2>${club.description}</h2>
         <p class="club-info">Club Popfesten är kvällsklubben där popälskare samlas för att fira den svenska musiken vi aldrig tröttnat på. Våra artister och DJ's bjuder på allt från tidlösa popklassiker till dagens största hits, med energifyllda liveframträdanden och välkända covers som för hela dansgolvet att sjunga med. Oavsett om du älskar ikoniska retrovibbar eller fräsch modern pop är Club Popfesten platsen där nostalgi möter nutid, och där festen aldrig stannar av. Älskar du svensk pop? Kom och studsa med oss.</p>
