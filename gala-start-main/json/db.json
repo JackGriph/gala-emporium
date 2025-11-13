@@ -209,15 +209,6 @@
   ],
   "bookings": [
     {
-      "id": "POP14736593UNNZ",
-      "name": "Sandra",
-      "antal": 10,
-      "eventDate": "2025-11-22 19:00",
-      "eventName": "Robin & Ingela med Värsta Bästa Bandet",
-      "clubId": "1234",
-      "createdAt": "2025-11-08T15:12:16.593Z"
-    },
-    {
       "id": "BK385029252ARK",
       "name": "John",
       "antal": 3,
@@ -238,16 +229,6 @@
       "createdAt": "2025-11-12T09:08:44.712Z"
     },
     {
-      "id": "BK395883817A9A",
-      "name": "Sandra",
-      "antal": 5,
-      "eventId": "pop01",
-      "eventName": "Miss Li",
-      "eventDate": "2025-11-15 21:00",
-      "clubId": "1234",
-      "createdAt": "2025-11-12T09:26:28.381Z"
-    },
-    {
       "id": "BK42128952PACJ",
       "name": "John",
       "antal": 2,
@@ -256,16 +237,6 @@
       "eventDate": "2025-11-28 23:00",
       "clubId": "fg5i",
       "createdAt": "2025-11-12T10:08:48.952Z"
-    },
-    {
-      "id": "BK735299649XX8",
-      "name": "Sandra",
-      "antal": 5,
-      "eventId": "pop01",
-      "eventName": "Miss Li",
-      "eventDate": "2025-11-15 21:00",
-      "clubId": "1234",
-      "createdAt": "2025-11-12T18:52:09.964Z"
     }
   ]
 }
