@@ -36,7 +36,23 @@ async function loadPageContent() {
   // add a class on body so that we can style differnt pages differently
   document.body.setAttribute('class', location.hash.slice(1));
   // get the correct function to run depending on location.hash
-  const functionToRun = menu[location.hash.slice(1)].function;
+  const pageKey = location.hash.slice(1);
+  const menuItem = menu[pageKey];
+  
+  // Check if page exists
+  if (!menuItem) {
+    location.replace('#start');
+    return;
+  }
+  
+  // Check admin access
+  if (menuItem.isAdminPage && !isAdmin()) {
+    alert('Du måste vara inloggad som club-admin för att komma åt denna sida.');
+    location.replace('#start');
+    return;
+  }
+  
+  const functionToRun = menuItem.function;
   // run the function and expect it return a html string
   const html = await functionToRun();
   // replace the contents of the main element
