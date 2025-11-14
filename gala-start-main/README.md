@@ -7,7 +7,7 @@ En interaktiv webbplats för musikklubbar där besökare kan utforska olika klub
 ### 🎵 Klubbsidor
 - **Hip-Hop Klubben** - Urban kultur med fresh beats
 - **Jazz Klubben** - Elegant jazzupplevelse
-- **Retro-klubben** - Nostalgiska synthar och neonljus
+- **Retro Klubben** - Nostalgiska syntar och neonljus
 - **Club Popfesten** - Popmusik och feststämning
 
 ### ✨ Huvudfunktioner
@@ -29,7 +29,7 @@ En interaktiv webbplats för musikklubbar där besökare kan utforska olika klub
 
 **Responsiv Design**
 - Moderna CSS-gradienter och glow-effekter
-- Anpassad färgtematik för varje klubb (Hip-Hop: ljusgrön, Jazz: guld, Metal: röd/svart)
+- Anpassad färgtematik för varje klubb (Hip-Hop: ljusgrön, Jazz: guld, Retro: röd/blå)
 - Raleway-typsnitt för elegant look
 
 ## Teknisk Struktur

@@ -10,11 +10,6 @@ export function setUserRole(role) {
   localStorage.setItem('userRole', role);
 }
 
-// Check if user is logged in
-export function isLoggedIn() {
-  return getUserRole() !== null;
-}
-
 // Simulate authentication - check if email is admin
 export function authenticateUser(email, password) {
   // Simple simulation: hardcoded admin emails
