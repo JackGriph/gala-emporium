@@ -1,5 +1,5 @@
 import clubInfoAndEvents from "../utils/club-info-and-events.js";
-import { getUserRole, setUserRole } from "../utils/user-roles.js";
+import { getUserRole, authenticateUser, logoutUser, isAdmin } from "../utils/user-roles.js";
 
 export default async function start() {
   // Hämta alla klubbar
@@ -10,13 +10,30 @@ export default async function start() {
 
   // Setup event listeners after HTML is rendered
   setTimeout(() => {
-    const roleSwitchBtn = document.querySelector('.role-switch-btn');
-    if (roleSwitchBtn) {
-      roleSwitchBtn.addEventListener('click', () => {
-        const currentRole = getUserRole();
-        const newRole = currentRole === 'User' ? 'Club-Admin' : 'User';
-        setUserRole(newRole);
-        location.reload(); // Reload to update menu
+    // Login form handling
+    const loginForm = document.querySelector('#login-form');
+    if (loginForm) {
+      loginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = document.querySelector('#login-email').value;
+        const password = document.querySelector('#login-password').value;
+        
+        const result = authenticateUser(email, password);
+        if (result.success) {
+          alert(`Inloggad som ${result.role}`);
+          location.reload(); // Reload to update menu
+        } else {
+          alert(result.message);
+        }
+      });
+    }
+
+    // Logout button
+    const logoutBtn = document.querySelector('.logout-btn');
+    if (logoutBtn) {
+      logoutBtn.addEventListener('click', () => {
+        logoutUser();
+        location.reload();
       });
     }
   }, 0);
@@ -30,7 +47,27 @@ export default async function start() {
         Oavsett om du älskar intimt jazz, svensk pop, urban hiphop eller retro-nostalgi, 
         hittar du din perfekta kväll hos oss.
       </p>
-      <button class="role-switch-btn">Byt roll: ${getUserRole()}</button>
+      
+      ${!isAdmin() ? `
+        <div class="login-section">
+          <h3>Logga in</h3>
+          <form id="login-form">
+            <div class="form-group">
+              <input type="email" id="login-email" placeholder="E-post" required>
+            </div>
+            <div class="form-group">
+              <input type="password" id="login-password" placeholder="Lösenord" required>
+            </div>
+            <button type="submit" class="login-btn">Logga in</button>
+          </form>
+          <p class="login-info">Admin-konto: admin@gala.se / admin123</p>
+        </div>
+      ` : `
+        <div class="user-info">
+          <p>Inloggad som: <strong>${getUserRole()}</strong></p>
+          <button class="logout-btn">Logga ut</button>
+        </div>
+      `}
     </div>
 
     <div class="clubs-showcase">
